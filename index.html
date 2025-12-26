@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hanyu (Mason) Liu</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      line-height: 1.65;
+      color: #111;
+    }
+    h1 { font-size: 40px; margin-bottom: 8px; }
+    h2 { margin-top: 36px; }
+    .tagline { color: #555; font-size: 18px; }
+    a { color: #0b57d0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .card {
+      border: 1px solid #eee;
+      border-radius: 14px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    footer {
+      margin-top: 60px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Hanyu (Mason) Liu</h1>
+  <p class="tagline">
+    PhD researcher in climate & methane modeling · Bayesian inference ·
+    physics-based inverse modeling · ML & data science
+  </p>
+
+  <p>
+    <a href="mailto:YOUR_EMAIL">Email</a> ·
+    <a href="https://github.com/hanyumasonliu">GitHub</a> ·
+    <a href="#">Google Scholar</a> ·
+    <a href="#">LinkedIn</a>
+  </p>
+
+  <div class="card">
+    <h2>About</h2>
+    <p>
+      I work on physics-based inverse modeling and Bayesian inference to
+      quantify methane emissions at continental scales. My research integrates
+      atmospheric transport models, observational data, and statistical
+      inference, with growing use of machine learning for scalable
+      model–data fusion.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Research & Projects</h2>
+    <ul>
+      <li>Geostatistical inversion of Arctic methane emissions</li>
+      <li>Evaluation of Global Carbon Project methane models</li>
+      <li>Uncertainty quantification for high-dimensional inverse problems</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Industry Interests</h2>
+    <p>
+      I’m interested in research engineer and applied scientist roles at
+      industry labs working on climate, energy, weather, and large-scale
+      physical systems.
+    </p>
+  </div>
+
+  <footer>
+    © <span id="y"></span> Hanyu (Mason) Liu
+  </footer>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
