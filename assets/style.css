@@ -1,0 +1,180 @@
+:root {
+  --primary: #002d72;
+  --secondary: #68ace5;
+  --dark: #1a1a1a;
+  --light: #f4f7f9;
+  --accent: #d0f0fd;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  line-height: 1.8;
+  color: var(--dark);
+  background-color: var(--white);
+}
+
+a { color: inherit; }
+
+.container { max-width: 1000px; margin: 0 auto; padding: 80px 20px; }
+
+h1, h2, h3 { line-height: 1.2; }
+
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  position: relative;
+}
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  margin-top: 10px;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark);
+  margin-left: 22px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+.nav-links a:hover { color: var(--primary); }
+
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #001535 100%);
+  color: white;
+  padding: 160px 20px 90px;
+  text-align: center;
+}
+
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 5px solid rgba(255,255,255,0.18);
+  margin-bottom: 22px;
+  object-fit: cover;
+}
+
+.hero h1 { font-size: 3.2rem; margin: 0; }
+.hero p { font-size: 1.1rem; color: var(--secondary); max-width: 860px; margin: 18px auto; }
+
+.socials a { color: white; font-size: 1.8rem; margin: 0 10px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 26px; }
+
+.card {
+  background: var(--light);
+  padding: 26px;
+  border-radius: 16px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.card:hover { transform: translateY(-6px); background: var(--accent); }
+
+.skills-tag {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin: 6px 6px 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.timeline { border-left: 2px solid var(--light); padding-left: 30px; margin-left: 18px; }
+.timeline-item { position: relative; margin-bottom: 44px; }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -41px;
+  top: 5px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+.date { font-weight: 800; color: var(--primary); font-size: 0.9rem; }
+.job-title { font-size: 1.25rem; font-weight: 800; margin: 6px 0; }
+.company { color: #666; font-style: italic; margin-bottom: 12px; }
+
+.tennis-box {
+  background: #121212;
+  color: white;
+  border-radius: 20px;
+  padding: 46px;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  margin-top: 30px;
+}
+.tennis-content { flex: 1; }
+.tennis-stats { display: flex; gap: 14px; margin-top: 18px; flex-wrap: wrap; }
+.stat-item {
+  text-align: center;
+  background: rgba(255,255,255,0.08);
+  padding: 12px 14px;
+  border-radius: 12px;
+  min-width: 92px;
+}
+.stat-num { display: block; font-size: 1.35rem; font-weight: 900; color: var(--secondary); }
+
+.button {
+  display: inline-block;
+  padding: 14px 34px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.page-hero {
+  padding-top: 120px;
+  padding-bottom: 30px;
+  background: var(--light);
+}
+.page-hero .container { padding-top: 40px; padding-bottom: 40px; }
+
+footer { background: #000; color: #777; padding: 50px 20px; text-align: center; }
+footer a { color: white; margin: 0 10px; font-size: 1.2rem; }
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.4rem; }
+  .tennis-box { flex-direction: column; padding: 26px; }
+}
