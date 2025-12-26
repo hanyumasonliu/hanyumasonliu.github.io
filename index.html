@@ -3,82 +3,207 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hanyu (Mason) Liu</title>
+  <title>Hanyu (Mason) Liu | PhD Researcher & Athlete</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
+    :root {
+      --primary: #1a2a3a;
+      --accent: #0b57d0;
+      --text: #333;
+      --light-bg: #f8f9fa;
+      --border: #e1e4e8;
+    }
+
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+      color: var(--text);
+      background-color: #fff;
+    }
+
+    /* Hero Section */
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .container {
       max-width: 900px;
-      margin: 60px auto;
+      margin: 0 auto;
       padding: 0 20px;
-      line-height: 1.65;
-      color: #111;
     }
-    h1 { font-size: 40px; margin-bottom: 8px; }
-    h2 { margin-top: 36px; }
-    .tagline { color: #555; font-size: 18px; }
-    a { color: #0b57d0; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: cover;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h1 { font-size: 3rem; margin: 10px 0; letter-spacing: -1px; }
+    
+    .tagline { 
+      font-size: 1.2rem; 
+      color: #cbd5e0; 
+      max-width: 700px; 
+      margin: 0 auto 30px; 
+      font-weight: 300;
+    }
+
+    .social-links a {
+      color: white;
+      margin: 0 15px;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    .social-links a:hover { color: #63b3ed; }
+
+    /* Layout Sections */
+    section { padding: 60px 0; }
+    h2 { 
+      font-size: 1.8rem; 
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
     .card {
-      border: 1px solid #eee;
-      border-radius: 14px;
-      padding: 20px;
-      margin: 20px 0;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.05);
+    }
+
+    .card h3 { margin-top: 0; color: var(--primary); }
+
+    /* Tennis & Distinction */
+    .tennis-section {
+      background-color: var(--light-bg);
+      border-radius: 20px;
+      padding: 40px;
+      margin-top: 40px;
+    }
+    .badge {
+      background: #e2e8f0;
+      color: #2d3748;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
     footer {
-      margin-top: 60px;
-      font-size: 14px;
-      color: #777;
+      text-align: center;
+      padding: 40px;
+      font-size: 0.9rem;
+      color: #718096;
+      border-top: 1px solid var(--border);
+    }
+
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2rem; }
+      .profile-img { width: 150px; height: 150px; }
     }
   </style>
 </head>
 <body>
 
-  <h1>Hanyu (Mason) Liu</h1>
-  <p class="tagline">
-    PhD researcher in climate & methane modeling · Bayesian inference ·
-    physics-based inverse modeling · ML & data science
-  </p>
+  <header>
+    <div class="container">
+      <img src="https://via.placeholder.com/300" alt="Hanyu Liu" class="profile-img">
+      <h1>Hanyu (Mason) Liu</h1>
+      <p class="tagline">
+        PhD Student at Johns Hopkins · Climate & Methane Modeling · 
+        Bayesian Inference · NCAA Academic All-American
+      </p>
+      <div class="social-links">
+        <a href="mailto:hliu83@jhu.edu" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/hanyumasonliu" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/hliu83/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+      </div>
+    </div>
+  </header>
 
-  <p>
-    <a href="mailto:YOUR_EMAIL">Email</a> ·
-    <a href="https://github.com/hanyumasonliu">GitHub</a> ·
-    <a href="#">Google Scholar</a> ·
-    <a href="#">LinkedIn</a>
-  </p>
+  <section class="container">
+    <h2>Research & Academic Focus</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Inverse Modeling</h3>
+        <p>Developing physics-based models and Bayesian inference frameworks to quantify methane emissions at continental scales, focusing on Arctic and global source-sink dynamics.</p>
+      </div>
+      <div class="card">
+        <h3>Machine Learning</h3>
+        <p>Integrating ML for scalable model-data fusion to improve the resolution and speed of greenhouse gas flux estimations from satellite and ground-based data.</p>
+      </div>
+      <div class="card">
+        <h3>Environmental Engineering</h3>
+        <p>Research assistant at the JHU Greenhouse Gas Research Group, focusing on uncertainty quantification for high-dimensional inverse problems.</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="card">
-    <h2>About</h2>
-    <p>
-      I work on physics-based inverse modeling and Bayesian inference to
-      quantify methane emissions at continental scales. My research integrates
-      atmospheric transport models, observational data, and statistical
-      inference, with growing use of machine learning for scalable
-      model–data fusion.
-    </p>
-  </div>
+  <section class="container" style="padding-top: 0;">
+    <h2>Education</h2>
+    <div class="card">
+      <p><strong>Johns Hopkins University</strong> | PhD in Geography and Environmental Engineering (Current)</p>
+      <p><strong>Johns Hopkins University</strong> | M.H.S. in Environmental Health and Engineering</p>
+      <p><strong>George Washington University</strong> | B.S. in Business Analytics</p>
+    </div>
+  </section>
 
-  <div class="card">
-    <h2>Research & Projects</h2>
-    <ul>
-      <li>Geostatistical inversion of Arctic methane emissions</li>
-      <li>Evaluation of Global Carbon Project methane models</li>
-      <li>Uncertainty quantification for high-dimensional inverse problems</li>
-    </ul>
-  </div>
+  <section class="container">
+    <div class="tennis-section">
+      <h2>Tennis & Leadership</h2>
+      <div class="badge">NCAA Academic All-American</div>
+      <div class="badge">Assistant Coach @ JHU</div>
+      <div class="badge">Founder @ Mason's Tennis Academy</div>
+      
+      <p>Beyond the lab, I am a lifelong tennis player and coach. Born in Beijing and trained at IMG Academy, I competed at the NCAA level with over 100 collegiate career wins. My approach to sport mirrors my approach to science: a blend of technical precision, mental conditioning, and data-driven strategy.</p>
+      
+      <div class="grid" style="margin-top: 20px;">
+        <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #ddd;">
+          <strong>Athletic Honors</strong>
+          <ul>
+            <li>Third Team CSC Academic All-American (2024)</li>
+            <li>Ranked #22 in JHU history for career singles wins</li>
+            <li>All-Centennial Conference First Team</li>
+          </ul>
+        </div>
+        <div style="border-radius: 12px; overflow: hidden;">
+          <img src="https://via.placeholder.com/400x250?text=Tennis+Action+Shot" alt="Tennis" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <div class="card">
-    <h2>Industry Interests</h2>
-    <p>
-      I’m interested in research engineer and applied scientist roles at
-      industry labs working on climate, energy, weather, and large-scale
-      physical systems.
-    </p>
-  </div>
-
-  <footer>
-    © <span id="y"></span> Hanyu (Mason) Liu
+  <footer class="container">
+    <p>© <span id="y"></span> Hanyu (Mason) Liu. Built with precision and passion.</p>
   </footer>
+
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
