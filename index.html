@@ -7,206 +7,282 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     :root {
-      --primary: #1a2a3a;
-      --accent: #0b57d0;
-      --text: #333;
-      --light-bg: #f8f9fa;
-      --border: #e1e4e8;
+      --primary: #002d72; /* JHU Blue */
+      --secondary: #68ace5;
+      --dark: #1a1a1a;
+      --light: #f4f7f9;
+      --accent: #d0f0fd;
+      --white: #ffffff;
     }
 
+    * { box-sizing: border-box; }
     body {
-      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      line-height: 1.7;
-      color: var(--text);
-      background-color: #fff;
+      line-height: 1.8;
+      color: var(--dark);
+      background-color: var(--white);
+      scroll-behavior: smooth;
     }
 
-    /* Hero Section */
-    header {
-      background: var(--primary);
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid #eee;
+      padding: 15px 0;
     }
-
-    .container {
-      max-width: 900px;
+    .nav-container {
+      max-width: 1100px;
       margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 0 20px;
     }
-
-    .profile-img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 4px solid white;
-      object-fit: cover;
-      margin-bottom: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-
-    h1 { font-size: 3rem; margin: 10px 0; letter-spacing: -1px; }
-    
-    .tagline { 
-      font-size: 1.2rem; 
-      color: #cbd5e0; 
-      max-width: 700px; 
-      margin: 0 auto 30px; 
-      font-weight: 300;
-    }
-
-    .social-links a {
-      color: white;
-      margin: 0 15px;
-      font-size: 1.5rem;
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      margin-left: 25px;
+      font-weight: 500;
+      font-size: 0.9rem;
       transition: color 0.3s;
     }
-    .social-links a:hover { color: #63b3ed; }
+    .nav-links a:hover { color: var(--primary); }
 
-    /* Layout Sections */
-    section { padding: 60px 0; }
-    h2 { 
-      font-size: 1.8rem; 
-      border-bottom: 2px solid var(--accent);
-      display: inline-block;
-      margin-bottom: 30px;
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #001535 100%);
+      color: white;
+      padding: 160px 20px 100px;
+      text-align: center;
+    }
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 5px solid rgba(255,255,255,0.2);
+      margin-bottom: 25px;
+      object-fit: cover;
+    }
+    .hero h1 { font-size: 3.5rem; margin: 0; }
+    .hero p { font-size: 1.2rem; color: var(--secondary); max-width: 800px; margin: 20px auto; }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 80px 20px; }
+    h2 { font-size: 2.2rem; margin-bottom: 40px; position: relative; }
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      margin-top: 10px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
+    /* Experience Timeline */
+    .timeline { border-left: 2px solid var(--light); padding-left: 30px; margin-left: 20px; }
+    .timeline-item { position: relative; margin-bottom: 50px; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -41px;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--primary);
     }
+    .date { font-weight: bold; color: var(--primary); font-size: 0.9rem; }
+    .job-title { font-size: 1.4rem; font-weight: 700; margin: 5px 0; }
+    .company { color: #666; font-style: italic; margin-bottom: 15px; }
 
+    /* Cards & Grid */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
     .card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 25px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      background: var(--light);
+      padding: 30px;
+      border-radius: 15px;
+      transition: all 0.3s ease;
     }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 20px rgba(0,0,0,0.05);
-    }
+    .card:hover { transform: translateY(-10px); background: var(--accent); }
 
-    .card h3 { margin-top: 0; color: var(--primary); }
-
-    /* Tennis & Distinction */
-    .tennis-section {
-      background-color: var(--light-bg);
+    /* Skills Section */
+    .skills-tag {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 5px 15px;
       border-radius: 20px;
-      padding: 40px;
+      margin: 5px;
+      font-size: 0.85rem;
+    }
+
+    /* Tennis Section - Visual Focus */
+    .tennis-box {
+      background: #1a1a1a;
+      color: white;
+      border-radius: 20px;
+      padding: 60px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
       margin-top: 40px;
     }
-    .badge {
-      background: #e2e8f0;
-      color: #2d3748;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      display: inline-block;
-      margin-bottom: 10px;
+    .tennis-content { flex: 1; }
+    .tennis-stats {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
     }
+    .stat-item { text-align: center; background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; min-width: 80px; }
+    .stat-num { display: block; font-size: 1.5rem; font-weight: bold; color: var(--secondary); }
 
-    footer {
-      text-align: center;
-      padding: 40px;
-      font-size: 0.9rem;
-      color: #718096;
-      border-top: 1px solid var(--border);
-    }
+    /* Footer */
+    footer { background: #000; color: #777; padding: 60px 20px; text-align: center; }
+    .footer-links a { color: white; margin: 0 10px; font-size: 1.2rem; }
 
-    ul { padding-left: 20px; }
-    li { margin-bottom: 8px; }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 2.2rem; }
-      .profile-img { width: 150px; height: 150px; }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .tennis-box { flex-direction: column; padding: 30px; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <img src="https://via.placeholder.com/300" alt="Hanyu Liu" class="profile-img">
-      <h1>Hanyu (Mason) Liu</h1>
-      <p class="tagline">
-        PhD Student at Johns Hopkins · Climate & Methane Modeling · 
-        Bayesian Inference · NCAA Academic All-American
-      </p>
-      <div class="social-links">
-        <a href="mailto:hliu83@jhu.edu" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://github.com/hanyumasonliu" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/hliu83/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="#" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+  <nav>
+    <div class="nav-container">
+      <div style="font-weight: bold; font-size: 1.2rem;">ML</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#research">Research</a>
+        <a href="#tennis">Tennis</a>
+        <a href="#contact">Contact</a>
       </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <img src="https://via.placeholder.com/200" alt="Hanyu Liu" class="profile-img">
+    <h1>Hanyu (Mason) Liu</h1>
+    <p>PhD Student at Johns Hopkins University | Environmental Engineer | Inverse Modeling Expert | NCAA Academic All-American</p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/hliu83/" target="_blank" style="color: white; font-size: 2rem;"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/hanyumasonliu" target="_blank" style="color: white; font-size: 2rem; margin-left: 20px;"><i class="fab fa-github"></i></a>
     </div>
   </header>
 
-  <section class="container">
-    <h2>Research & Academic Focus</h2>
+  <section id="about" class="container">
+    <h2>About Me</h2>
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+      <div>
+        <p>I am a PhD researcher at <strong>Johns Hopkins University</strong> within the Greenhouse Gas Research Group. My work sits at the intersection of atmospheric science, Bayesian statistics, and machine learning. I specialize in <strong>physics-based inverse modeling</strong> to quantify methane emissions—a critical driver of climate change.</p>
+        <p>Before my doctoral studies, I completed my M.H.S. at Johns Hopkins and my undergraduate degree at George Washington University. My journey is defined by a dual pursuit of academic rigor and elite athletic performance, having competed as a top-tier NCAA tennis player while maintaining Academic All-American status.</p>
+      </div>
+      <div>
+        <h4>Core Expertise</h4>
+        <span class="skills-tag">Bayesian Inference</span>
+        <span class="skills-tag">Methane Flux Modeling</span>
+        <span class="skills-tag">Inverse Problems</span>
+        <span class="skills-tag">Data Science (Python/R)</span>
+        <span class="skills-tag">Geostatistical Modeling</span>
+        <span class="skills-tag">Machine Learning</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" style="background: var(--light);">
+    <div class="container">
+      <h2>Professional Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="date">2023 - Present</span>
+          <div class="job-title">Graduate Research Assistant</div>
+          <div class="company">Johns Hopkins University | Baltimore, MD</div>
+          <p>Developing geostatistical inversion frameworks for Arctic methane emissions. Working on high-dimensional uncertainty quantification and integrating satellite-based observations with atmospheric transport models (STILT/WRF).</p>
+        </div>
+
+        <div class="timeline-item">
+          <span class="date">2022 - 2023</span>
+          <div class="job-title">Assistant Tennis Coach</div>
+          <div class="company">Johns Hopkins University Athletics</div>
+          <p>Assisted in team strategy, player development, and recruitment. Mentored student-athletes on balancing high-performance sports with rigorous engineering curricula.</p>
+        </div>
+
+        <div class="timeline-item">
+          <span class="date">2019 - 2022</span>
+          <div class="job-title">NCAA Student-Athlete & Founder</div>
+          <div class="company">George Washington University / Mason's Tennis Academy</div>
+          <p>Maintained a 3.9+ GPA while competing at the highest collegiate level. Founded a tennis academy to provide high-performance coaching to youth players, managing both operations and technical instruction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research" class="container">
+    <h2>Current Research Projects</h2>
     <div class="grid">
       <div class="card">
-        <h3>Inverse Modeling</h3>
-        <p>Developing physics-based models and Bayesian inference frameworks to quantify methane emissions at continental scales, focusing on Arctic and global source-sink dynamics.</p>
+        <i class="fas fa-globe-americas fa-2x" style="color: var(--primary); margin-bottom: 15px;"></i>
+        <h3>Arctic Methane Inversion</h3>
+        <p>Using geostatistical inverse modeling to reconcile the gap between "bottom-up" process models and "top-down" atmospheric observations in the Arctic Circle.</p>
       </div>
       <div class="card">
-        <h3>Machine Learning</h3>
-        <p>Integrating ML for scalable model-data fusion to improve the resolution and speed of greenhouse gas flux estimations from satellite and ground-based data.</p>
+        <i class="fas fa-microchip fa-2x" style="color: var(--primary); margin-bottom: 15px;"></i>
+        <h3>ML-Data Fusion</h3>
+        <p>Applying machine learning techniques to accelerate the computational efficiency of transport model sensitivity matrices (Jacobians) for real-time emission tracking.</p>
       </div>
       <div class="card">
-        <h3>Environmental Engineering</h3>
-        <p>Research assistant at the JHU Greenhouse Gas Research Group, focusing on uncertainty quantification for high-dimensional inverse problems.</p>
+        <i class="fas fa-chart-line fa-2x" style="color: var(--primary); margin-bottom: 15px;"></i>
+        <h3>Global Carbon Project</h3>
+        <p>Evaluating the performance of diverse methane models to identify regional biases in emission inventories across North America.</p>
       </div>
     </div>
   </section>
 
-  <section class="container" style="padding-top: 0;">
-    <h2>Education</h2>
-    <div class="card">
-      <p><strong>Johns Hopkins University</strong> | PhD in Geography and Environmental Engineering (Current)</p>
-      <p><strong>Johns Hopkins University</strong> | M.H.S. in Environmental Health and Engineering</p>
-      <p><strong>George Washington University</strong> | B.S. in Business Analytics</p>
-    </div>
-  </section>
-
-  <section class="container">
-    <div class="tennis-section">
-      <h2>Tennis & Leadership</h2>
-      <div class="badge">NCAA Academic All-American</div>
-      <div class="badge">Assistant Coach @ JHU</div>
-      <div class="badge">Founder @ Mason's Tennis Academy</div>
-      
-      <p>Beyond the lab, I am a lifelong tennis player and coach. Born in Beijing and trained at IMG Academy, I competed at the NCAA level with over 100 collegiate career wins. My approach to sport mirrors my approach to science: a blend of technical precision, mental conditioning, and data-driven strategy.</p>
-      
-      <div class="grid" style="margin-top: 20px;">
-        <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #ddd;">
-          <strong>Athletic Honors</strong>
-          <ul>
-            <li>Third Team CSC Academic All-American (2024)</li>
-            <li>Ranked #22 in JHU history for career singles wins</li>
-            <li>All-Centennial Conference First Team</li>
-          </ul>
+  <section id="tennis" class="container" style="padding-top: 0;">
+    <div class="tennis-box">
+      <div class="tennis-content">
+        <h2 style="color: white; border-bottom-color: var(--secondary);">Tennis & Elite Performance</h2>
+        <p>Tennis has been the cornerstone of my discipline. From training at <strong>IMG Academy</strong> to competing in the NCAA, I have learned to analyze complex systems under pressure—whether that's a 120mph serve or a high-dimensional dataset.</p>
+        
+        <div class="tennis-stats">
+          <div class="stat-item"><span class="stat-num">100+</span><span>Wins</span></div>
+          <div class="stat-item"><span class="stat-num">#22</span><span>All-Time JHU</span></div>
+          <div class="stat-item"><span class="stat-num">3rd</span><span>Academic All-Am</span></div>
         </div>
-        <div style="border-radius: 12px; overflow: hidden;">
-          <img src="https://via.placeholder.com/400x250?text=Tennis+Action+Shot" alt="Tennis" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
+        
+        <p style="margin-top: 25px; font-size: 0.9rem; color: #aaa;">
+          <em>Honors:</em> CSC Academic All-American, Centennial Conference Player of the Week, ITA Scholar-Athlete.
+        </p>
+      </div>
+      <div style="flex: 1;">
+         <img src="https://via.placeholder.com/400x300?text=Mason+on+Court" alt="Mason Liu Tennis" style="width: 100%; border-radius: 10px; filter: grayscale(30%);">
       </div>
     </div>
   </section>
 
-  <footer class="container">
-    <p>© <span id="y"></span> Hanyu (Mason) Liu. Built with precision and passion.</p>
+  <section id="contact" class="container" style="text-align: center;">
+    <h2>Get In Touch</h2>
+    <p>I am always open to discussing climate tech, Bayesian stats, or tennis strategy.</p>
+    <a href="mailto:hliu83@jhu.edu" style="display: inline-block; padding: 15px 40px; background: var(--primary); color: white; text-decoration: none; border-radius: 30px; font-weight: bold; margin-top: 20px;">Email Mason</a>
+  </section>
+
+  <footer>
+    <div class="footer-links" style="margin-bottom: 20px;">
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>© <span id="y"></span> Hanyu (Mason) Liu | Built for Climate Research & Performance</p>
   </footer>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
