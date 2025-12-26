@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Experience | Hanyu (Mason) Liu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #002d72; /* JHU Blue */
+      --secondary: #68ace5;
+      --dark: #1a1a1a;
+      --light: #f4f7f9;
+      --accent: #d0f0fd;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      line-height: 1.8;
+      color: var(--dark);
+      background-color: var(--white);
+      scroll-behavior: smooth;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid #eee;
+      padding: 15px 0;
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand .dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--secondary);
+      display: inline-block;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      margin-left: 22px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: color 0.3s, opacity 0.3s;
+      opacity: 0.85;
+    }
+    .nav-links a:hover { color: var(--primary); opacity: 1; }
+    .nav-links a.active { color: var(--primary); opacity: 1; }
+
+    /* Hero / Page header */
+    .page-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #001535 100%);
+      color: white;
+      padding: 130px 20px 55px;
+      text-align: center;
+    }
+    .page-hero h1 { font-size: 2.8rem; margin: 0; }
+    .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.8); max-width: 900px; margin: 14px auto 0; }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 70px 20px; }
+    h2 { font-size: 2rem; margin: 0 0 26px; }
+    .subtle { color: #666; max-width: 900px; margin: 0 auto; }
+
+    /* Timeline */
+    .timeline-wrap {
+      background: var(--light);
+      border-radius: 18px;
+      padding: 28px;
+      border: 1px solid #edf1f4;
+    }
+    .timeline { border-left: 2px solid #dbe6ee; padding-left: 28px; margin-left: 10px; }
+    .timeline-item { position: relative; margin-bottom: 40px; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -40px;
+      top: 4px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 6px rgba(104,172,229,0.20);
+    }
+    .date { font-weight: 800; color: var(--primary); font-size: 0.9rem; }
+    .job-title { font-size: 1.25rem; font-weight: 800; margin: 6px 0 2px; }
+    .company { color: #4f5b66; font-style: italic; margin-bottom: 12px; }
+    ul { margin: 0; padding-left: 18px; }
+    li { margin: 8px 0; }
+
+    /* Cards */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 22px; }
+    .card {
+      background: #fff;
+      border: 1px solid #edf1f4;
+      padding: 22px;
+      border-radius: 16px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 14px 28px rgba(0,0,0,0.08); }
+    .card h3 { margin: 8px 0 8px; }
+    .pill {
+      display: inline-block;
+      background: rgba(0,45,114,0.10);
+      color: var(--primary);
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+    }
+
+    /* Footer */
+    footer { background: #000; color: #777; padding: 48px 20px; text-align: center; }
+    .footer-links a { color: white; margin: 0 10px; font-size: 1.2rem; opacity: 0.9; }
+    .footer-links a:hover { opacity: 1; }
+
+    @media (max-width: 768px) {
+      .page-hero h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-container">
+      <a class="brand" href="index.html"><span class="dot"></span> Mason Liu</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="experience.html">Experience</a>
+        <a href="tennis.html">Tennis</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <h1>Experience</h1>
+    <p>Research + leadership + high-performance execution — the same mindset across climate modeling and competitive athletics.</p>
+  </header>
+
+  <main class="container">
+    <h2>Timeline</h2>
+
+    <div class="timeline-wrap">
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="date">2023 – Present</span>
+          <div class="job-title">PhD Researcher (Environmental Health & Engineering)</div>
+          <div class="company">Johns Hopkins University | Baltimore, MD</div>
+          <ul>
+            <li>Build geostatistical inverse modeling pipelines to quantify Arctic methane emissions using transport modeling and Bayesian inference.</li>
+            <li>Evaluate Global Carbon Project methane models against aircraft and tower observations to diagnose regional bias and seasonal drivers.</li>
+            <li>Develop uncertainty quantification workflows and scalable computation on HPC (matrix methods, optimization, diagnostics).</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <span class="date">2022 – 2023</span>
+          <div class="job-title">Assistant Tennis Coach</div>
+          <div class="company">Johns Hopkins University Athletics</div>
+          <ul>
+            <li>Supported training plans, match strategy, and player development for NCAA athletes.</li>
+            <li>Mentored students on balancing elite performance with demanding academics.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <span class="date">2019 – 2022</span>
+          <div class="job-title">NCAA Student-Athlete & Founder</div>
+          <div class="company">George Washington University / Mason’s Tennis Academy</div>
+          <ul>
+            <li>Competed at a high level while maintaining strong academic performance.</li>
+            <li>Founded and operated a coaching program: scheduling, curriculum design, and client communication.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <span class="date">Earlier</span>
+          <div class="job-title">Training & Education</div>
+          <div class="company">IMG Academy • Beijing • Washington, DC • Baltimore</div>
+          <ul>
+            <li>Early training in Beijing; later attended IMG Academy for high-performance development.</li>
+            <li>Academic path across international relations → business analytics → environmental health & engineering.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="margin-top: 48px;">What I’m building toward</h2>
+    <p class="subtle">Roles at the intersection of climate + ML + systems: Research Engineer / Applied Scientist for AI-enabled climate, sustainability, and weather/energy modeling.</p>
+
+    <div class="grid">
+      <div class="card">
+        <span class="pill">Climate + ML</span>
+        <h3>AI for Weather & Sustainability</h3>
+        <p>Modeling, evaluation, and deployment mindset: careful validation, clear metrics, and high-impact use cases.</p>
+      </div>
+      <div class="card">
+        <span class="pill">Inference</span>
+        <h3>Inverse Problems & Uncertainty</h3>
+        <p>Turning observations into estimates with confidence bounds — especially when data are sparse and models are imperfect.</p>
+      </div>
+      <div class="card">
+        <span class="pill">Execution</span>
+        <h3>High-performance Habits</h3>
+        <p>Athlete mentality: practice loops, feedback, resilience, and consistent improvement under pressure.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links" style="margin-bottom: 16px;">
+      <a href="https://www.linkedin.com/in/hliu83/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/hanyumasonliu" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+      <a href="mailto:hliu83@jhu.edu"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>© <span id="y"></span> Hanyu (Mason) Liu</p>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
