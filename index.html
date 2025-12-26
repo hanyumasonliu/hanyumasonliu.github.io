@@ -3,19 +3,134 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hanyu (Mason) Liu | Climate + Inverse Modeling + Performance</title>
+  <meta name="description" content="Hanyu (Mason) Liu — Applied Scientist & Research Engineer. PhD researcher at Johns Hopkins specializing in physics-based inverse modeling, Bayesian inference, and scalable ML systems. Former NCAA Top-25 tennis player." />
+  <title>Hanyu (Mason) Liu | Applied Scientist & Research Engineer</title>
   <link rel="stylesheet" href="assets/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 3px solid var(--color-border);
+      margin: 0 auto var(--space-lg);
+      display: block;
+      object-fit: cover;
+    }
+    
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-lg);
+      margin: var(--space-3xl) 0;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .hero-stat {
+      text-align: center;
+      padding: var(--space-lg);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+    }
+    
+    .hero-stat-value {
+      font-size: var(--text-3xl);
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: var(--space-xs);
+    }
+    
+    .hero-stat-label {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+    }
+    
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-xl);
+      margin-top: var(--space-2xl);
+    }
+    
+    .pillar {
+      padding: var(--space-xl);
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      transition: all var(--transition-base);
+    }
+    
+    .pillar:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+    
+    .pillar-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-primary-light);
+      border-radius: var(--border-radius);
+      margin-bottom: var(--space-md);
+      color: var(--color-primary);
+      font-size: var(--text-xl);
+    }
+    
+    .pillar-primary .pillar-icon {
+      background: var(--color-primary);
+      color: white;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: var(--space-lg);
+      justify-content: center;
+      margin-top: var(--space-xl);
+    }
+    
+    .social-links a {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--color-border);
+      background: var(--color-surface-elevated);
+      color: var(--color-text-secondary);
+      transition: all var(--transition-fast);
+    }
+    
+    .social-links a:hover {
+      background: var(--color-primary);
+      color: white;
+      border-color: var(--color-primary);
+      transform: translateY(-2px);
+    }
+    
+    .value-prop {
+      font-size: var(--text-xl);
+      color: var(--color-text-secondary);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+  </style>
 </head>
 <body>
 
   <nav>
     <div class="nav-container">
-      <div class="brand">ML</div>
+      <a href="index.html" class="brand">Mason Liu</a>
       <div class="nav-links">
-        <a href="index.html#about">About</a>
-        <a href="experience.html">Experience</a>
+        <a href="index.html" class="active">Home</a>
         <a href="research.html">Research</a>
+        <a href="experience.html">Experience</a>
         <a href="tennis.html">Tennis</a>
         <a href="contact.html">Contact</a>
       </div>
@@ -23,87 +138,192 @@
   </nav>
 
   <header class="hero">
-    <!-- Replace with your own image in assets/ -->
-    <img src="assets/mason.jpg" alt="Hanyu (Mason) Liu" class="profile-img">
-    <h1>Hanyu (Mason) Liu</h1>
-    <p>
-      PhD researcher (JHU) in climate & methane — physics-based inverse modeling, Bayesian inference,
-      and scalable data/ML methods for real-world systems.
-    </p>
-
-    <div class="socials">
-      <a href="https://www.linkedin.com/in/hliu83/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/hanyumasonliu" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-      <a href="mailto:hliu83@jhu.edu"><i class="fas fa-envelope"></i></a>
+    <div class="hero-content">
+      <img src="assets/mason.jpg" alt="Hanyu (Mason) Liu" class="profile-img">
+      <h1>Applied Scientist & Research Engineer</h1>
+      <p class="hero-subtitle">
+        Building production-ready ML systems for climate science. 
+        Translating research into scalable, real-world impact.
+      </p>
+      <p class="value-prop">
+        PhD researcher at Johns Hopkins specializing in physics-based inverse modeling, 
+        Bayesian inference, and uncertainty quantification. Former NCAA Top-25 athlete 
+        with a track record of high-pressure performance and leadership.
+      </p>
+      
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-value">PhD</div>
+          <div class="hero-stat-label">Johns Hopkins University</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">Top-25</div>
+          <div class="hero-stat-label">NCAA Singles & Doubles</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">ATP 1000</div>
+          <div class="hero-stat-label">Tour Coach (Shanghai Masters QF)</div>
+        </div>
+      </div>
+      
+      <div class="btn-group">
+        <a href="research.html" class="btn btn-primary">
+          <i class="fas fa-microscope"></i> View Research
+        </a>
+        <a href="experience.html" class="btn">
+          <i class="fas fa-briefcase"></i> Experience
+        </a>
+        <a href="contact.html" class="btn">
+          <i class="fas fa-envelope"></i> Contact
+        </a>
+      </div>
+      
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/hliu83/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/hanyumasonliu" target="_blank" rel="noopener" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:hliu83@jhu.edu" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
     </div>
   </header>
 
-  <section id="about" class="container">
-    <h2>About</h2>
-
-    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 34px;">
-      <div>
-        <p>
-          I’m a PhD researcher at <strong>Johns Hopkins University</strong> in the Greenhouse Gas Research Group.
-          My work quantifies methane emissions using <strong>physics-based inverse modeling</strong>,
-          <strong>Bayesian statistics</strong>, and computational tools that scale to large atmospheric datasets.
-        </p>
-        <p>
-          I’m also a former NCAA tennis student-athlete, and I care deeply about high performance —
-          building systems that are reliable under pressure, whether it’s on court or in research.
-        </p>
-
-        <p>
-          <a class="button" href="research.html">See research projects</a>
-          <span style="display:inline-block; width: 10px;"></span>
-          <a class="button" href="experience.html" style="background:#0b4aa2;">View experience</a>
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Why I'm Built for Big Tech</h2>
+        <p class="section-description">
+          Three pillars that define my approach: technical depth, proven performance systems, 
+          and the ability to ship production-quality research.
         </p>
       </div>
-
-      <div>
-        <h3 style="margin-top:0;">Focus Areas</h3>
-        <span class="skills-tag">Inverse modeling</span>
-        <span class="skills-tag">Bayesian inference</span>
-        <span class="skills-tag">Transport modeling</span>
-        <span class="skills-tag">Uncertainty quant.</span>
-        <span class="skills-tag">Python / MATLAB</span>
-        <span class="skills-tag">Data + ML tools</span>
+      
+      <div class="pillars">
+        <div class="pillar pillar-primary">
+          <div class="pillar-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3>Technical & Research Excellence</h3>
+          <p>
+            <strong>Production-ready ML & data science:</strong> Advanced inverse modeling, 
+            Bayesian inference, and scalable computational pipelines. Strong academic pedigree 
+            with publications and the ability to translate research into real-world systems.
+          </p>
+          <p>
+            Experience collaborating across engineering and research teams, building systems 
+            that scale to large atmospheric datasets with rigorous uncertainty quantification.
+          </p>
+          <div class="tag-group mt-md">
+            <span class="tag">Inverse Modeling</span>
+            <span class="tag">Bayesian Inference</span>
+            <span class="tag">Uncertainty Quantification</span>
+            <span class="tag">HPC Workflows</span>
+            <span class="tag">ML Systems</span>
+          </div>
+        </div>
+        
+        <div class="pillar">
+          <div class="pillar-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h3>Elite Performance & Leadership</h3>
+          <p>
+            <strong>NCAA Top-25 in Singles & Doubles</strong> — not a side hobby, but evidence 
+            of discipline, high-pressure performance, and long-term excellence.
+          </p>
+          <p>
+            <strong>Assistant Coach at Johns Hopkins</strong> and <strong>Tour Coach</strong> 
+            for ATP professionals, including coaching Mark Wallner to the Quarterfinals of the 
+            2025 ATP 1000 Shanghai Masters with a win over the 2024 Olympic Champion.
+          </p>
+          <p>
+            Tennis demonstrates: systematic training, mentorship, and execution under pressure — 
+            skills that translate directly to research and engineering.
+          </p>
+        </div>
+        
+        <div class="pillar">
+          <div class="pillar-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3>Research → Production Pipeline</h3>
+          <p>
+            <strong>Industry-ready experience:</strong> Building end-to-end systems from 
+            research prototypes to validated, scalable solutions. Clear career narrative: 
+            elite athlete → elite researcher → applied scientist.
+          </p>
+          <p>
+            Proven ability to work with observational datasets, build reproducible pipelines, 
+            and communicate technical results to mixed audiences — from research teams to 
+            policy stakeholders.
+          </p>
+          <div class="tag-group mt-md">
+            <span class="tag">Model Evaluation</span>
+            <span class="tag">Reproducible Research</span>
+            <span class="tag">Science Communication</span>
+            <span class="tag">Cross-functional Collaboration</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="container">
-    <h2>Highlights</h2>
-    <div class="grid">
-      <div class="card">
-        <i class="fas fa-globe-americas fa-2x" style="color: var(--primary); margin-bottom: 12px;"></i>
-        <h3>Climate & methane</h3>
-        <p>High-latitude methane fluxes using aircraft + tower observations and atmospheric transport.</p>
+  <section class="section" style="background: var(--color-surface);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Target Roles</h2>
+        <p class="section-description">
+          Seeking senior-level positions where rigorous research meets production engineering.
+        </p>
       </div>
-      <div class="card">
-        <i class="fas fa-chart-line fa-2x" style="color: var(--primary); margin-bottom: 12px;"></i>
-        <h3>Inverse problems</h3>
-        <p>Geostatistical inversions, priors/covariates, model selection, and uncertainty quantification.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-bolt fa-2x" style="color: var(--primary); margin-bottom: 12px;"></i>
-        <h3>Performance mindset</h3>
-        <p>NCAA athlete experience applied to execution, iteration speed, and consistency.</p>
+      
+      <div class="grid grid-3">
+        <div class="card card-compact">
+          <h4>Applied Scientist</h4>
+          <p class="text-muted">
+            Building ML systems that solve real-world problems with rigorous validation 
+            and uncertainty quantification.
+          </p>
+        </div>
+        <div class="card card-compact">
+          <h4>Research Scientist</h4>
+          <p class="text-muted">
+            Advancing the state-of-the-art in climate modeling, inverse problems, 
+            and Bayesian methods.
+          </p>
+        </div>
+        <div class="card card-compact">
+          <h4>Research Engineer</h4>
+          <p class="text-muted">
+            Translating research into scalable, production-ready systems with 
+            strong engineering practices.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <div style="margin-bottom: 14px;">
-      <a href="https://www.linkedin.com/in/hliu83/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/hanyumasonliu" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-      <a href="mailto:hliu83@jhu.edu"><i class="fas fa-envelope"></i></a>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/hliu83/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/hanyumasonliu" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:hliu83@jhu.edu" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
     </div>
-    <p>© <span id="y"></span> Hanyu (Mason) Liu</p>
+    <p>© <span id="year"></span> Hanyu (Mason) Liu</p>
   </footer>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

@@ -3,177 +3,184 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact Hanyu (Mason) Liu — Applied Scientist & Research Engineer. Open to opportunities in Big Tech." />
   <title>Contact | Hanyu (Mason) Liu</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    :root {
-      --primary: #002d72;
-      --secondary: #68ace5;
-      --dark: #1a1a1a;
-      --light: #f4f7f9;
-      --accent: #d0f0fd;
-      --white: #ffffff;
+    .contact-hero {
+      padding: calc(80px + var(--space-3xl)) 0 var(--space-2xl);
     }
-
-    * { box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      margin: 0;
-      line-height: 1.8;
-      color: var(--dark);
-      background-color: var(--white);
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-xl);
+      margin-top: var(--space-2xl);
     }
-
-    nav {
-      position: fixed; top: 0; width: 100%;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      border-bottom: 1px solid #eee;
-      padding: 15px 0;
-    }
-    .nav-container {
-      max-width: 1100px; margin: 0 auto;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0 20px;
-    }
-    .brand {
-      font-weight: 800; font-size: 1.15rem; letter-spacing: 0.5px;
-      color: var(--primary); text-decoration: none;
-      display: inline-flex; align-items: center; gap: 10px;
-    }
-    .brand .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--secondary); display: inline-block; }
-    .nav-links a {
-      text-decoration: none; color: var(--dark);
-      margin-left: 22px; font-weight: 600; font-size: 0.92rem;
-      opacity: 0.85; transition: color 0.3s, opacity 0.3s;
-    }
-    .nav-links a:hover { color: var(--primary); opacity: 1; }
-    .nav-links a.active { color: var(--primary); opacity: 1; }
-
-    .page-hero {
-      background: linear-gradient(135deg, var(--primary) 0%, #001535 100%);
-      color: white;
-      padding: 130px 20px 65px;
+    
+    .contact-card {
+      padding: var(--space-2xl);
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
       text-align: center;
+      transition: all var(--transition-base);
     }
-    .page-hero h1 { font-size: 2.8rem; margin: 0; }
-    .page-hero p { max-width: 900px; margin: 14px auto 0; color: rgba(255,255,255,0.78); }
-
-    .container { max-width: 900px; margin: 0 auto; padding: 70px 20px; }
-
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
-    .card {
-      background: var(--light);
-      border: 1px solid #edf1f4;
-      border-radius: 18px;
-      padding: 22px;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    
+    .contact-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
     }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 14px 28px rgba(0,0,0,0.08); background: var(--accent); }
-
-    .card .icon {
-      font-size: 1.6rem;
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-
-    .btn {
-      display: inline-flex;
+    
+    .contact-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto var(--space-lg);
+      display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 14px 22px;
-      background: var(--primary);
-      color: white;
-      text-decoration: none;
-      border-radius: 999px;
-      font-weight: 800;
-      margin-top: 18px;
-      box-shadow: 0 10px 20px rgba(0,45,114,0.18);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      justify-content: center;
+      background: var(--color-primary-light);
+      border-radius: 50%;
+      color: var(--color-primary);
+      font-size: var(--text-2xl);
     }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,45,114,0.22); }
-
-    .small { color: #666; font-size: 0.95rem; margin-top: 10px; }
-
-    footer { background: #000; color: #777; padding: 48px 20px; text-align: center; }
-    .footer-links a { color: white; margin: 0 10px; font-size: 1.2rem; opacity: 0.9; }
-    .footer-links a:hover { opacity: 1; }
-
-    @media (max-width: 768px) {
-      .page-hero h1 { font-size: 2.2rem; }
+    
+    .contact-card h3 {
+      margin-bottom: var(--space-md);
+    }
+    
+    .contact-card p {
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-lg);
+    }
+    
+    .contact-card .btn {
+      width: 100%;
+      justify-content: center;
+    }
+    
+    .interests-card {
+      margin-top: var(--space-3xl);
+      padding: var(--space-2xl);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+    }
+    
+    .interests-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      margin-top: var(--space-lg);
     }
   </style>
 </head>
-
 <body>
+
   <nav>
     <div class="nav-container">
-      <a class="brand" href="index.html"><span class="dot"></span> Mason Liu</a>
+      <a href="index.html" class="brand">Mason Liu</a>
       <div class="nav-links">
         <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
         <a href="experience.html">Experience</a>
         <a href="tennis.html">Tennis</a>
-        <a class="active" href="contact.html">Contact</a>
+        <a href="contact.html" class="active">Contact</a>
       </div>
     </div>
   </nav>
 
-  <header class="page-hero">
-    <h1>Contact</h1>
-    <p>Open to climate-tech conversations, research collaborations, and anything at the intersection of modeling + impact.</p>
+  <header class="contact-hero">
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title">Let's Connect</h1>
+        <p class="section-description">
+          Open to opportunities in Big Tech, research collaborations, and conversations 
+          at the intersection of ML, climate science, and production systems.
+        </p>
+      </div>
+    </div>
   </header>
 
   <main class="container">
-    <div class="grid">
-      <div class="card">
-        <div class="icon"><i class="fas fa-envelope"></i></div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
         <h3>Email</h3>
-        <p>Fastest way to reach me for research, talks, or collaboration.</p>
-        <a class="btn" href="mailto:hliu83@jhu.edu"><i class="fas fa-paper-plane"></i> Email me</a>
-        <div class="small">hliu83@jhu.edu</div>
+        <p>Fastest way to reach me for research, opportunities, or collaboration.</p>
+        <a href="mailto:hliu83@jhu.edu" class="btn btn-primary">
+          <i class="fas fa-paper-plane"></i> Send Email
+        </a>
+        <p style="margin-top: var(--space-md); font-size: var(--text-sm); color: var(--color-text-muted);">
+          hliu83@jhu.edu
+        </p>
       </div>
-
-      <div class="card">
-        <div class="icon"><i class="fab fa-linkedin"></i></div>
+      
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fab fa-linkedin"></i>
+        </div>
         <h3>LinkedIn</h3>
-        <p>For professional updates and networking.</p>
-        <a class="btn" href="https://www.linkedin.com/in/hliu83/" target="_blank" rel="noopener">
+        <p>For professional updates, networking, and career opportunities.</p>
+        <a href="https://www.linkedin.com/in/hliu83/" target="_blank" rel="noopener" class="btn btn-primary">
           <i class="fab fa-linkedin"></i> Connect on LinkedIn
         </a>
       </div>
-
-      <div class="card">
-        <div class="icon"><i class="fab fa-github"></i></div>
+      
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fab fa-github"></i>
+        </div>
         <h3>GitHub</h3>
-        <p>Code, projects, and reproducible research.</p>
-        <a class="btn" href="https://github.com/hanyumasonliu" target="_blank" rel="noopener">
+        <p>Code, projects, and reproducible research repositories.</p>
+        <a href="https://github.com/hanyumasonliu" target="_blank" rel="noopener" class="btn btn-primary">
           <i class="fab fa-github"></i> View GitHub
         </a>
       </div>
     </div>
-
-    <div class="card" style="margin-top: 18px;">
-      <div class="icon"><i class="fas fa-comments"></i></div>
-      <h3>What I’m excited to talk about</h3>
-      <p style="margin: 0;">
-        Climate ML • inverse problems • methane emissions • uncertainty quantification • research engineering workflows •
-        athlete mindset & performance systems
+    
+    <div class="interests-card">
+      <h2>What I'm Excited to Talk About</h2>
+      <p class="text-muted">
+        Areas where I can contribute and collaborate:
       </p>
+      <div class="interests-list">
+        <span class="tag">Applied ML</span>
+        <span class="tag">Inverse Problems</span>
+        <span class="tag">Bayesian Methods</span>
+        <span class="tag">Climate Science</span>
+        <span class="tag">Methane Emissions</span>
+        <span class="tag">Uncertainty Quantification</span>
+        <span class="tag">Research Engineering</span>
+        <span class="tag">Production Systems</span>
+        <span class="tag">HPC Workflows</span>
+        <span class="tag">Model Evaluation</span>
+        <span class="tag">Science Communication</span>
+        <span class="tag">Performance Systems</span>
+      </div>
     </div>
   </main>
 
   <footer>
-    <div class="footer-links" style="margin-bottom: 16px;">
-      <a href="https://www.linkedin.com/in/hliu83/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/hanyumasonliu" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-      <a href="mailto:hliu83@jhu.edu"><i class="fas fa-envelope"></i></a>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/hliu83/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/hanyumasonliu" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:hliu83@jhu.edu" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
     </div>
-    <p>© <span id="y"></span> Hanyu (Mason) Liu</p>
+    <p>© <span id="year"></span> Hanyu (Mason) Liu</p>
   </footer>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

@@ -3,228 +3,491 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tennis | Hanyu (Mason) Liu</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="description" content="Elite tennis performance and leadership by Hanyu (Mason) Liu — NCAA Top-25, ATP Tour Coach, Assistant Coach at Johns Hopkins." />
+  <title>Tennis & Leadership | Hanyu (Mason) Liu</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    :root {
-      --primary: #002d72;
-      --secondary: #68ace5;
-      --dark: #1a1a1a;
-      --light: #f4f7f9;
-      --accent: #d0f0fd;
-      --white: #ffffff;
-    }
-    * { box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      margin: 0;
-      line-height: 1.8;
-      color: var(--dark);
-      background: var(--white);
-    }
-
-    nav {
-      position: fixed; top: 0; width: 100%;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      border-bottom: 1px solid #eee;
-      padding: 15px 0;
-    }
-    .nav-container {
-      max-width: 1100px; margin: 0 auto;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0 20px;
-    }
-    .brand {
-      font-weight: 800; font-size: 1.15rem; letter-spacing: 0.5px;
-      color: var(--primary); text-decoration: none;
-      display: inline-flex; align-items: center; gap: 10px;
-    }
-    .brand .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--secondary); display: inline-block; }
-    .nav-links a {
-      text-decoration: none; color: var(--dark);
-      margin-left: 22px; font-weight: 600; font-size: 0.92rem;
-      opacity: 0.85; transition: color 0.3s, opacity 0.3s;
-    }
-    .nav-links a:hover { color: var(--primary); opacity: 1; }
-    .nav-links a.active { color: var(--primary); opacity: 1; }
-
-    .page-hero {
-      background: radial-gradient(1200px 600px at 20% 0%, rgba(104,172,229,0.45), transparent 60%),
-                  linear-gradient(135deg, #111 0%, #000 100%);
+    .tennis-hero {
+      padding: calc(80px + var(--space-3xl)) 0 var(--space-2xl);
+      background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
       color: white;
-      padding: 130px 20px 65px;
+    }
+    
+    .tennis-hero h1,
+    .tennis-hero p {
+      color: white;
+    }
+    
+    .tennis-hero .section-description {
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-lg);
+      margin: var(--space-2xl) 0;
+    }
+    
+    .achievement-card {
+      padding: var(--space-xl);
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
       text-align: center;
     }
-    .page-hero h1 { font-size: 2.8rem; margin: 0; }
-    .page-hero p { max-width: 900px; margin: 14px auto 0; color: rgba(255,255,255,0.78); }
-
-    .container { max-width: 1000px; margin: 0 auto; padding: 70px 20px; }
-    h2 { font-size: 2rem; margin: 0 0 22px; }
-    .subtle { color: #666; }
-
-    .tennis-box {
-      background: #0b0b0b;
-      color: white;
-      border-radius: 20px;
-      padding: 34px;
+    
+    .achievement-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto var(--space-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-primary-light);
+      border-radius: 50%;
+      color: var(--color-primary);
+      font-size: var(--text-2xl);
+    }
+    
+    .achievement-value {
+      font-size: var(--text-3xl);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: var(--space-xs);
+    }
+    
+    .achievement-label {
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+    }
+    
+    .coaching-highlight {
+      background: var(--color-surface-elevated);
+      border: 2px solid var(--color-primary);
+      border-radius: var(--border-radius-lg);
+      padding: var(--space-2xl);
+      margin: var(--space-2xl) 0;
+    }
+    
+    .coaching-highlight h3 {
+      color: var(--color-primary);
+      margin-bottom: var(--space-md);
+    }
+    
+    .skills-translation {
       display: grid;
-      grid-template-columns: 1.25fr 1fr;
-      gap: 22px;
-      border: 1px solid rgba(255,255,255,0.08);
-      overflow: hidden;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-xl);
+      margin-top: var(--space-xl);
     }
-    .tennis-box h2 { color: white; margin: 0 0 10px; }
-    .tennis-box p { color: rgba(255,255,255,0.82); }
-
-    .stats {
+    
+    .skill-card {
+      padding: var(--space-xl);
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+    }
+    
+    .skill-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-primary-light);
+      border-radius: var(--border-radius);
+      margin-bottom: var(--space-md);
+      color: var(--color-primary);
+      font-size: var(--text-xl);
+    }
+    
+    .timeline-coaching {
+      margin-top: var(--space-2xl);
+    }
+    
+    .coaching-role {
+      padding: var(--space-xl);
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      margin-bottom: var(--space-lg);
+    }
+    
+    .coaching-role-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--space-md);
+      margin-bottom: var(--space-md);
+    }
+    
+    .coaching-role-title {
+      font-size: var(--text-xl);
+      font-weight: 600;
+      margin-bottom: var(--space-xs);
+    }
+    
+    .coaching-role-meta {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+    
+    .coaching-role-content {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-lg);
+      margin-top: var(--space-lg);
     }
-    .stat {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 14px;
-      padding: 14px;
-      text-align: center;
+    
+    .coaching-box {
+      padding: var(--space-lg);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius);
     }
-    .stat .num {
-      display: block;
-      font-size: 1.55rem;
-      font-weight: 900;
-      color: var(--secondary);
-      letter-spacing: 0.4px;
+    
+    .coaching-box h4 {
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-md);
     }
-    .stat .label { font-size: 0.9rem; color: rgba(255,255,255,0.75); }
-
-    .img {
-      width: 100%;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.12);
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      filter: grayscale(20%);
-      background: #1b1b1b;
+    
+    .coaching-box ul {
+      list-style: none;
+      padding: 0;
     }
-
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 22px; }
-    .card {
-      background: var(--light);
-      border: 1px solid #edf1f4;
-      padding: 22px;
-      border-radius: 16px;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    
+    .coaching-box li {
+      padding: var(--space-xs) 0;
+      color: var(--color-text-secondary);
+      position: relative;
+      padding-left: var(--space-lg);
     }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 14px 28px rgba(0,0,0,0.08); background: var(--accent); }
-    .card h3 { margin: 10px 0 8px; }
-    .kicker { font-weight: 900; color: var(--primary); letter-spacing: 0.5px; font-size: 0.9rem; text-transform: uppercase; }
-
-    footer { background: #000; color: #777; padding: 48px 20px; text-align: center; }
-    .footer-links a { color: white; margin: 0 10px; font-size: 1.2rem; opacity: 0.9; }
-    .footer-links a:hover { opacity: 1; }
-
-    @media (max-width: 900px) {
-      .tennis-box { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 768px) {
-      .page-hero h1 { font-size: 2.2rem; }
-      .stats { grid-template-columns: 1fr; }
+    
+    .coaching-box li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--color-primary);
+      font-weight: 600;
     }
   </style>
 </head>
-
 <body>
+
   <nav>
     <div class="nav-container">
-      <a class="brand" href="index.html"><span class="dot"></span> Mason Liu</a>
+      <a href="index.html" class="brand">Mason Liu</a>
       <div class="nav-links">
         <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
         <a href="experience.html">Experience</a>
-        <a class="active" href="tennis.html">Tennis</a>
+        <a href="tennis.html" class="active">Tennis</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
   </nav>
 
-  <header class="page-hero">
-    <h1>Tennis & Elite Performance</h1>
-    <p>High performance isn’t a vibe — it’s a system: training loops, discipline, feedback, and calm under pressure.</p>
+  <header class="tennis-hero">
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title">Elite Performance & Leadership</h1>
+        <p class="section-description">
+          Tennis isn't a side hobby — it's evidence of discipline, high-pressure performance, 
+          and long-term excellence. The same systems that drive elite athletics translate 
+          directly to research and engineering.
+        </p>
+      </div>
+    </div>
   </header>
 
   <main class="container">
-    <div class="tennis-box">
-      <div>
-        <h2>My performance story</h2>
-        <p>
-          From training at <strong>IMG Academy</strong> to competing in the NCAA, tennis shaped how I think:
-          break big goals into repeatable systems, measure progress, and perform when it matters.
-        </p>
-
-        <div class="stats">
-          <div class="stat"><span class="num">100+</span><span class="label">Match Wins</span></div>
-          <div class="stat"><span class="num">#22</span><span class="label">All-Time JHU</span></div>
-          <div class="stat"><span class="num">3×</span><span class="label">Academic All-American</span></div>
+    <section class="section">
+      <h2>Competitive Achievements</h2>
+      <p class="text-muted">
+        Nationally ranked performance at the highest level of collegiate tennis.
+      </p>
+      
+      <div class="achievement-grid">
+        <div class="achievement-card">
+          <div class="achievement-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <div class="achievement-value">Top-25</div>
+          <div class="achievement-label">NCAA Singles Ranking<br>Fall 2022</div>
         </div>
+        
+        <div class="achievement-card">
+          <div class="achievement-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <div class="achievement-value">Top-25</div>
+          <div class="achievement-label">NCAA Doubles Ranking<br>Fall 2022</div>
+        </div>
+        
+        <div class="achievement-card">
+          <div class="achievement-icon">
+            <i class="fas fa-medal"></i>
+          </div>
+          <div class="achievement-value">3×</div>
+          <div class="achievement-label">Academic All-American<br>Scholar-Athlete</div>
+        </div>
+        
+        <div class="achievement-card">
+          <div class="achievement-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="achievement-value">First Team</div>
+          <div class="achievement-label">All-Centennial Conference<br>Recognition</div>
+        </div>
+      </div>
+    </section>
 
-        <p style="margin-top: 14px; color: rgba(255,255,255,0.72); font-size: 0.95rem;">
-          Honors include: ITA Scholar-Athlete, conference awards, and recognition for academic excellence.
+    <section class="section" style="background: var(--color-surface); padding: var(--space-3xl) var(--space-xl); border-radius: var(--border-radius-lg);">
+      <div class="coaching-highlight">
+        <h3><i class="fas fa-star"></i> ATP Tour Coaching Achievement</h3>
+        <p style="font-size: var(--text-lg); margin-bottom: var(--space-md);">
+          <strong>Tour Coach for Mark Wallner</strong> — Helped guide Mark Wallner and Jakob Schnaitter 
+          to the <strong>Quarterfinals of the 2025 ATP 1000 Shanghai Masters</strong>, including a 
+          victory over the <strong>2024 Olympic Champion</strong>.
+        </p>
+        <p>
+          This achievement demonstrates the ability to perform at the highest level of professional 
+          sports, translating technical expertise, strategic thinking, and composure under pressure 
+          into tangible results on the world stage.
         </p>
       </div>
+    </section>
 
-      <!-- Replace this image src with my photo!!!  -->
-      <img class="img" src="assets/tennis.png" alt="Mason Liu playing tennis" />
-    </div>
+    <section class="section">
+      <h2>Coaching & Leadership Roles</h2>
+      <p class="text-muted">
+        Building systems for excellence — from collegiate athletes to ATP professionals.
+      </p>
+      
+      <div class="timeline-coaching">
+        <div class="coaching-role">
+          <div class="coaching-role-header">
+            <div>
+              <h3 class="coaching-role-title">Assistant Men's Tennis Coach</h3>
+              <div class="coaching-role-meta">
+                <i class="fas fa-building-columns"></i> Johns Hopkins University • 
+                <i class="fas fa-calendar"></i> 2023 – Present
+              </div>
+            </div>
+          </div>
+          
+          <p>
+            Supporting the development of collegiate athletes at a top-tier academic and athletic 
+            institution. Contributing to team culture, technical development, and competitive strategy.
+          </p>
+          
+          <div class="coaching-role-content">
+            <div class="coaching-box">
+              <h4>Responsibilities</h4>
+              <ul>
+                <li>Technical skill development</li>
+                <li>Match strategy and analysis</li>
+                <li>Team culture and leadership</li>
+                <li>Recruiting support</li>
+              </ul>
+            </div>
+            
+            <div class="coaching-box">
+              <h4>Impact</h4>
+              <ul>
+                <li>Supporting team performance</li>
+                <li>Mentoring student-athletes</li>
+                <li>Building systematic training approaches</li>
+                <li>Fostering excellence culture</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="coaching-role">
+          <div class="coaching-role-header">
+            <div>
+              <h3 class="coaching-role-title">Tour Coach — ATP Professional Tennis</h3>
+              <div class="coaching-role-meta">
+                <i class="fas fa-globe"></i> ATP Tour • 
+                <i class="fas fa-calendar"></i> 2024 – Present
+              </div>
+            </div>
+          </div>
+          
+          <p>
+            Coaching professional athletes on the ATP Tour, including preparation for ATP 1000 events 
+            and Grand Slam tournaments. Translating technical expertise into competitive advantage 
+            at the highest level.
+          </p>
+          
+          <div class="coaching-role-content">
+            <div class="coaching-box">
+              <h4>Key Achievements</h4>
+              <ul>
+                <li>ATP 1000 Shanghai Masters Quarterfinals</li>
+                <li>Victory over 2024 Olympic Champion</li>
+                <li>Strategic match preparation</li>
+                <li>Performance under pressure</li>
+              </ul>
+            </div>
+            
+            <div class="coaching-box">
+              <h4>Skills Demonstrated</h4>
+              <ul>
+                <li>High-stakes decision making</li>
+                <li>Technical analysis and strategy</li>
+                <li>Mental performance coaching</li>
+                <li>Elite-level execution</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="coaching-role">
+          <div class="coaching-role-header">
+            <div>
+              <h3 class="coaching-role-title">Personal Tennis Coach</h3>
+              <div class="coaching-role-meta">
+                <i class="fas fa-user-graduate"></i> Private Coaching • 
+                <i class="fas fa-calendar"></i> 2018 – Present
+              </div>
+            </div>
+          </div>
+          
+          <p>
+            Developing players across skill levels, from youth athletes to competitive juniors. 
+            Building technical foundations, strategic thinking, and performance systems.
+          </p>
+          
+          <div class="coaching-role-content">
+            <div class="coaching-box">
+              <h4>Focus Areas</h4>
+              <ul>
+                <li>Technical skill development</li>
+                <li>Footwork and movement</li>
+                <li>Mental performance</li>
+                <li>Competitive strategy</li>
+              </ul>
+            </div>
+            
+            <div class="coaching-box">
+              <h4>Approach</h4>
+              <ul>
+                <li>Systematic training methods</li>
+                <li>Individualized development</li>
+                <li>Long-term athlete development</li>
+                <li>Performance mindset coaching</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <h2 style="margin-top: 48px;">What tennis taught me (that I use in research)</h2>
-    <p class="subtle">These are the exact “transferable skills” that big-tech interviewers actually care about.</p>
-
-    <div class="grid">
-      <div class="card">
-        <div class="kicker">Execution</div>
-        <h3>Practice loops & iteration</h3>
-        <p>Train → measure → adjust. Same approach for models: validate, diagnose error, improve, repeat.</p>
+    <section class="section" style="background: var(--color-surface); padding: var(--space-3xl) var(--space-xl); border-radius: var(--border-radius-lg);">
+      <h2>Transferable Skills</h2>
+      <p class="text-muted" style="text-align: center; margin-bottom: var(--space-xl);">
+        The systems that drive elite athletics translate directly to research and engineering.
+      </p>
+      
+      <div class="skills-translation">
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-sync-alt"></i>
+          </div>
+          <h3>Training Loops & Iteration</h3>
+          <p>
+            <strong>Practice → Measure → Adjust.</strong> The same systematic approach applies to 
+            model development: validate, diagnose error, improve, repeat. Building feedback loops 
+            that accelerate progress.
+          </p>
+        </div>
+        
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-fire"></i>
+          </div>
+          <h3>Performance Under Pressure</h3>
+          <p>
+            <strong>Staying calm when it matters.</strong> Whether in match point situations, 
+            conference presentations, or production system failures — composure under pressure 
+            is a superpower.
+          </p>
+        </div>
+        
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Leadership & Mentorship</h3>
+          <p>
+            <strong>Building culture and systems.</strong> From coaching ATP professionals to 
+            mentoring research students — the ability to elevate others' performance is essential 
+            for team success.
+          </p>
+        </div>
+        
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Long-Term Excellence</h3>
+          <p>
+            <strong>Consistency over motivation.</strong> Elite performance isn't about peak moments — 
+            it's about building systems that sustain excellence over years. The same discipline 
+            applies to research and engineering.
+          </p>
+        </div>
+        
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3>Strategic Thinking</h3>
+          <p>
+            <strong>Analysis and adaptation.</strong> Reading opponents, adjusting tactics, and 
+            making real-time decisions. The same analytical mindset drives research strategy and 
+            engineering problem-solving.
+          </p>
+        </div>
+        
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>Time Management</h3>
+          <p>
+            <strong>Balancing competing priorities.</strong> Maintaining elite athletic performance 
+            while pursuing a PhD demonstrates exceptional time management and prioritization skills.
+          </p>
+        </div>
       </div>
-      <div class="card">
-        <div class="kicker">Pressure</div>
-        <h3>Decision-making under stress</h3>
-        <p>Staying calm when things break is a superpower — in matches, in research, and in production systems.</p>
-      </div>
-      <div class="card">
-        <div class="kicker">Leadership</div>
-        <h3>Team habits</h3>
-        <p>Culture matters: consistency, accountability, and supporting others to perform at their best.</p>
-      </div>
-    </div>
-
-    <h2 style="margin-top: 48px;">Coaching & mentoring</h2>
-    <div class="grid">
-      <div class="card">
-        <div class="kicker">Coaching</div>
-        <h3>Player development</h3>
-        <p>Footwork, energy management, confidence, and habit-building — especially for youth athletes.</p>
-      </div>
-      <div class="card">
-        <div class="kicker">Balance</div>
-        <h3>Student-athlete strategy</h3>
-        <p>How to combine academics and high performance without burning out: routines > motivation.</p>
-      </div>
-    </div>
+    </section>
   </main>
 
   <footer>
-    <div class="footer-links" style="margin-bottom: 16px;">
-      <a href="https://www.linkedin.com/in/hliu83/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/hanyumasonliu" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-      <a href="mailto:hliu83@jhu.edu"><i class="fas fa-envelope"></i></a>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/hliu83/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/hanyumasonliu" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:hliu83@jhu.edu" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
     </div>
-    <p>© <span id="y"></span> Hanyu (Mason) Liu</p>
+    <p>© <span id="year"></span> Hanyu (Mason) Liu</p>
   </footer>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

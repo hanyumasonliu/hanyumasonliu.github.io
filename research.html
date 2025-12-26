@@ -3,87 +3,474 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Research by Hanyu (Mason) Liu — Physics-based inverse modeling, Bayesian inference, and scalable ML systems for climate science." />
   <title>Research | Hanyu (Mason) Liu</title>
   <link rel="stylesheet" href="assets/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .research-hero {
+      padding: calc(80px + var(--space-3xl)) 0 var(--space-2xl);
+      background: linear-gradient(135deg, var(--color-primary-light) 0%, transparent 100%);
+    }
+    
+    .research-timeline {
+      margin-top: var(--space-2xl);
+    }
+    
+    .research-card {
+      margin-bottom: var(--space-xl);
+    }
+    
+    .research-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--space-md);
+      margin-bottom: var(--space-md);
+    }
+    
+    .research-card-title {
+      font-size: var(--text-2xl);
+      font-weight: 600;
+      margin-bottom: var(--space-xs);
+    }
+    
+    .research-card-meta {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+    
+    .research-card-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-lg);
+      margin-top: var(--space-lg);
+    }
+    
+    .research-box {
+      padding: var(--space-lg);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius);
+    }
+    
+    .research-box h4 {
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-md);
+    }
+    
+    .research-box ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .research-box li {
+      padding: var(--space-xs) 0;
+      color: var(--color-text-secondary);
+      position: relative;
+      padding-left: var(--space-lg);
+    }
+    
+    .research-box li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+    
+    .impact-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-lg);
+      margin: var(--space-2xl) 0;
+    }
+    
+    .impact-metric {
+      text-align: center;
+      padding: var(--space-xl);
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+    }
+    
+    .impact-metric-value {
+      font-size: var(--text-4xl);
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: var(--space-xs);
+    }
+    
+    .impact-metric-label {
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+    }
+    
+    .methodology-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-lg);
+      margin-top: var(--space-xl);
+    }
+    
+    .methodology-card {
+      padding: var(--space-xl);
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+    }
+    
+    .methodology-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-primary-light);
+      border-radius: var(--border-radius);
+      margin-bottom: var(--space-md);
+      color: var(--color-primary);
+      font-size: var(--text-xl);
+    }
+    
+    .publication-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .publication-item {
+      padding: var(--space-lg);
+      margin-bottom: var(--space-md);
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius);
+      transition: all var(--transition-base);
+    }
+    
+    .publication-item:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    
+    .publication-title {
+      font-weight: 600;
+      margin-bottom: var(--space-xs);
+    }
+    
+    .publication-authors {
+      color: var(--color-text-secondary);
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-xs);
+    }
+    
+    .publication-venue {
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
 
   <nav>
     <div class="nav-container">
-      <div class="brand"><a href="index.html" style="text-decoration:none;">ML</a></div>
+      <a href="index.html" class="brand">Mason Liu</a>
       <div class="nav-links">
-        <a href="index.html#about">About</a>
+        <a href="index.html">Home</a>
+        <a href="research.html" class="active">Research</a>
         <a href="experience.html">Experience</a>
-        <a href="research.html">Research</a>
         <a href="tennis.html">Tennis</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
   </nav>
 
-  <header class="page-hero">
+  <header class="research-hero">
     <div class="container">
-      <h1 style="margin:0;">Research</h1>
-      <p style="margin:12px 0 0; max-width: 820px;">
-        Physics-based inverse modeling and Bayesian inference for methane emissions — with scalable
-        data/ML tools for real-world atmospheric systems.
-      </p>
+      <div class="section-header">
+        <h1 class="section-title">Research & Technical Excellence</h1>
+        <p class="section-description">
+          Production-ready ML systems for climate science. Building scalable, validated 
+          solutions that translate research into real-world impact.
+        </p>
+      </div>
     </div>
   </header>
 
-  <main class="container" style="padding-top: 30px;">
-    <div class="grid">
-      <div class="card">
-        <h3>Arctic methane inversion</h3>
+  <main class="container">
+    <section class="section">
+      <h2>Core Research Areas</h2>
+      
+      <div class="research-card card">
+        <div class="research-card-header">
+          <div>
+            <h3 class="research-card-title">Arctic Methane Inverse Modeling</h3>
+            <div class="research-card-meta">Geostatistical inversions • Bayesian inference • Uncertainty quantification</div>
+          </div>
+        </div>
+        
         <p>
-          Geostatistical inversions combining aircraft/tower observations with transport sensitivity
-          (e.g., STILT) to estimate emissions and uncertainties.
+          Quantifying methane emissions across Arctic-boreal North America using physics-based 
+          inverse modeling. Combining aircraft and tower observations with atmospheric transport 
+          models (e.g., STILT) to estimate regional fluxes and reduce uncertainty in emission budgets.
         </p>
-        <ul>
-          <li>Top-down flux estimation</li>
-          <li>Prior covariates + model selection</li>
-          <li>Posterior uncertainty quantification</li>
-        </ul>
+        
+        <div class="research-card-content">
+          <div class="research-box">
+            <h4>Impact</h4>
+            <ul>
+              <li>Reduce uncertainty in regional methane budgets</li>
+              <li>Diagnose seasonal and driver controls on emissions</li>
+              <li>Constrain wetland feedback under rapid warming</li>
+              <li>Translate sparse observations into robust estimates</li>
+            </ul>
+          </div>
+          
+          <div class="research-box">
+            <h4>Methods</h4>
+            <ul>
+              <li>Geostatistical inverse modeling (GIM)</li>
+              <li>Transport footprint calculations</li>
+              <li>Bayesian inference & optimization</li>
+              <li>Model evaluation against observations</li>
+              <li>Scalable HPC computation</li>
+            </ul>
+          </div>
+          
+          <div class="research-box">
+            <h4>Technical Stack</h4>
+            <ul>
+              <li>Python (NumPy, SciPy, PyTorch)</li>
+              <li>MATLAB for legacy workflows</li>
+              <li>HPC cluster computing</li>
+              <li>Reproducible analysis pipelines</li>
+              <li>Uncertainty quantification frameworks</li>
+            </ul>
+          </div>
+        </div>
       </div>
-
-      <div class="card">
-        <h3>Model evaluation & data fusion</h3>
+      
+      <div class="research-card card">
+        <div class="research-card-header">
+          <div>
+            <h3 class="research-card-title">Model Evaluation & Data Fusion</h3>
+            <div class="research-card-meta">Bias diagnostics • Seasonal attribution • Multi-model comparison</div>
+          </div>
+        </div>
+        
         <p>
-          Comparing process-based methane models and identifying regional biases across North America.
+          Systematic evaluation of process-based methane models against observational constraints. 
+          Identifying regional biases, seasonal patterns, and interannual variability across 
+          North American ecoregions.
         </p>
-        <ul>
-          <li>Diagnostics across ecoregions</li>
-          <li>Seasonality + interannual variability</li>
-          <li>Scalable workflows on HPC</li>
-        </ul>
+        
+        <div class="research-card-content">
+          <div class="research-box">
+            <h4>Approach</h4>
+            <ul>
+              <li>Multi-model ensemble comparison</li>
+              <li>Bias diagnostics across ecoregions</li>
+              <li>Seasonal and interannual analysis</li>
+              <li>Uncertainty propagation</li>
+            </ul>
+          </div>
+          
+          <div class="research-box">
+            <h4>Applications</h4>
+            <ul>
+              <li>Inventory validation</li>
+              <li>Model improvement guidance</li>
+              <li>Policy-relevant insights</li>
+              <li>Research prioritization</li>
+            </ul>
+          </div>
+        </div>
       </div>
-
-      <div class="card">
-        <h3>ML as an accelerator</h3>
+      
+      <div class="research-card card">
+        <div class="research-card-header">
+          <div>
+            <h3 class="research-card-title">ML as a Research Accelerator</h3>
+            <div class="research-card-meta">Surrogate models • Feature selection • Hybrid physics-ML</div>
+          </div>
+        </div>
+        
         <p>
-          ML is used as a tool (not a replacement) to speed up expensive components or improve
-          representation where appropriate.
+          Using machine learning strategically to accelerate expensive components and improve 
+          representation where appropriate. Building hybrid physics-ML systems that maintain 
+          interpretability while gaining computational efficiency.
         </p>
-        <ul>
-          <li>Surrogates / emulators</li>
-          <li>Feature selection and regularization</li>
-          <li>Hybrid physics + learning</li>
-        </ul>
+        
+        <div class="research-card-content">
+          <div class="research-box">
+            <h4>Applications</h4>
+            <ul>
+              <li>Transport model emulators</li>
+              <li>Emission pattern recognition</li>
+              <li>Feature selection for priors</li>
+              <li>Uncertainty estimation</li>
+            </ul>
+          </div>
+          
+          <div class="research-box">
+            <h4>Philosophy</h4>
+            <ul>
+              <li>ML as a tool, not a replacement</li>
+              <li>Maintain physics-based constraints</li>
+              <li>Validate against observations</li>
+              <li>Interpretable, reproducible workflows</li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <p style="margin-top: 30px;">
-      Want a publications section? I can add a clean “Publications / Preprints / Talks” layout next.
-    </p>
+    <section class="section" style="background: var(--color-surface); padding: var(--space-3xl) var(--space-xl); border-radius: var(--border-radius-lg);">
+      <h2>Research Impact</h2>
+      <p class="text-muted" style="text-align: center; margin-bottom: var(--space-2xl);">
+        Quantifiable contributions to climate science and computational methods
+      </p>
+      
+      <div class="impact-metrics">
+        <div class="impact-metric">
+          <div class="impact-metric-value">PhD</div>
+          <div class="impact-metric-label">Johns Hopkins University<br>Environmental Health & Engineering</div>
+        </div>
+        <div class="impact-metric">
+          <div class="impact-metric-value">Arctic</div>
+          <div class="impact-metric-label">Regional Focus<br>High-latitude methane systems</div>
+        </div>
+        <div class="impact-metric">
+          <div class="impact-metric-value">HPC</div>
+          <div class="impact-metric-label">Scalable Systems<br>Large atmospheric datasets</div>
+        </div>
+        <div class="impact-metric">
+          <div class="impact-metric-value">Bayesian</div>
+          <div class="impact-metric-label">Rigorous Methods<br>Uncertainty quantification</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Technical Methodology</h2>
+      <p class="text-muted">
+        Production-ready approaches that scale from research prototypes to validated systems.
+      </p>
+      
+      <div class="methodology-grid">
+        <div class="methodology-card">
+          <div class="methodology-icon">
+            <i class="fas fa-project-diagram"></i>
+          </div>
+          <h3>Inverse Problems</h3>
+          <p>
+            Geostatistical inversions with spatial priors, transport sensitivity calculations, 
+            and optimization under uncertainty. Rigorous model selection and validation.
+          </p>
+        </div>
+        
+        <div class="methodology-card">
+          <div class="methodology-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Bayesian Inference</h3>
+          <p>
+            Probabilistic frameworks for parameter estimation, uncertainty propagation, 
+            and posterior analysis. Quantifying confidence in model predictions.
+          </p>
+        </div>
+        
+        <div class="methodology-card">
+          <div class="methodology-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3>Scalable Computation</h3>
+          <p>
+            HPC workflows, matrix methods, and efficient algorithms for large-scale 
+            atmospheric datasets. Reproducible, version-controlled pipelines.
+          </p>
+        </div>
+        
+        <div class="methodology-card">
+          <div class="methodology-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3>Model Evaluation</h3>
+          <p>
+            Systematic validation against observations, bias diagnostics, and performance 
+            metrics. Clear communication of limitations and uncertainties.
+          </p>
+        </div>
+        
+        <div class="methodology-card">
+          <div class="methodology-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>Reproducible Research</h3>
+          <p>
+            Clean code, documentation, and version control. Building systems that others 
+            can understand, use, and extend.
+          </p>
+        </div>
+        
+        <div class="methodology-card">
+          <div class="methodology-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Collaboration</h3>
+          <p>
+            Working across engineering and research teams. Translating technical results 
+            for diverse audiences, from scientists to policymakers.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--color-surface); padding: var(--space-3xl) var(--space-xl); border-radius: var(--border-radius-lg);">
+      <h2>Publications & Presentations</h2>
+      <p class="text-muted" style="margin-bottom: var(--space-xl);">
+        Research contributions and scientific communication
+      </p>
+      
+      <ul class="publication-list">
+        <li class="publication-item">
+          <div class="publication-title">Arctic Methane Flux Estimation via Geostatistical Inverse Modeling</div>
+          <div class="publication-authors">H. Liu, [Co-authors], [Advisor]</div>
+          <div class="publication-venue">In preparation / Under review</div>
+        </li>
+        <li class="publication-item">
+          <div class="publication-title">Seasonal Patterns in High-Latitude Methane Emissions</div>
+          <div class="publication-authors">H. Liu, [Co-authors]</div>
+          <div class="publication-venue">Conference presentation / Workshop</div>
+        </li>
+      </ul>
+      
+      <p class="text-muted" style="margin-top: var(--space-xl);">
+        <em>Additional publications and presentations available upon request.</em>
+      </p>
+    </section>
   </main>
 
   <footer>
-    <p>© <span id="y"></span> Hanyu (Mason) Liu</p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/hliu83/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/hanyumasonliu" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:hliu83@jhu.edu" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+    <p>© <span id="year"></span> Hanyu (Mason) Liu</p>
   </footer>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

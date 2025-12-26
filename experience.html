@@ -3,881 +3,521 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Professional experience of Hanyu (Mason) Liu — PhD researcher, applied scientist, and elite athlete with Big Tech-ready skills." />
   <title>Experience | Hanyu (Mason) Liu</title>
-  <meta name="description" content="Experience of Hanyu (Mason) Liu — PhD researcher in Arctic methane inverse modeling, NCAA/ITA athlete, mentor, and science communicator." />
-  <meta name="theme-color" content="#0b1220" />
-
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="assets/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
-    :root{
-      --bg: #ffffff;
-      --surface: #f6f8fb;
-      --surface2: #eef3f8;
-      --text: #0f172a;
-      --muted: #475569;
-      --muted2: #64748b;
-      --border: rgba(15, 23, 42, .10);
-      --shadow: 0 18px 40px rgba(2, 6, 23, .10);
-
-      /* Brand */
-      --primary: #002d72; /* JHU blue */
-      --secondary: #68ace5;
-
-      /* Accents */
-      --ok: #16a34a;
-      --warn: #f59e0b;
-
-      --radius: 18px;
-      --radius2: 24px;
-
-      --max: 1120px;
+    .experience-hero {
+      padding: calc(80px + var(--space-3xl)) 0 var(--space-2xl);
     }
-
-    @media (prefers-color-scheme: dark){
-      :root{
-        --bg: #070b12;
-        --surface: #0b1220;
-        --surface2: #0f1a2f;
-        --text: #e6edf7;
-        --muted: #a8b4c6;
-        --muted2: #94a3b8;
-        --border: rgba(226, 232, 240, .12);
-        --shadow: 0 18px 50px rgba(0,0,0,.45);
-
-        --primary: #78a6ff;
-        --secondary: #7fd1ff;
-      }
+    
+    .experience-timeline {
+      margin-top: var(--space-2xl);
     }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body{
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color: var(--text);
-      background: radial-gradient(1200px 600px at 20% -10%, rgba(104,172,229,.25), transparent 60%),
-                  radial-gradient(1200px 600px at 90% 0%, rgba(0,45,114,.20), transparent 55%),
-                  var(--bg);
-      line-height: 1.65;
+    
+    .experience-item {
+      padding: var(--space-2xl);
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      margin-bottom: var(--space-xl);
+      transition: all var(--transition-base);
     }
-
-    a { color: inherit; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container{ max-width: var(--max); margin: 0 auto; padding: 0 22px; }
-
-    /* NAV */
-    nav{
-      position: fixed;
-      inset: 0 0 auto 0;
-      z-index: 1000;
-      background: rgba(255,255,255,.72);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(14px);
+    
+    .experience-item:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
     }
-    @media (prefers-color-scheme: dark){
-      nav{ background: rgba(7,11,18,.62); }
-    }
-    .nav-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding: 14px 0;
-      gap: 14px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap: 12px;
-      font-weight: 900;
-      letter-spacing: .2px;
-    }
-    .brand-badge{
-      width: 12px; height: 12px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--secondary), var(--primary));
-      box-shadow: 0 0 0 6px rgba(104,172,229,.18);
-    }
-    .nav-links{
-      display:flex;
-      gap: 18px;
-      align-items:center;
-      font-weight: 650;
-      font-size: .95rem;
-      color: var(--muted);
-    }
-    .nav-links a{
-      padding: 8px 10px;
-      border-radius: 999px;
-      text-decoration: none;
-      opacity: .92;
-    }
-    .nav-links a:hover{
-      background: rgba(104,172,229,.14);
-      opacity: 1;
-    }
-    .nav-links a.active{
-      color: var(--text);
-      background: rgba(0,45,114,.12);
-      border: 1px solid var(--border);
-    }
-
-    /* HERO */
-    header{
-      padding: 120px 0 34px;
-    }
-    .hero{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 22px;
-      align-items: start;
-    }
-    @media (max-width: 920px){
-      .hero{ grid-template-columns: 1fr; }
-    }
-
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap: 10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(104,172,229,.12);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-weight: 650;
-      font-size: .92rem;
-      width: fit-content;
-    }
-    .kicker i{ color: var(--secondary); }
-
-    h1{
-      margin: 14px 0 10px;
-      font-size: clamp(2.2rem, 4.2vw, 3.35rem);
-      line-height: 1.1;
-      letter-spacing: -0.6px;
-    }
-    .lede{
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 1.08rem;
-      max-width: 64ch;
-    }
-
-    .hero-actions{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items:center;
-      margin-top: 16px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap: 10px;
-      padding: 11px 14px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.6);
-      backdrop-filter: blur(12px);
-      font-weight: 750;
-      text-decoration: none;
-      box-shadow: 0 10px 22px rgba(2,6,23,.06);
-    }
-    @media (prefers-color-scheme: dark){
-      .btn{ background: rgba(15,26,47,.55); }
-    }
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(0,45,114,.95), rgba(104,172,229,.90));
-      color: white;
-      border-color: rgba(255,255,255,.14);
-    }
-    .btn:hover{ transform: translateY(-1px); }
-    .btn:active{ transform: translateY(0px); }
-    .btn i{ opacity: .95; }
-
-    /* Right hero card */
-    .hero-card{
-      background: linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.55));
-      border: 1px solid var(--border);
-      border-radius: var(--radius2);
-      padding: 18px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative;
-    }
-    @media (prefers-color-scheme: dark){
-      .hero-card{
-        background: linear-gradient(180deg, rgba(15,26,47,.65), rgba(11,18,32,.55));
-      }
-    }
-    .hero-card::before{
-      content:"";
-      position:absolute;
-      inset: -160px -220px auto auto;
-      width: 380px; height: 380px;
-      background: radial-gradient(circle at 30% 30%, rgba(127,209,255,.55), transparent 62%);
-      filter: blur(0px);
-      opacity: .9;
-      pointer-events:none;
-      transform: rotate(18deg);
-    }
-    .mini-title{
-      font-weight: 900;
-      margin: 0 0 8px;
-      letter-spacing: -0.2px;
-    }
-    .mini-sub{
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: .98rem;
-    }
-
-    .stat-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 12px;
-    }
-    .stat{
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 12px;
-      background: rgba(255,255,255,.55);
-    }
-    @media (prefers-color-scheme: dark){
-      .stat{ background: rgba(7,11,18,.35); }
-    }
-    .stat .label{
-      color: var(--muted2);
-      font-weight: 650;
-      font-size: .85rem;
-      margin-bottom: 4px;
-      display:flex;
-      align-items:center;
-      gap: 8px;
-    }
-    .stat .value{
-      font-size: 1.25rem;
-      font-weight: 950;
-      letter-spacing: -0.3px;
-    }
-    .chips{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 14px;
-    }
-    .chip{
-      font-size: .85rem;
-      font-weight: 700;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(104,172,229,.12);
-      color: var(--text);
-    }
-    .chip.alt{ background: rgba(0,45,114,.10); }
-
-    /* SECTIONS */
-    main{ padding: 10px 0 70px; }
-
-    .section{
-      margin-top: 30px;
-      background: rgba(255,255,255,.55);
-      border: 1px solid var(--border);
-      border-radius: var(--radius2);
-      padding: 26px;
-    }
-    @media (prefers-color-scheme: dark){
-      .section{ background: rgba(11,18,32,.55); }
-    }
-
-    .section h2{
-      margin: 0 0 10px;
-      font-size: 1.6rem;
-      letter-spacing: -0.3px;
-    }
-    .section .desc{
-      margin: 0 0 18px;
-      color: var(--muted);
-      max-width: 82ch;
-    }
-
-    /* TIMELINE */
-    .timeline{
-      position: relative;
-      padding-left: 28px;
-      margin: 10px 0 0;
-    }
-    .timeline::before{
-      content:"";
-      position:absolute;
-      left: 10px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: rgba(104,172,229,.35);
-    }
-    .t-item{
-      position: relative;
-      padding: 18px 18px 18px 18px;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.62);
-      margin: 0 0 14px;
-    }
-    @media (prefers-color-scheme: dark){
-      .t-item{ background: rgba(7,11,18,.25); }
-    }
-    .t-item:last-child{ margin-bottom: 0; }
-    .t-item::before{
-      content:"";
-      position:absolute;
-      left: -28px;
-      top: 22px;
-      width: 14px; height: 14px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--secondary), var(--primary));
-      box-shadow: 0 0 0 6px rgba(104,172,229,.18);
-      border: 1px solid rgba(255,255,255,.35);
-    }
-
-    .t-top{
-      display:flex;
-      gap: 12px;
-      align-items: baseline;
+    
+    .experience-header {
+      display: flex;
       justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
       flex-wrap: wrap;
     }
-    .t-role{
-      font-weight: 950;
-      font-size: 1.15rem;
-      letter-spacing: -0.2px;
-      margin: 0;
+    
+    .experience-title {
+      font-size: var(--text-2xl);
+      font-weight: 600;
+      margin-bottom: var(--space-xs);
     }
-    .t-meta{
-      color: var(--muted2);
-      font-weight: 650;
-      font-size: .92rem;
-      display:flex;
+    
+    .experience-org {
+      font-size: var(--text-lg);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-xs);
+    }
+    
+    .experience-meta {
+      display: flex;
+      gap: var(--space-lg);
       flex-wrap: wrap;
-      gap: 10px;
-      align-items:center;
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
     }
-    .t-meta span{ display:inline-flex; align-items:center; gap: 8px; }
-    .t-meta i{ opacity: .9; color: var(--secondary); }
-
-    .t-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 14px;
-      margin-top: 14px;
+    
+    .experience-meta span {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
     }
-    @media (max-width: 980px){
-      .t-grid{ grid-template-columns: 1fr; }
+    
+    .experience-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-lg);
+      margin-top: var(--space-lg);
     }
-    .box{
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 14px;
-      background: rgba(104,172,229,.08);
+    
+    .experience-box {
+      padding: var(--space-lg);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius);
     }
-    .box h4{
-      margin: 0 0 8px;
-      font-size: .92rem;
-      letter-spacing: .1px;
+    
+    .experience-box h4 {
+      font-size: var(--text-sm);
       text-transform: uppercase;
-      color: var(--muted2);
+      letter-spacing: 0.05em;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-md);
     }
-    .box ul{
-      margin: 0;
-      padding-left: 18px;
+    
+    .experience-box ul {
+      list-style: none;
+      padding: 0;
     }
-    .box li{ margin: 8px 0; }
-
-    .proof{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
+    
+    .experience-box li {
+      padding: var(--space-xs) 0;
+      color: var(--color-text-secondary);
+      position: relative;
+      padding-left: var(--space-lg);
     }
-    .tag{
-      display:inline-flex;
-      align-items:center;
-      gap: 8px;
-      font-size: .86rem;
-      font-weight: 750;
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.6);
+    
+    .experience-box li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--color-primary);
+      font-weight: 600;
     }
-    @media (prefers-color-scheme: dark){
-      .tag{ background: rgba(15,26,47,.45); }
+    
+    .skills-section {
+      background: var(--color-surface);
+      padding: var(--space-3xl) var(--space-xl);
+      border-radius: var(--border-radius-lg);
+      margin-top: var(--space-3xl);
     }
-    .tag i{ color: var(--secondary); }
-
-    /* HIGHLIGHTS */
-    .cards{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
+    
+    .highlight-card {
+      background: var(--color-primary-light);
+      border: 2px solid var(--color-primary);
+      border-radius: var(--border-radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-xl) 0;
     }
-    .card{
-      grid-column: span 6;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px;
-      background: rgba(255,255,255,.6);
-      box-shadow: 0 10px 20px rgba(2,6,23,.06);
-      transition: transform .22s ease, box-shadow .22s ease;
-    }
-    @media (prefers-color-scheme: dark){
-      .card{ background: rgba(7,11,18,.22); }
-    }
-    .card:hover{
-      transform: translateY(-3px);
-      box-shadow: 0 16px 34px rgba(2,6,23,.12);
-    }
-    @media (max-width: 920px){
-      .card{ grid-column: span 12; }
-    }
-    .card .topline{
-      display:flex;
-      justify-content: space-between;
-      align-items:center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap: 8px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      font-size: .85rem;
-      font-weight: 800;
-      border: 1px solid var(--border);
-      background: rgba(0,45,114,.10);
-    }
-    .badge i{ color: var(--secondary); }
-    .card h3{
-      margin: 0 0 8px;
-      font-size: 1.12rem;
-      letter-spacing: -0.2px;
-    }
-    .card p{
-      margin: 0 0 10px;
-      color: var(--muted);
-    }
-
-    /* SKILLS */
-    .skills{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .skill{
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-weight: 750;
-      font-size: .9rem;
-      background: rgba(104,172,229,.10);
-    }
-
-    /* FOOTER */
-    footer{
-      padding: 44px 0 50px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-    }
-    .foot{
-      display:flex;
-      justify-content: space-between;
-      align-items:center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-    .social{
-      display:flex;
-      gap: 12px;
-      align-items:center;
-    }
-    .social a{
-      width: 40px; height: 40px;
-      display:grid; place-items:center;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.55);
-      text-decoration:none;
-    }
-    @media (prefers-color-scheme: dark){
-      .social a{ background: rgba(15,26,47,.40); }
-    }
-    .social a:hover{ transform: translateY(-1px); }
-    .small{ font-size: .92rem; color: var(--muted2); }
-
-    /* subtle motion preference */
-    @media (prefers-reduced-motion: reduce){
-      * { transition: none !important; scroll-behavior: auto !important; }
-      .btn:hover, .card:hover, .social a:hover { transform: none !important; }
+    
+    .highlight-card h3 {
+      color: var(--color-primary);
+      margin-bottom: var(--space-md);
     }
   </style>
 </head>
-
 <body>
-  <nav aria-label="Primary">
-    <div class="container nav-inner">
-      <a class="brand" href="index.html" aria-label="Home">
-        <span class="brand-badge" aria-hidden="true"></span>
-        Mason Liu
-      </a>
-      <div class="nav-links" role="navigation" aria-label="Site">
+
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="brand">Mason Liu</a>
+      <div class="nav-links">
         <a href="index.html">Home</a>
-        <a class="active" href="experience.html" aria-current="page">Experience</a>
+        <a href="research.html">Research</a>
+        <a href="experience.html" class="active">Experience</a>
         <a href="tennis.html">Tennis</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
   </nav>
 
-  <header>
-    <div class="container hero">
-      <div>
-        <div class="kicker">
-          <i class="fa-solid fa-compass" aria-hidden="true"></i>
-          Climate inference · high-performance execution · science communication
-        </div>
-
-        <h1>Experience that scales from research to real-world impact.</h1>
-        <p class="lede">
-          I build rigorous methane modeling pipelines (inverse problems, uncertainty, HPC) and bring an athlete’s operating system:
-          discipline, feedback loops, and performance under pressure.
+  <header class="experience-hero">
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title">Professional Experience</h1>
+        <p class="section-description">
+          Building production-ready systems from research to real-world impact. 
+          A track record of translating technical depth into scalable solutions.
         </p>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="contact.html"><i class="fa-solid fa-paper-plane"></i>Contact</a>
-          <a class="btn" href="tennis.html"><i class="fa-solid fa-tennis-ball"></i>Tennis</a>
-          <a class="btn" href="https://www.linkedin.com/in/hliu83/" target="_blank" rel="noopener">
-            <i class="fa-brands fa-linkedin"></i>LinkedIn
-          </a>
-          <a class="btn" href="https://github.com/hanyumasonliu" target="_blank" rel="noopener">
-            <i class="fa-brands fa-github"></i>GitHub
-          </a>
-        </div>
       </div>
-
-      <aside class="hero-card" aria-label="Highlights">
-        <h3 class="mini-title">At a glance</h3>
-        <p class="mini-sub">Proof points that help hiring managers scan in 10 seconds.</p>
-
-        <div class="stat-grid">
-          <div class="stat">
-            <div class="label"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>PhD (JHU)</div>
-            <div class="value">2023–Present</div>
-          </div>
-          <div class="stat">
-            <div class="label"><i class="fa-solid fa-wind" aria-hidden="true"></i>Focus</div>
-            <div class="value">Arctic CH₄</div>
-          </div>
-          <div class="stat">
-            <div class="label"><i class="fa-solid fa-ranking-star" aria-hidden="true"></i>NCAA/ITA</div>
-            <div class="value">#23 Singles</div>
-          </div>
-          <div class="stat">
-            <div class="label"><i class="fa-solid fa-chart-line" aria-hidden="true"></i>Audience</div>
-            <div class="value">4.5k+ / 150k+</div>
-          </div>
-        </div>
-
-        <div class="chips" aria-label="Keywords">
-          <span class="chip">Inverse modeling</span>
-          <span class="chip alt">Bayesian inference</span>
-          <span class="chip">HPC workflows</span>
-          <span class="chip alt">Model evaluation</span>
-          <span class="chip">Communication</span>
-          <span class="chip alt">Leadership</span>
-        </div>
-      </aside>
     </div>
   </header>
 
   <main class="container">
-
-    <section class="section" id="timeline">
-      <h2>Timeline</h2>
-      <p class="desc">
-        Structured for readability: <strong>Impact</strong> (what changed), <strong>Methods</strong> (how), <strong>Proof</strong> (signals).
-      </p>
-
-      <div class="timeline">
-
-        <!-- JHU PhD -->
-        <article class="t-item">
-          <div class="t-top">
-            <p class="t-role">Doctoral Student — Environmental Health & Engineering</p>
-            <div class="t-meta">
-              <span><i class="fa-solid fa-building-columns" aria-hidden="true"></i>Johns Hopkins University</span>
-              <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Baltimore, MD</span>
-              <span><i class="fa-solid fa-calendar" aria-hidden="true"></i>Aug 2023 – Present</span>
+    <section class="section">
+      <div class="experience-timeline">
+        
+        <div class="experience-item">
+          <div class="experience-header">
+            <div>
+              <h2 class="experience-title">Doctoral Student</h2>
+              <div class="experience-org">Johns Hopkins University • Environmental Health & Engineering</div>
+              <div class="experience-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Baltimore, MD</span>
+                <span><i class="fas fa-calendar"></i> Aug 2023 – Present</span>
+                <span><i class="fas fa-users"></i> Greenhouse Gas Research Group</span>
+              </div>
             </div>
           </div>
-
-          <div class="t-grid">
-            <div class="box">
+          
+          <p>
+            Leading research on Arctic methane emissions using physics-based inverse modeling 
+            and Bayesian inference. Building scalable computational pipelines that translate 
+            sparse observations into robust emission estimates with rigorous uncertainty quantification.
+          </p>
+          
+          <div class="experience-content">
+            <div class="experience-box">
               <h4>Impact</h4>
               <ul>
-                <li>Quantify methane emissions across Arctic-boreal North America to reduce uncertainty in regional budgets.</li>
-                <li>Diagnose seasonal/driver controls and constrain wetland feedback under rapid warming.</li>
-                <li>Translate sparse observations into robust estimates with uncertainty bounds.</li>
+                <li>Quantify methane emissions across Arctic-boreal North America</li>
+                <li>Reduce uncertainty in regional emission budgets</li>
+                <li>Diagnose seasonal and driver controls on emissions</li>
+                <li>Constrain wetland feedback under rapid warming</li>
+                <li>Translate research into policy-relevant insights</li>
               </ul>
             </div>
-            <div class="box">
-              <h4>Methods</h4>
+            
+            <div class="experience-box">
+              <h4>Technical Methods</h4>
               <ul>
-                <li>Geostatistical inverse modeling (GIM), transport footprints, Bayesian inference & optimization.</li>
-                <li>Model evaluation against aircraft + tower observations; bias diagnostics & seasonal attribution.</li>
-                <li>Scalable computation on HPC; matrix methods, stability checks, and reproducible pipelines.</li>
+                <li>Geostatistical inverse modeling (GIM)</li>
+                <li>Transport footprint calculations (STILT)</li>
+                <li>Bayesian inference & optimization</li>
+                <li>Model evaluation against observations</li>
+                <li>Scalable HPC computation</li>
+                <li>Uncertainty quantification frameworks</li>
               </ul>
             </div>
-            <div class="box">
-              <h4>What I’m known for</h4>
+            
+            <div class="experience-box">
+              <h4>Production Skills</h4>
               <ul>
-                <li>Turning complex workflows into clean, testable steps.</li>
-                <li>Explaining technical results to mixed audiences.</li>
-                <li>High standards + consistent execution.</li>
+                <li>End-to-end research pipelines</li>
+                <li>Reproducible analysis workflows</li>
+                <li>Cross-functional collaboration</li>
+                <li>Technical communication</li>
+                <li>Code quality & documentation</li>
+                <li>Version control & best practices</li>
               </ul>
             </div>
           </div>
-
-          <div class="proof" aria-label="Proof points">
-            <span class="tag"><i class="fa-solid fa-atom"></i>Inverse problems</span>
-            <span class="tag"><i class="fa-solid fa-server"></i>HPC pipelines</span>
-            <span class="tag"><i class="fa-solid fa-magnifying-glass-chart"></i>Model evaluation</span>
-            <span class="tag"><i class="fa-solid fa-shield-halved"></i>Uncertainty quantification</span>
+          
+          <div class="tag-group" style="margin-top: var(--space-lg);">
+            <span class="tag">Inverse Problems</span>
+            <span class="tag">Bayesian Inference</span>
+            <span class="tag">Uncertainty Quantification</span>
+            <span class="tag">HPC Workflows</span>
+            <span class="tag">Python</span>
+            <span class="tag">MATLAB</span>
+            <span class="tag">ML Systems</span>
           </div>
-        </article>
-
-        <!-- NCAA Athlete -->
-        <article class="t-item">
-          <div class="t-top">
-            <p class="t-role">Student-Athlete (NCAA/ITA) — Johns Hopkins Men’s Tennis</p>
-            <div class="t-meta">
-              <span><i class="fa-solid fa-trophy" aria-hidden="true"></i>#23 Singles, #24 Doubles (Fall 2022)</span>
-              <span><i class="fa-solid fa-calendar" aria-hidden="true"></i>Aug 2022 – Present</span>
+        </div>
+        
+        <div class="experience-item">
+          <div class="experience-header">
+            <div>
+              <h2 class="experience-title">Assistant Men's Tennis Coach</h2>
+              <div class="experience-org">Johns Hopkins University</div>
+              <div class="experience-meta">
+                <span><i class="fas fa-calendar"></i> 2023 – Present</span>
+                <span><i class="fas fa-trophy"></i> NCAA Division III</span>
+              </div>
             </div>
           </div>
-
-          <div class="t-grid">
-            <div class="box">
-              <h4>Impact</h4>
-              <ul>
-                <li>Perform at a nationally ranked level while sustaining research output and academic excellence.</li>
-                <li>Bring structured training cycles and feedback loops into research execution.</li>
-              </ul>
-            </div>
-            <div class="box">
+          
+          <p>
+            Supporting the development of collegiate athletes at a top-tier academic and athletic 
+            institution. Contributing to team culture, technical development, and competitive strategy 
+            while maintaining research excellence.
+          </p>
+          
+          <div class="experience-content">
+            <div class="experience-box">
               <h4>Leadership</h4>
               <ul>
-                <li>Model composure under pressure; consistent preparation and match-day execution.</li>
-                <li>Mentor teammates and younger players on habits, discipline, and mindset.</li>
+                <li>Technical skill development</li>
+                <li>Match strategy and analysis</li>
+                <li>Team culture building</li>
+                <li>Mentoring student-athletes</li>
               </ul>
             </div>
-            <div class="box">
-              <h4>Awards</h4>
+            
+            <div class="experience-box">
+              <h4>Transferable Skills</h4>
               <ul>
-                <li>Academic All-American; Academic All-District</li>
-                <li>First Team All-Centennial</li>
+                <li>Performance under pressure</li>
+                <li>Systematic training approaches</li>
+                <li>Feedback loops and iteration</li>
+                <li>Cross-functional collaboration</li>
               </ul>
             </div>
-          </div>
-
-          <div class="proof">
-            <span class="tag"><i class="fa-solid fa-bolt"></i>Performance under pressure</span>
-            <span class="tag"><i class="fa-solid fa-repeat"></i>Training systems</span>
-            <span class="tag"><i class="fa-solid fa-calendar-check"></i>Time management</span>
-          </div>
-        </article>
-
-        <!-- WISE Mentor -->
-        <article class="t-item">
-          <div class="t-top">
-            <p class="t-role">Mentor — WISE Climate & Data Science Program</p>
-            <div class="t-meta">
-              <span><i class="fa-solid fa-people-group" aria-hidden="true"></i>JHU Whiting School of Engineering</span>
-              <span><i class="fa-solid fa-calendar" aria-hidden="true"></i>Jan 2024 – May 2024</span>
-            </div>
-          </div>
-
-          <div class="t-grid">
-            <div class="box">
-              <h4>Impact</h4>
-              <ul>
-                <li>Mentored two high school students on a data-driven evaluation of Baltimore’s Climate Action Plan.</li>
-                <li>Helped translate analysis into policy-relevant insights for non-technical audiences.</li>
-              </ul>
-            </div>
-            <div class="box">
-              <h4>Methods</h4>
-              <ul>
-                <li>Problem framing, data interpretation, visualization, and storytelling for decision-makers.</li>
-                <li>Iterative coaching: draft → feedback → revise → present.</li>
-              </ul>
-            </div>
-            <div class="box">
-              <h4>Visibility</h4>
-              <ul>
-                <li>Featured interview highlighting mentorship and science communication.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="proof">
-            <span class="tag"><i class="fa-solid fa-microphone"></i>Science communication</span>
-            <span class="tag"><i class="fa-solid fa-lightbulb"></i>Policy translation</span>
-            <span class="tag"><i class="fa-solid fa-chalkboard-user"></i>Mentorship</span>
-          </div>
-        </article>
-
-        <!-- GRA -->
-        <article class="t-item">
-          <div class="t-top">
-            <p class="t-role">Graduate Research Assistant — Atmospheric/Emissions Analytics</p>
-            <div class="t-meta">
-              <span><i class="fa-solid fa-tower-observation" aria-hidden="true"></i>NOAA tower + aircraft observations</span>
-              <span><i class="fa-solid fa-calendar" aria-hidden="true"></i>Jul 2022 – Jun 2023</span>
-            </div>
-          </div>
-
-          <div class="t-grid">
-            <div class="box">
-              <h4>Impact</h4>
-              <ul>
-                <li>Investigated temporal emission patterns in oil & gas sectors using in-situ observations (e.g., propane).</li>
-                <li>Supported inventory evaluation with statistical diagnostics and uncertainty characterization.</li>
-              </ul>
-            </div>
-            <div class="box">
-              <h4>Methods</h4>
-              <ul>
-                <li>Time-series analysis, data cleaning, exploratory statistics, reproducible analysis in R.</li>
-              </ul>
-            </div>
-            <div class="box">
-              <h4>Signal</h4>
-              <ul>
-                <li>Strong foundation in observational datasets + careful interpretation.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="proof">
-            <span class="tag"><i class="fa-solid fa-chart-simple"></i>Time series</span>
-            <span class="tag"><i class="fa-brands fa-r-project"></i>R</span>
-            <span class="tag"><i class="fa-solid fa-scale-balanced"></i>Uncertainty</span>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <section class="section" id="highlights">
-      <h2>Selected highlights</h2>
-      <p class="desc">
-        These are the “credible differentiators” that make you memorable: research depth + elite athletics + communication at scale.
-      </p>
-
-      <div class="cards">
-        <div class="card">
-          <div class="topline">
-            <span class="badge"><i class="fa-solid fa-globe"></i>Science communicator</span>
-            <span class="small">2021–Present</span>
-          </div>
-          <h3>Content creator — data-driven education</h3>
-          <p>
-            Built trust and engagement by explaining science, health, and decision-making with clarity and evidence.
-          </p>
-          <div class="proof">
-            <span class="tag"><i class="fa-solid fa-users"></i>Xiaohongshu: 4,500+ followers</span>
-            <span class="tag"><i class="fa-solid fa-heart"></i>20.7K+ likes/saves</span>
-            <span class="tag"><i class="fa-solid fa-circle-play"></i>bilibili: 150,600+ views</span>
           </div>
         </div>
-
-        <div class="card">
-          <div class="topline">
-            <span class="badge"><i class="fa-solid fa-brain"></i>Analyst mindset</span>
-            <span class="small">2022</span>
+        
+        <div class="experience-item">
+          <div class="experience-header">
+            <div>
+              <h2 class="experience-title">Tour Coach — ATP Professional Tennis</h2>
+              <div class="experience-org">ATP Tour</div>
+              <div class="experience-meta">
+                <span><i class="fas fa-calendar"></i> 2024 – Present</span>
+                <span><i class="fas fa-globe"></i> International</span>
+              </div>
+            </div>
           </div>
-          <h3>Research data analyst — epidemiology & health analytics</h3>
+          
+          <div class="highlight-card">
+            <h3><i class="fas fa-star"></i> Key Achievement</h3>
+            <p>
+              <strong>Coached Mark Wallner and Jakob Schnaitter to the Quarterfinals of the 
+              2025 ATP 1000 Shanghai Masters</strong>, including a victory over the 
+              <strong>2024 Olympic Champion</strong>. This demonstrates the ability to perform 
+              at the highest level of professional sports, translating technical expertise 
+              and strategic thinking into tangible results.
+            </p>
+          </div>
+          
+          <div class="experience-content">
+            <div class="experience-box">
+              <h4>High-Stakes Performance</h4>
+              <ul>
+                <li>ATP 1000 tournament preparation</li>
+                <li>Strategic match analysis</li>
+                <li>Real-time decision making</li>
+                <li>Performance under pressure</li>
+              </ul>
+            </div>
+            
+            <div class="experience-box">
+              <h4>Technical Expertise</h4>
+              <ul>
+                <li>Match strategy development</li>
+                <li>Technical analysis</li>
+                <li>Mental performance coaching</li>
+                <li>Elite-level execution</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="experience-item">
+          <div class="experience-header">
+            <div>
+              <h2 class="experience-title">Mentor — WISE Climate & Data Science Program</h2>
+              <div class="experience-org">Johns Hopkins Whiting School of Engineering</div>
+              <div class="experience-meta">
+                <span><i class="fas fa-calendar"></i> Jan 2024 – May 2024</span>
+                <span><i class="fas fa-users"></i> High School Students</span>
+              </div>
+            </div>
+          </div>
+          
           <p>
-            Analyzed epidemiological and survey datasets, improved data quality via standardized protocols,
-            and contributed to cross-team research coordination.
+            Mentored two high school students on a data-driven evaluation of Baltimore's Climate 
+            Action Plan. Helped translate technical analysis into policy-relevant insights for 
+            non-technical audiences.
           </p>
-          <div class="proof">
-            <span class="tag"><i class="fa-solid fa-database"></i>Data protocols</span>
-            <span class="tag"><i class="fa-solid fa-people-arrows"></i>Cross-functional collaboration</span>
-            <span class="tag"><i class="fa-solid fa-code"></i>R & Python exposure</span>
+          
+          <div class="experience-content">
+            <div class="experience-box">
+              <h4>Impact</h4>
+              <ul>
+                <li>Data-driven policy evaluation</li>
+                <li>Technical communication</li>
+                <li>Mentorship and coaching</li>
+                <li>Science communication</li>
+              </ul>
+            </div>
+            
+            <div class="experience-box">
+              <h4>Skills Demonstrated</h4>
+              <ul>
+                <li>Problem framing</li>
+                <li>Data interpretation</li>
+                <li>Visualization and storytelling</li>
+                <li>Iterative feedback loops</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="experience-item">
+          <div class="experience-header">
+            <div>
+              <h2 class="experience-title">Graduate Research Assistant</h2>
+              <div class="experience-org">Atmospheric/Emissions Analytics</div>
+              <div class="experience-meta">
+                <span><i class="fas fa-calendar"></i> Jul 2022 – Jun 2023</span>
+                <span><i class="fas fa-flask"></i> NOAA Observations</span>
+              </div>
+            </div>
+          </div>
+          
+          <p>
+            Investigated temporal emission patterns in oil & gas sectors using in-situ observations. 
+            Supported inventory evaluation with statistical diagnostics and uncertainty characterization.
+          </p>
+          
+          <div class="experience-content">
+            <div class="experience-box">
+              <h4>Research</h4>
+              <ul>
+                <li>Time-series analysis</li>
+                <li>Data cleaning and validation</li>
+                <li>Exploratory statistics</li>
+                <li>Reproducible analysis in R</li>
+              </ul>
+            </div>
+            
+            <div class="experience-box">
+              <h4>Foundation</h4>
+              <ul>
+                <li>Observational datasets</li>
+                <li>Careful interpretation</li>
+                <li>Uncertainty characterization</li>
+                <li>Statistical methods</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="tag-group" style="margin-top: var(--space-lg);">
+            <span class="tag">Time Series Analysis</span>
+            <span class="tag">R</span>
+            <span class="tag">Data Validation</span>
+            <span class="tag">Uncertainty</span>
+          </div>
+        </div>
+        
+        <div class="experience-item">
+          <div class="experience-header">
+            <div>
+              <h2 class="experience-title">Content Creator — Science Communication</h2>
+              <div class="experience-org">Data-Driven Education</div>
+              <div class="experience-meta">
+                <span><i class="fas fa-calendar"></i> 2021 – Present</span>
+                <span><i class="fas fa-users"></i> 4,500+ followers</span>
+              </div>
+            </div>
+          </div>
+          
+          <p>
+            Built trust and engagement by explaining science, health, and decision-making with clarity 
+            and evidence. Demonstrated ability to communicate complex technical concepts to diverse audiences.
+          </p>
+          
+          <div class="experience-content">
+            <div class="experience-box">
+              <h4>Impact</h4>
+              <ul>
+                <li>Xiaohongshu: 4,500+ followers</li>
+                <li>20.7K+ likes/saves</li>
+                <li>bilibili: 150,600+ views</li>
+                <li>Science communication at scale</li>
+              </ul>
+            </div>
+            
+            <div class="experience-box">
+              <h4>Skills</h4>
+              <ul>
+                <li>Technical communication</li>
+                <li>Data visualization</li>
+                <li>Audience engagement</li>
+                <li>Content strategy</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="skills-section">
+      <h2>Technical Skills & Expertise</h2>
+      <p class="text-muted" style="text-align: center; margin-bottom: var(--space-xl);">
+        Production-ready skills for Big Tech roles
+      </p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-lg);">
+        <div>
+          <h4 style="margin-bottom: var(--space-md);">Core Methods</h4>
+          <div class="tag-group">
+            <span class="tag">Inverse Problems</span>
+            <span class="tag">Bayesian Inference</span>
+            <span class="tag">Uncertainty Quantification</span>
+            <span class="tag">Transport Modeling</span>
+            <span class="tag">Model Evaluation</span>
+            <span class="tag">Statistical Methods</span>
+          </div>
+        </div>
+        
+        <div>
+          <h4 style="margin-bottom: var(--space-md);">Programming & Tools</h4>
+          <div class="tag-group">
+            <span class="tag">Python</span>
+            <span class="tag">MATLAB</span>
+            <span class="tag">R</span>
+            <span class="tag">HPC Workflows</span>
+            <span class="tag">Git</span>
+            <span class="tag">ML Frameworks</span>
+          </div>
+        </div>
+        
+        <div>
+          <h4 style="margin-bottom: var(--space-md);">Research Engineering</h4>
+          <div class="tag-group">
+            <span class="tag">Reproducible Research</span>
+            <span class="tag">Code Quality</span>
+            <span class="tag">Documentation</span>
+            <span class="tag">Version Control</span>
+            <span class="tag">Testing</span>
+            <span class="tag">CI/CD</span>
+          </div>
+        </div>
+        
+        <div>
+          <h4 style="margin-bottom: var(--space-md);">Communication</h4>
+          <div class="tag-group">
+            <span class="tag">Technical Writing</span>
+            <span class="tag">Science Communication</span>
+            <span class="tag">Data Visualization</span>
+            <span class="tag">Mentorship</span>
+            <span class="tag">Cross-functional Collaboration</span>
           </div>
         </div>
       </div>
     </section>
-
-    <section class="section" id="toward">
-      <h2>What I’m building toward</h2>
-      <p class="desc">
-        Best fit for roles that combine rigorous modeling, strong validation, and deployment-minded engineering:
-        <strong>Research Engineer / Applied Scientist</strong> for weather, climate, sustainability, and energy.
-      </p>
-
-      <div class="skills" aria-label="Skills">
-        <span class="skill">Inverse problems</span>
-        <span class="skill">Bayesian inference</span>
-        <span class="skill">Uncertainty quantification</span>
-        <span class="skill">Transport modeling</span>
-        <span class="skill">Model evaluation</span>
-        <span class="skill">HPC workflows</span>
-        <span class="skill">Scientific storytelling</span>
-        <span class="skill">Leadership under pressure</span>
-      </div>
-    </section>
-
   </main>
 
   <footer>
-    <div class="container foot">
-      <div class="social" aria-label="Social links">
-        <a href="https://www.linkedin.com/in/hliu83/" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/hanyumasonliu" target="_blank" rel="noopener" aria-label="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="mailto:hliu83@jhu.edu" aria-label="Email">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-      </div>
-      <div class="small">© <span id="y"></span> Hanyu (Mason) Liu</div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/hliu83/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/hanyumasonliu" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:hliu83@jhu.edu" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
     </div>
+    <p>© <span id="year"></span> Hanyu (Mason) Liu</p>
   </footer>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-
-    // optional: active nav link on scroll (lightweight)
-    const sections = ["timeline","highlights","toward"].map(id => document.getElementById(id)).filter(Boolean);
-    const links = Array.from(document.querySelectorAll(".nav-links a"));
-    const io = new IntersectionObserver((entries)=>{
-      const visible = entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
-      if(!visible) return;
-      const id = visible.target.id;
-      links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "experience.html" && id));
-    }, { threshold: [0.15, 0.35, 0.6] });
-    sections.forEach(s => io.observe(s));
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
