@@ -3,58 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Research by Hanyu (Mason) Liu — Physics-based inverse modeling, Bayesian inference, and scalable ML systems for climate science." />
-  <title>Research | Hanyu (Mason) Liu</title>
+  
+  <!-- Primary Meta Tags -->
+  <title>Research | Hanyu (Mason) Liu — Applied Scientist & Research Engineer</title>
+  <meta name="title" content="Research | Hanyu (Mason) Liu" />
+  <meta name="description" content="Research by Hanyu (Mason) Liu: Arctic methane inverse modeling, geostatistical methods, Bayesian inference, and scalable ML systems. First-author publications and conference presentations." />
+  <meta name="keywords" content="Inverse Modeling, Bayesian Inference, Climate Science, Methane Emissions, Geostatistical Methods, Atmospheric Transport, Uncertainty Quantification, HPC" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hanyumasonliu.github.io/research.html" />
+  <meta property="og:title" content="Research | Hanyu (Mason) Liu" />
+  <meta property="og:description" content="Arctic methane inverse modeling, geostatistical methods, Bayesian inference, and scalable ML systems for climate science." />
+  <meta property="og:image" content="https://hanyumasonliu.github.io/assets/mason.jpg" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://hanyumasonliu.github.io/research.html" />
+  <meta property="twitter:title" content="Research | Hanyu (Mason) Liu" />
+  <meta property="twitter:description" content="Arctic methane inverse modeling, geostatistical methods, Bayesian inference, and scalable ML systems." />
+  <meta property="twitter:image" content="https://hanyumasonliu.github.io/assets/mason.jpg" />
+  
   <link rel="stylesheet" href="assets/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
   <style>
-    .research-hero {
+    .page-hero {
       padding: calc(80px + var(--space-3xl)) 0 var(--space-2xl);
       background: linear-gradient(135deg, var(--color-primary-light) 0%, transparent 100%);
     }
     
-    .research-timeline {
-      margin-top: var(--space-2xl);
-    }
-    
-    .research-card {
+    .project-card {
+      padding: var(--space-2xl);
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
       margin-bottom: var(--space-xl);
+      transition: all var(--transition-base);
     }
     
-    .research-card-header {
+    .project-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+    
+    .project-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       gap: var(--space-md);
-      margin-bottom: var(--space-md);
+      margin-bottom: var(--space-lg);
+      flex-wrap: wrap;
     }
     
-    .research-card-title {
+    .project-title {
       font-size: var(--text-2xl);
       font-weight: 600;
       margin-bottom: var(--space-xs);
     }
     
-    .research-card-meta {
+    .project-meta {
       font-size: var(--text-sm);
       color: var(--color-text-muted);
     }
     
-    .research-card-content {
+    .project-content {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: var(--space-lg);
       margin-top: var(--space-lg);
     }
     
-    .research-box {
+    .project-box {
       padding: var(--space-lg);
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: var(--border-radius);
     }
     
-    .research-box h4 {
+    .project-box h4 {
       font-size: var(--text-sm);
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -62,19 +89,21 @@
       margin-bottom: var(--space-md);
     }
     
-    .research-box ul {
+    .project-box ul {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
     
-    .research-box li {
+    .project-box li {
       padding: var(--space-xs) 0;
       color: var(--color-text-secondary);
+      font-size: var(--text-sm);
       position: relative;
-      padding-left: var(--space-lg);
+      padding-left: var(--space-md);
     }
     
-    .research-box li::before {
+    .project-box li::before {
       content: '→';
       position: absolute;
       left: 0;
@@ -82,71 +111,12 @@
       font-weight: 600;
     }
     
-    .impact-metrics {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: var(--space-lg);
-      margin: var(--space-2xl) 0;
-    }
-    
-    .impact-metric {
-      text-align: center;
-      padding: var(--space-xl);
-      background: var(--color-surface-elevated);
-      border: 1px solid var(--color-border);
-      border-radius: var(--border-radius-lg);
-    }
-    
-    .impact-metric-value {
-      font-size: var(--text-4xl);
-      font-weight: 700;
-      color: var(--color-primary);
-      margin-bottom: var(--space-xs);
-    }
-    
-    .impact-metric-label {
-      font-size: var(--text-base);
-      color: var(--color-text-secondary);
-    }
-    
-    .methodology-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: var(--space-lg);
-      margin-top: var(--space-xl);
-    }
-    
-    .methodology-card {
-      padding: var(--space-xl);
-      background: var(--color-surface-elevated);
-      border: 1px solid var(--color-border);
-      border-radius: var(--border-radius-lg);
-    }
-    
-    .methodology-icon {
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--color-primary-light);
-      border-radius: var(--border-radius);
-      margin-bottom: var(--space-md);
-      color: var(--color-primary);
-      font-size: var(--text-xl);
-    }
-    
-    .publication-list {
-      list-style: none;
-      padding: 0;
-    }
-    
     .publication-item {
       padding: var(--space-lg);
-      margin-bottom: var(--space-md);
       background: var(--color-surface-elevated);
       border: 1px solid var(--color-border);
-      border-radius: var(--border-radius);
+      border-radius: var(--border-radius-lg);
+      margin-bottom: var(--space-md);
       transition: all var(--transition-base);
     }
     
@@ -171,27 +141,48 @@
       font-size: var(--text-sm);
       font-style: italic;
     }
+    
+    .page-cta {
+      text-align: center;
+      padding: var(--space-2xl);
+      background: var(--color-primary-light);
+      border-radius: var(--border-radius-lg);
+      margin: var(--space-3xl) 0;
+    }
+    
+    .page-cta-buttons {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: var(--space-lg);
+    }
   </style>
 </head>
 <body>
 
-  <nav>
+  <nav id="main-nav" aria-label="Main navigation">
     <div class="nav-container">
       <a href="index.html" class="brand">Mason Liu</a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="research.html" class="active">Research</a>
-        <a href="experience.html">Experience</a>
-        <a href="tennis.html">Tennis</a>
-        <a href="contact.html">Contact</a>
+      <div style="display: flex; align-items: center;">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="research.html" class="active">Research</a>
+          <a href="experience.html">Experience</a>
+          <a href="tennis.html">Tennis</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon" id="dark-mode-icon"></i>
+        </button>
       </div>
     </div>
   </nav>
 
-  <header class="research-hero">
+  <header class="page-hero">
     <div class="container">
       <div class="section-header">
-        <h1 class="section-title">Research & Technical Excellence</h1>
+        <h1 class="section-title">Research & Publications</h1>
         <p class="section-description">
           Production-ready ML systems for climate science. Building scalable, validated 
           solutions that translate research into real-world impact.
@@ -202,285 +193,227 @@
 
   <main class="container">
     <section class="section">
-      <h2>Core Research Areas</h2>
+      <h2>Featured Research Projects</h2>
       
-      <div class="research-card card">
-        <div class="research-card-header">
+      <div class="project-card">
+        <div class="project-header">
           <div>
-            <h3 class="research-card-title">Arctic Methane Inverse Modeling</h3>
-            <div class="research-card-meta">Geostatistical inversions • Bayesian inference • Uncertainty quantification</div>
+            <h3 class="project-title">Arctic Methane Flux Estimation via Geostatistical Inverse Modeling</h3>
+            <div class="project-meta">First Author • EGUsphere Preprint • 2025</div>
           </div>
         </div>
         
         <p>
           Quantifying methane emissions across Arctic-boreal North America using physics-based 
           inverse modeling. Combining aircraft and tower observations with atmospheric transport 
-          models (e.g., STILT) to estimate regional fluxes and reduce uncertainty in emission budgets.
+          models (STILT) to estimate regional fluxes and reduce uncertainty in emission budgets.
         </p>
         
-        <div class="research-card-content">
-          <div class="research-box">
-            <h4>Impact</h4>
+        <div class="project-content">
+          <div class="project-box">
+            <h4>Problem</h4>
             <ul>
-              <li>Reduce uncertainty in regional methane budgets</li>
-              <li>Diagnose seasonal and driver controls on emissions</li>
-              <li>Constrain wetland feedback under rapid warming</li>
-              <li>Translate sparse observations into robust estimates</li>
+              <li>High uncertainty in Arctic methane budgets</li>
+              <li>Sparse observational constraints across vast regions</li>
+              <li>Need for scalable inference methods</li>
+              <li>Seasonal and spatial pattern validation</li>
             </ul>
           </div>
           
-          <div class="research-box">
-            <h4>Methods</h4>
+          <div class="project-box">
+            <h4>Method</h4>
             <ul>
               <li>Geostatistical inverse modeling (GIM)</li>
-              <li>Transport footprint calculations</li>
               <li>Bayesian inference & optimization</li>
-              <li>Model evaluation against observations</li>
-              <li>Scalable HPC computation</li>
-            </ul>
-          </div>
-          
-          <div class="research-box">
-            <h4>Technical Stack</h4>
-            <ul>
-              <li>Python (NumPy, SciPy, PyTorch)</li>
-              <li>MATLAB for legacy workflows</li>
-              <li>HPC cluster computing</li>
-              <li>Reproducible analysis pipelines</li>
+              <li>STILT transport footprint calculations</li>
+              <li>HPC-scalable computation pipelines</li>
               <li>Uncertainty quantification frameworks</li>
             </ul>
           </div>
+          
+          <div class="project-box">
+            <h4>Impact</h4>
+            <ul>
+              <li>Reduced regional uncertainty in emission budgets</li>
+              <li>Validated against aircraft + tower observations</li>
+              <li>Reproducible analysis pipeline</li>
+              <li>First-author publication (EGUsphere, 2025)</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="tag-group" style="margin-top: var(--space-lg);">
+          <span class="tag">Python</span>
+          <span class="tag">Inverse Modeling</span>
+          <span class="tag">Bayesian Inference</span>
+          <span class="tag">HPC</span>
+          <span class="tag">Uncertainty Quantification</span>
+          <span class="tag">Geostatistics</span>
+        </div>
+        
+        <div style="margin-top: var(--space-lg);">
+          <a href="https://egusphere.copernicus.org/preprints/2025/egusphere-2025-2150/" target="_blank" rel="noopener" class="btn">
+            <i class="fas fa-external-link-alt"></i> View Publication
+          </a>
         </div>
       </div>
       
-      <div class="research-card card">
-        <div class="research-card-header">
+      <div class="project-card">
+        <div class="project-header">
           <div>
-            <h3 class="research-card-title">Model Evaluation & Data Fusion</h3>
-            <div class="research-card-meta">Bias diagnostics • Seasonal attribution • Multi-model comparison</div>
+            <h3 class="project-title">Global Wetland Methane Emissions from Satellite Observations</h3>
+            <div class="project-meta">Co-Author • JGR Atmospheres • 2025</div>
           </div>
         </div>
         
         <p>
-          Systematic evaluation of process-based methane models against observational constraints. 
-          Identifying regional biases, seasonal patterns, and interannual variability across 
-          North American ecoregions.
+          Spatial and temporal analysis of global wetland methane emissions using satellite observations. 
+          Developed methods for estimating emissions during 2019–2020 with improved spatial resolution 
+          and temporal coverage.
         </p>
         
-        <div class="research-card-content">
-          <div class="research-box">
-            <h4>Approach</h4>
+        <div class="project-content">
+          <div class="project-box">
+            <h4>Problem</h4>
             <ul>
-              <li>Multi-model ensemble comparison</li>
-              <li>Bias diagnostics across ecoregions</li>
-              <li>Seasonal and interannual analysis</li>
+              <li>Global-scale emission estimation needed</li>
+              <li>Satellite data integration challenges</li>
+              <li>Temporal pattern analysis required</li>
+            </ul>
+          </div>
+          
+          <div class="project-box">
+            <h4>Method</h4>
+            <ul>
+              <li>Satellite observation processing</li>
+              <li>Geospatial analysis techniques</li>
+              <li>Time series modeling</li>
               <li>Uncertainty propagation</li>
             </ul>
           </div>
           
-          <div class="research-box">
-            <h4>Applications</h4>
+          <div class="project-box">
+            <h4>Impact</h4>
             <ul>
-              <li>Inventory validation</li>
-              <li>Model improvement guidance</li>
-              <li>Policy-relevant insights</li>
-              <li>Research prioritization</li>
+              <li>Published in JGR Atmospheres (2025)</li>
+              <li>Improved spatial resolution</li>
+              <li>Validated temporal patterns</li>
             </ul>
           </div>
         </div>
+        
+        <div class="tag-group" style="margin-top: var(--space-lg);">
+          <span class="tag">Python</span>
+          <span class="tag">Geospatial Analysis</span>
+          <span class="tag">Satellite Data</span>
+          <span class="tag">Time Series</span>
+        </div>
+        
+        <div style="margin-top: var(--space-lg);">
+          <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JD044354" target="_blank" rel="noopener" class="btn">
+            <i class="fas fa-external-link-alt"></i> View Publication
+          </a>
+        </div>
       </div>
       
-      <div class="research-card card">
-        <div class="research-card-header">
+      <div class="project-card">
+        <div class="project-header">
           <div>
-            <h3 class="research-card-title">ML as a Research Accelerator</h3>
-            <div class="research-card-meta">Surrogate models • Feature selection • Hybrid physics-ML</div>
+            <h3 class="project-title">Model Evaluation & Multi-Model Intercomparison</h3>
+            <div class="project-meta">Research • NASA ABoVE • 2024-2025</div>
           </div>
         </div>
         
         <p>
-          Using machine learning strategically to accelerate expensive components and improve 
-          representation where appropriate. Building hybrid physics-ML systems that maintain 
-          interpretability while gaining computational efficiency.
+          Systematic evaluation of 16 process-based methane models against atmospheric observations. 
+          Identified regional biases, seasonal patterns, and model improvements for high-latitude North America.
         </p>
         
-        <div class="research-card-content">
-          <div class="research-box">
-            <h4>Applications</h4>
+        <div class="project-content">
+          <div class="project-box">
+            <h4>Problem</h4>
             <ul>
-              <li>Transport model emulators</li>
-              <li>Emission pattern recognition</li>
-              <li>Feature selection for priors</li>
-              <li>Uncertainty estimation</li>
+              <li>Model intercomparison needed</li>
+              <li>Bias identification required</li>
+              <li>Seasonal pattern validation</li>
             </ul>
           </div>
           
-          <div class="research-box">
-            <h4>Philosophy</h4>
+          <div class="project-box">
+            <h4>Method</h4>
             <ul>
-              <li>ML as a tool, not a replacement</li>
-              <li>Maintain physics-based constraints</li>
-              <li>Validate against observations</li>
-              <li>Interpretable, reproducible workflows</li>
+              <li>Multi-model ensemble analysis</li>
+              <li>Bias diagnostics across ecoregions</li>
+              <li>Seasonal attribution analysis</li>
+              <li>Statistical evaluation methods</li>
             </ul>
           </div>
+          
+          <div class="project-box">
+            <h4>Impact</h4>
+            <ul>
+              <li>Reduced inter-model uncertainty</li>
+              <li>Identified improvement areas</li>
+              <li>Conference presentations (AGU, AMS, ABoVE)</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="tag-group" style="margin-top: var(--space-lg);">
+          <span class="tag">R</span>
+          <span class="tag">Python</span>
+          <span class="tag">Model Evaluation</span>
+          <span class="tag">Statistics</span>
         </div>
       </div>
     </section>
 
     <section class="section" style="background: var(--color-surface); padding: var(--space-3xl) var(--space-xl); border-radius: var(--border-radius-lg);">
-      <h2>Research Impact</h2>
-      <p class="text-muted" style="text-align: center; margin-bottom: var(--space-2xl);">
-        Quantifiable contributions to climate science and computational methods
-      </p>
+      <h2>Peer-Reviewed Publications</h2>
       
-      <div class="impact-metrics">
-        <div class="impact-metric">
-          <div class="impact-metric-value">PhD</div>
-          <div class="impact-metric-label">Johns Hopkins University<br>Environmental Health & Engineering</div>
+      <div class="publication-item">
+        <h4 class="publication-title">
+          <a href="https://egusphere.copernicus.org/preprints/2025/egusphere-2025-2150/" target="_blank" rel="noopener" style="color: var(--color-text);">
+            Methane fluxes from arctic & boreal North America: Comparisons between process-based estimates and atmospheric observations
+          </a>
+        </h4>
+        <div class="publication-authors">
+          <strong>H. Liu</strong> (First Author), F. R. Vogel, M. Ishizawa, Z. Zhang, B. Poulter, D. E. J. Worthy, L. Feng, A. L. Gagné-Landmann, A. Chen, Z. Huang, D. C. Gaeta, J. R. Melton, D. Chan, V. Yadav, D. Huntzinger, S. M. Miller
         </div>
-        <div class="impact-metric">
-          <div class="impact-metric-value">Arctic</div>
-          <div class="impact-metric-label">Regional Focus<br>High-latitude methane systems</div>
+        <div class="publication-venue">
+          EGUsphere [preprint], 2025. 
+          <a href="https://doi.org/10.5194/egusphere-2025-2150" target="_blank" rel="noopener" style="color: var(--color-primary);">DOI: 10.5194/egusphere-2025-2150</a>
         </div>
-        <div class="impact-metric">
-          <div class="impact-metric-value">HPC</div>
-          <div class="impact-metric-label">Scalable Systems<br>Large atmospheric datasets</div>
+      </div>
+      
+      <div class="publication-item">
+        <h4 class="publication-title">
+          <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JD044354" target="_blank" rel="noopener" style="color: var(--color-text);">
+            Spatial and Temporal Distribution of Global Wetland Methane Emissions During 2019–2020 Estimated From Satellite Observations
+          </a>
+        </h4>
+        <div class="publication-authors">
+          A. Chen, Z. Zhang, B. Poulter, L. Feng, <strong>H. Liu</strong>, L. T. Murray, X. Yu, Z. Huang, D. C. Gaeta, K. L. Morgan, Q. Zhu, S. M. Miller
         </div>
-        <div class="impact-metric">
-          <div class="impact-metric-value">Bayesian</div>
-          <div class="impact-metric-label">Rigorous Methods<br>Uncertainty quantification</div>
+        <div class="publication-venue">
+          Journal of Geophysical Research: Atmospheres, 2025.
+          <a href="https://doi.org/10.1029/2025JD044354" target="_blank" rel="noopener" style="color: var(--color-primary);">DOI: 10.1029/2025JD044354</a>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <h2>Technical Methodology</h2>
-      <p class="text-muted">
-        Production-ready approaches that scale from research prototypes to validated systems.
-      </p>
-      
-      <div class="methodology-grid">
-        <div class="methodology-card">
-          <div class="methodology-icon">
-            <i class="fas fa-project-diagram"></i>
-          </div>
-          <h3>Inverse Problems</h3>
-          <p>
-            Geostatistical inversions with spatial priors, transport sensitivity calculations, 
-            and optimization under uncertainty. Rigorous model selection and validation.
-          </p>
-        </div>
-        
-        <div class="methodology-card">
-          <div class="methodology-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <h3>Bayesian Inference</h3>
-          <p>
-            Probabilistic frameworks for parameter estimation, uncertainty propagation, 
-            and posterior analysis. Quantifying confidence in model predictions.
-          </p>
-        </div>
-        
-        <div class="methodology-card">
-          <div class="methodology-icon">
-            <i class="fas fa-server"></i>
-          </div>
-          <h3>Scalable Computation</h3>
-          <p>
-            HPC workflows, matrix methods, and efficient algorithms for large-scale 
-            atmospheric datasets. Reproducible, version-controlled pipelines.
-          </p>
-        </div>
-        
-        <div class="methodology-card">
-          <div class="methodology-icon">
-            <i class="fas fa-check-circle"></i>
-          </div>
-          <h3>Model Evaluation</h3>
-          <p>
-            Systematic validation against observations, bias diagnostics, and performance 
-            metrics. Clear communication of limitations and uncertainties.
-          </p>
-        </div>
-        
-        <div class="methodology-card">
-          <div class="methodology-icon">
-            <i class="fas fa-code"></i>
-          </div>
-          <h3>Reproducible Research</h3>
-          <p>
-            Clean code, documentation, and version control. Building systems that others 
-            can understand, use, and extend.
-          </p>
-        </div>
-        
-        <div class="methodology-card">
-          <div class="methodology-icon">
-            <i class="fas fa-users"></i>
-          </div>
-          <h3>Collaboration</h3>
-          <p>
-            Working across engineering and research teams. Translating technical results 
-            for diverse audiences, from scientists to policymakers.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" style="background: var(--color-surface); padding: var(--space-3xl) var(--space-xl); border-radius: var(--border-radius-lg);">
-      <h2>Publications & Presentations</h2>
+      <h2>Conference Presentations</h2>
       <p class="text-muted" style="margin-bottom: var(--space-xl);">
-        Research contributions and scientific communication
+        Research contributions presented at major scientific conferences
       </p>
       
-      <h3 style="margin-top: var(--space-xl); margin-bottom: var(--space-md);">Peer-Reviewed Publications</h3>
-      <ul class="publication-list">
-        <li class="publication-item">
-          <div class="publication-title">
-            <a href="https://egusphere.copernicus.org/preprints/2025/egusphere-2025-2150/" target="_blank" rel="noopener" style="color: var(--color-text);">
-              Methane fluxes from arctic & boreal North America: Comparisons between process-based estimates and atmospheric observations
-            </a>
-          </div>
-          <div class="publication-authors">
-            <strong>H. Liu</strong> (First Author), F. R. Vogel, M. Ishizawa, Z. Zhang, B. Poulter, D. E. J. Worthy, L. Feng, A. L. Gagné-Landmann, A. Chen, Z. Huang, D. C. Gaeta, J. R. Melton, D. Chan, V. Yadav, D. Huntzinger, S. M. Miller
-          </div>
-          <div class="publication-venue">
-            EGUsphere [preprint], 2025. 
-            <a href="https://doi.org/10.5194/egusphere-2025-2150" target="_blank" rel="noopener" style="color: var(--color-primary); font-size: var(--text-sm);">
-              DOI: 10.5194/egusphere-2025-2150
-            </a>
-          </div>
-        </li>
-        <li class="publication-item">
-          <div class="publication-title">
-            <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JD044354" target="_blank" rel="noopener" style="color: var(--color-text);">
-              Spatial and Temporal Distribution of Global Wetland Methane Emissions During 2019–2020 Estimated From Satellite Observations
-            </a>
-          </div>
-          <div class="publication-authors">
-            A. Chen, Z. Zhang, B. Poulter, L. Feng, <strong>H. Liu</strong>, L. T. Murray, X. Yu, Z. Huang, D. C. Gaeta, K. L. Morgan, Q. Zhu, S. M. Miller
-          </div>
-          <div class="publication-venue">
-            Journal of Geophysical Research: Atmospheres, 2025.
-            <a href="https://doi.org/10.1029/2025JD044354" target="_blank" rel="noopener" style="color: var(--color-primary); font-size: var(--text-sm);">
-              DOI: 10.1029/2025JD044354
-            </a>
-          </div>
-        </li>
-      </ul>
-      
-      <h3 style="margin-top: var(--space-2xl); margin-bottom: var(--space-md);">Conference Presentations</h3>
-      <ul class="publication-list">
+      <ul style="list-style: none; padding: 0;">
         <li class="publication-item">
           <div class="publication-title">
             <a href="https://cce-datasharing.gsfc.nasa.gov/files/conference_presentations/Poster_Liu_4_55_45.pdf" target="_blank" rel="noopener" style="color: var(--color-text);">
               2025 ABoVE Science Team Meeting Poster
             </a>
-          </div>
-          <div class="publication-authors">
-            <strong>H. Liu</strong> and co-authors
           </div>
           <div class="publication-venue">NASA ABoVE Science Team Meeting</div>
         </li>
@@ -490,9 +423,6 @@
               2025 ABoVE Science Team Meeting Presentation
             </a>
           </div>
-          <div class="publication-authors">
-            <strong>H. Liu</strong> and co-authors
-          </div>
           <div class="publication-venue">NASA ABoVE Science Team Meeting</div>
         </li>
         <li class="publication-item">
@@ -500,9 +430,6 @@
             <a href="https://cce-datasharing.gsfc.nasa.gov/conferences/absbyid/5/41/h/1/" target="_blank" rel="noopener" style="color: var(--color-text);">
               2024 ABoVE Science Team Meeting Presentation
             </a>
-          </div>
-          <div class="publication-authors">
-            <strong>H. Liu</strong> and co-authors
           </div>
           <div class="publication-venue">NASA ABoVE Science Team Meeting</div>
         </li>
@@ -512,9 +439,6 @@
               2024 AMS Annual Meeting Poster
             </a>
           </div>
-          <div class="publication-authors">
-            <strong>H. Liu</strong> and co-authors
-          </div>
           <div class="publication-venue">American Meteorological Society (AMS) 104th Annual Meeting</div>
         </li>
         <li class="publication-item">
@@ -522,9 +446,6 @@
             <a href="https://ui.adsabs.harvard.edu/abs/2024AGUFMB22E...04L/abstract" target="_blank" rel="noopener" style="color: var(--color-text);">
               2024 AGU Fall Meeting Presentation
             </a>
-          </div>
-          <div class="publication-authors">
-            <strong>H. Liu</strong> and co-authors
           </div>
           <div class="publication-venue">American Geophysical Union (AGU) Fall Meeting</div>
         </li>
@@ -534,13 +455,28 @@
               2023 AGU Fall Meeting Presentation
             </a>
           </div>
-          <div class="publication-authors">
-            <strong>H. Liu</strong> and co-authors
-          </div>
           <div class="publication-venue">American Geophysical Union (AGU) Fall Meeting</div>
         </li>
       </ul>
     </section>
+
+    <div class="page-cta">
+      <h3>Interested in Collaborating?</h3>
+      <p style="margin: var(--space-md) 0; color: var(--color-text-secondary);">
+        Open to research collaborations, opportunities, and conversations about climate science and ML systems.
+      </p>
+      <div class="page-cta-buttons">
+        <a href="mailto:hliu154@jh.edu" class="btn btn-primary">
+          <i class="fas fa-envelope"></i> Email Me
+        </a>
+        <a href="assets/Mason_Liu_CV.pdf" download class="btn">
+          <i class="fas fa-download"></i> Download CV
+        </a>
+        <a href="contact.html" class="btn">
+          <i class="fas fa-comments"></i> Contact Page
+        </a>
+      </div>
+    </div>
   </main>
 
   <footer>
@@ -551,6 +487,9 @@
       <a href="https://github.com/hanyumasonliu" target="_blank" rel="noopener" aria-label="GitHub">
         <i class="fab fa-github"></i>
       </a>
+      <a href="https://scholar.google.com/citations?user=7ziLpjUAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
       <a href="mailto:hliu154@jh.edu" aria-label="Email">
         <i class="fas fa-envelope"></i>
       </a>
@@ -560,6 +499,38 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    const darkModeIcon = document.getElementById("dark-mode-icon");
+    const html = document.documentElement;
+    
+    const currentTheme = localStorage.getItem("theme") || 
+      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    
+    if (currentTheme === "dark") {
+      html.classList.add("dark-mode");
+      darkModeIcon.classList.remove("fa-moon");
+      darkModeIcon.classList.add("fa-sun");
+    }
+    
+    darkModeToggle.addEventListener("click", () => {
+      html.classList.toggle("dark-mode");
+      const isDark = html.classList.contains("dark-mode");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      darkModeIcon.classList.toggle("fa-moon");
+      darkModeIcon.classList.toggle("fa-sun");
+    });
+    
+    // Sticky Nav
+    const nav = document.getElementById("main-nav");
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 50) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
+      }
+    });
   </script>
 </body>
 </html>

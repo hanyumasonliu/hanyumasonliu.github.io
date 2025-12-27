@@ -3,103 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Professional experience of Hanyu (Mason) Liu — PhD researcher, applied scientist, and elite athlete with Big Tech-ready skills." />
-  <title>Experience | Hanyu (Mason) Liu</title>
+  
+  <!-- Primary Meta Tags -->
+  <title>Experience | Hanyu (Mason) Liu — Applied Scientist & Research Engineer</title>
+  <meta name="title" content="Experience | Hanyu (Mason) Liu" />
+  <meta name="description" content="Professional experience of Hanyu (Mason) Liu: PhD research at Johns Hopkins, industry ML work at FI Consulting, ATP tour coaching, and leadership roles. Building production-ready systems." />
+  <meta name="keywords" content="Applied Scientist, Research Engineer, PhD Research, Machine Learning, Industry Experience, Leadership, Cross-functional Collaboration" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hanyumasonliu.github.io/experience.html" />
+  <meta property="og:title" content="Experience | Hanyu (Mason) Liu" />
+  <meta property="og:description" content="PhD research, industry ML work, and leadership experience. Building production-ready systems from research to real-world impact." />
+  <meta property="og:image" content="https://hanyumasonliu.github.io/assets/mason.jpg" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://hanyumasonliu.github.io/experience.html" />
+  <meta property="twitter:title" content="Experience | Hanyu (Mason) Liu" />
+  <meta property="twitter:description" content="PhD research, industry ML work, and leadership experience. Building production-ready systems." />
+  <meta property="twitter:image" content="https://hanyumasonliu.github.io/assets/mason.jpg" />
+  
   <link rel="stylesheet" href="assets/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
   <style>
-    .experience-hero {
+    .page-hero {
       padding: calc(80px + var(--space-3xl)) 0 var(--space-2xl);
+      background: linear-gradient(135deg, var(--color-primary-light) 0%, transparent 100%);
     }
     
-    .experience-timeline {
+    .timeline {
+      position: relative;
+      padding-left: var(--space-xl);
       margin-top: var(--space-2xl);
     }
     
-    .experience-item {
-      padding: var(--space-2xl);
-      background: var(--color-surface-elevated);
-      border: 1px solid var(--color-border);
-      border-radius: var(--border-radius-lg);
-      margin-bottom: var(--space-xl);
-      transition: all var(--transition-base);
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--color-border);
     }
     
-    .experience-item:hover {
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-2px);
+    .timeline-item {
+      position: relative;
+      padding-left: var(--space-xl);
+      padding-bottom: var(--space-2xl);
     }
     
-    .experience-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: var(--space-md);
-      margin-bottom: var(--space-lg);
-      flex-wrap: wrap;
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: calc(-1 * var(--space-xl) - 5px);
+      top: var(--space-md);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      border: 2px solid var(--color-bg);
     }
     
-    .experience-title {
-      font-size: var(--text-2xl);
+    .timeline-date {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xs);
+      font-weight: 600;
+    }
+    
+    .timeline-title {
+      font-size: var(--text-xl);
       font-weight: 600;
       margin-bottom: var(--space-xs);
     }
     
-    .experience-org {
-      font-size: var(--text-lg);
+    .timeline-org {
+      font-size: var(--text-base);
       color: var(--color-text-secondary);
-      margin-bottom: var(--space-xs);
-    }
-    
-    .experience-meta {
-      display: flex;
-      gap: var(--space-lg);
-      flex-wrap: wrap;
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-    }
-    
-    .experience-meta span {
-      display: flex;
-      align-items: center;
-      gap: var(--space-xs);
-    }
-    
-    .experience-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: var(--space-lg);
-      margin-top: var(--space-lg);
-    }
-    
-    .experience-box {
-      padding: var(--space-lg);
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--border-radius);
-    }
-    
-    .experience-box h4 {
-      font-size: var(--text-sm);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--color-text-muted);
       margin-bottom: var(--space-md);
     }
     
-    .experience-box ul {
+    .impact-list {
       list-style: none;
       padding: 0;
+      margin: var(--space-md) 0;
     }
     
-    .experience-box li {
+    .impact-list li {
       padding: var(--space-xs) 0;
       color: var(--color-text-secondary);
       position: relative;
       padding-left: var(--space-lg);
     }
     
-    .experience-box li::before {
+    .impact-list li::before {
       content: '→';
       position: absolute;
       left: 0;
@@ -114,36 +114,63 @@
       margin-top: var(--space-3xl);
     }
     
-    .highlight-card {
-      background: var(--color-primary-light);
-      border: 2px solid var(--color-primary);
-      border-radius: var(--border-radius-lg);
-      padding: var(--space-xl);
-      margin: var(--space-xl) 0;
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-lg);
+      margin-top: var(--space-xl);
     }
     
-    .highlight-card h3 {
-      color: var(--color-primary);
+    .skill-category {
+      padding: var(--space-lg);
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+    }
+    
+    .skill-category h4 {
       margin-bottom: var(--space-md);
+      color: var(--color-primary);
+    }
+    
+    .page-cta {
+      text-align: center;
+      padding: var(--space-2xl);
+      background: var(--color-primary-light);
+      border-radius: var(--border-radius-lg);
+      margin: var(--space-3xl) 0;
+    }
+    
+    .page-cta-buttons {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: var(--space-lg);
     }
   </style>
 </head>
 <body>
 
-  <nav>
+  <nav id="main-nav" aria-label="Main navigation">
     <div class="nav-container">
       <a href="index.html" class="brand">Mason Liu</a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="experience.html" class="active">Experience</a>
-        <a href="tennis.html">Tennis</a>
-        <a href="contact.html">Contact</a>
+      <div style="display: flex; align-items: center;">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="experience.html" class="active">Experience</a>
+          <a href="tennis.html">Tennis</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon" id="dark-mode-icon"></i>
+        </button>
       </div>
     </div>
   </nav>
 
-  <header class="experience-hero">
+  <header class="page-hero">
     <div class="container">
       <div class="section-header">
         <h1 class="section-title">Professional Experience</h1>
@@ -157,769 +184,230 @@
 
   <main class="container">
     <section class="section">
-      <div class="experience-timeline">
+      <div class="timeline">
         
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <h2 class="experience-title">Doctoral Student</h2>
-              <div class="experience-org">Johns Hopkins University • Environmental Health & Engineering</div>
-              <div class="experience-meta">
-                <span><i class="fas fa-map-marker-alt"></i> Baltimore, MD</span>
-                <span><i class="fas fa-calendar"></i> Aug 2023 – Present</span>
-                <span><i class="fas fa-users"></i> Greenhouse Gas Research Group</span>
-              </div>
-            </div>
-          </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2023 – Present</div>
+          <h3 class="timeline-title">Doctoral Student</h3>
+          <div class="timeline-org">Johns Hopkins University • Environmental Health & Engineering</div>
           
-          <p>
-            Leading research on Arctic methane emissions using physics-based inverse modeling 
-            and Bayesian inference. Building scalable computational pipelines that translate 
-            sparse observations into robust emission estimates with rigorous uncertainty quantification.
-          </p>
+          <ul class="impact-list">
+            <li><strong>First-author publication:</strong> Arctic methane flux modeling (EGUsphere, 2025)</li>
+            <li><strong>Co-author publication:</strong> Global wetland emissions (JGR Atmospheres, 2025)</li>
+            <li><strong>6 conference presentations:</strong> AGU, AMS, NASA ABoVE (2023-2025)</li>
+            <li><strong>Scalable HPC pipelines:</strong> Large atmospheric datasets, reproducible workflows</li>
+            <li><strong>4.0 GPA:</strong> Perfect academic record in PhD program</li>
+            <li><strong>Cross-functional collaboration:</strong> Working with engineering and research teams</li>
+          </ul>
           
-          <div class="experience-content">
-            <div class="experience-box">
-              <h4>Impact</h4>
-              <ul>
-                <li>Quantify methane emissions across Arctic-boreal North America</li>
-                <li>Reduce uncertainty in regional emission budgets</li>
-                <li>Diagnose seasonal and driver controls on emissions</li>
-                <li>Constrain wetland feedback under rapid warming</li>
-                <li>Translate research into policy-relevant insights</li>
-              </ul>
-            </div>
-            
-            <div class="experience-box">
-              <h4>Technical Methods</h4>
-              <ul>
-                <li>Geostatistical inverse modeling (GIM)</li>
-                <li>Transport footprint calculations (STILT)</li>
-                <li>Bayesian inference & optimization</li>
-                <li>Model evaluation against observations</li>
-                <li>Scalable HPC computation</li>
-                <li>Uncertainty quantification frameworks</li>
-              </ul>
-            </div>
-            
-            <div class="experience-box">
-              <h4>Production Skills</h4>
-              <ul>
-                <li>End-to-end research pipelines</li>
-                <li>Reproducible analysis workflows</li>
-                <li>Cross-functional collaboration</li>
-                <li>Technical communication</li>
-                <li>Code quality & documentation</li>
-                <li>Version control & best practices</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="tag-group" style="margin-top: var(--space-lg);">
-            <span class="tag">Inverse Problems</span>
-            <span class="tag">Bayesian Inference</span>
-            <span class="tag">Uncertainty Quantification</span>
-            <span class="tag">HPC Workflows</span>
+          <div class="tag-group" style="margin-top: var(--space-md);">
             <span class="tag">Python</span>
             <span class="tag">MATLAB</span>
-            <span class="tag">ML Systems</span>
+            <span class="tag">Inverse Modeling</span>
+            <span class="tag">Bayesian Inference</span>
+            <span class="tag">HPC</span>
+            <span class="tag">Uncertainty Quantification</span>
           </div>
         </div>
         
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <h2 class="experience-title">Assistant Men's Tennis Coach</h2>
-              <div class="experience-org">Johns Hopkins University</div>
-              <div class="experience-meta">
-                <span><i class="fas fa-calendar"></i> 2023 – Present</span>
-                <span><i class="fas fa-trophy"></i> NCAA Division III</span>
-              </div>
-            </div>
-          </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2023 – Present</div>
+          <h3 class="timeline-title">Assistant Men's Tennis Coach</h3>
+          <div class="timeline-org">Johns Hopkins University</div>
           
-          <p>
-            Supporting the development of collegiate athletes at a top-tier academic and athletic 
-            institution. Contributing to team culture, technical development, and competitive strategy 
-            while maintaining research excellence.
-          </p>
+          <ul class="impact-list">
+            <li><strong>Team development:</strong> Supporting collegiate athletes at top-tier institution</li>
+            <li><strong>Technical coaching:</strong> Match strategy, skill development, team culture</li>
+            <li><strong>Mentorship:</strong> Student-athlete development and leadership</li>
+            <li><strong>Balance:</strong> Maintaining research excellence alongside coaching</li>
+          </ul>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2024 – Present</div>
+          <h3 class="timeline-title">Tour Coach — ATP Professional Tennis</h3>
+          <div class="timeline-org">ATP Tour</div>
           
-          <div class="experience-content">
-            <div class="experience-box">
-              <h4>Leadership</h4>
-              <ul>
-                <li>Technical skill development</li>
-                <li>Match strategy and analysis</li>
-                <li>Team culture building</li>
-                <li>Mentoring student-athletes</li>
-              </ul>
-            </div>
-            
-            <div class="experience-box">
-              <h4>Transferable Skills</h4>
-              <ul>
-                <li>Performance under pressure</li>
-                <li>Systematic training approaches</li>
-                <li>Feedback loops and iteration</li>
-                <li>Cross-functional collaboration</li>
-              </ul>
-            </div>
+          <ul class="impact-list">
+            <li><strong>ATP 1000 achievement:</strong> Coached to Shanghai Masters Quarterfinals (2025)</li>
+            <li><strong>Elite performance:</strong> Victory over 2024 Olympic Champion</li>
+            <li><strong>High-stakes execution:</strong> World's top tournaments, strategic match preparation</li>
+            <li><strong>Professional credibility:</strong> Coaching ATP-ranked professionals</li>
+          </ul>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2024</div>
+          <h3 class="timeline-title">Mentor — WISE Climate & Data Science Program</h3>
+          <div class="timeline-org">Johns Hopkins Whiting School of Engineering</div>
+          
+          <ul class="impact-list">
+            <li><strong>Mentored 2 high school students</strong> on data-driven climate policy evaluation</li>
+            <li><strong>Science communication:</strong> Featured interview (WebsEdgeScience)</li>
+            <li><strong>Policy translation:</strong> Technical analysis → non-technical insights</li>
+            <li><strong>Iterative coaching:</strong> Draft → feedback → revise → present workflow</li>
+          </ul>
+          
+          <div style="margin-top: var(--space-md);">
+            <a href="https://www.youtube.com/watch?v=rXiiwaVW6Qo" target="_blank" rel="noopener" class="btn" style="font-size: var(--text-sm);">
+              <i class="fas fa-video"></i> Watch Interview
+            </a>
           </div>
         </div>
         
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <h2 class="experience-title">Tour Coach — ATP Professional Tennis</h2>
-              <div class="experience-org">ATP Tour</div>
-              <div class="experience-meta">
-                <span><i class="fas fa-calendar"></i> 2025 – Present</span>
-                <span><i class="fas fa-globe"></i> International</span>
-              </div>
-            </div>
-          </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2022 – 2023</div>
+          <h3 class="timeline-title">Graduate Research Assistant</h3>
+          <div class="timeline-org">Atmospheric/Emissions Analytics</div>
           
-          <div class="highlight-card">
-            <h3><i class="fas fa-star"></i> Key Achievement</h3>
-            <p>
-              <strong>Coached Mark Wallner and Jakob Schnaitter to the Quarterfinals of the 
-              2025 ATP 1000 Shanghai Masters</strong>, including a victory over the 
-              <strong>2024 Olympic Champion</strong>. This demonstrates the ability to perform 
-              at the highest level of professional sports, translating technical expertise 
-              and strategic thinking into tangible results.
-            </p>
-          </div>
+          <ul class="impact-list">
+            <li><strong>NOAA observations:</strong> Analyzed tower and aircraft data for oil & gas emissions</li>
+            <li><strong>Time-series analysis:</strong> Temporal pattern identification and validation</li>
+            <li><strong>Statistical diagnostics:</strong> Uncertainty characterization and evaluation</li>
+            <li><strong>Reproducible workflows:</strong> R-based analysis pipelines</li>
+          </ul>
           
-          <div class="experience-content">
-            <div class="experience-box">
-              <h4>High-Stakes Performance</h4>
-              <ul>
-                <li>ATP 1000 tournament preparation</li>
-                <li>Strategic match analysis</li>
-                <li>Real-time decision making</li>
-                <li>Performance under pressure</li>
-              </ul>
-            </div>
-            
-            <div class="experience-box">
-              <h4>Technical Expertise</h4>
-              <ul>
-                <li>Match strategy development</li>
-                <li>Technical analysis</li>
-                <li>Mental performance coaching</li>
-                <li>Elite-level execution</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <h2 class="experience-title">Mentor — WISE Climate & Data Science Program</h2>
-              <div class="experience-org">Johns Hopkins Whiting School of Engineering</div>
-              <div class="experience-meta">
-                <span><i class="fas fa-calendar"></i> Jan 2024 – May 2024</span>
-                <span><i class="fas fa-users"></i> High School Students</span>
-              </div>
-            </div>
-          </div>
-          
-          <p>
-            Mentored two high school students on a data-driven evaluation of Baltimore's Climate 
-            Action Plan. Helped translate technical analysis into policy-relevant insights for 
-            non-technical audiences.
-          </p>
-          
-          <div style="margin: var(--space-lg) 0; padding: var(--space-md); background: var(--color-primary-light); border-left: 3px solid var(--color-primary); border-radius: var(--border-radius);">
-            <p style="margin: 0; font-size: var(--text-sm);">
-              <i class="fas fa-video" style="color: var(--color-primary);"></i> 
-              <strong>Featured Interview:</strong> 
-              <a href="https://www.youtube.com/watch?v=rXiiwaVW6Qo" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">
-                WebsEdgeScience Interview
-              </a> — Highlighting mentorship, science communication, and early engagement in environmental research.
-            </p>
-          </div>
-          
-          <div class="experience-content">
-            <div class="experience-box">
-              <h4>Impact</h4>
-              <ul>
-                <li>Data-driven policy evaluation</li>
-                <li>Technical communication</li>
-                <li>Mentorship and coaching</li>
-                <li>Science communication</li>
-              </ul>
-            </div>
-            
-            <div class="experience-box">
-              <h4>Skills Demonstrated</h4>
-              <ul>
-                <li>Problem framing</li>
-                <li>Data interpretation</li>
-                <li>Visualization and storytelling</li>
-                <li>Iterative feedback loops</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <h2 class="experience-title">Graduate Research Assistant</h2>
-              <div class="experience-org">Atmospheric/Emissions Analytics</div>
-              <div class="experience-meta">
-                <span><i class="fas fa-calendar"></i> Jul 2022 – Jun 2023</span>
-                <span><i class="fas fa-flask"></i> NOAA Observations</span>
-              </div>
-            </div>
-          </div>
-          
-          <p>
-            Investigated temporal emission patterns in oil & gas sectors using in-situ observations. 
-            Supported inventory evaluation with statistical diagnostics and uncertainty characterization.
-          </p>
-          
-          <div class="experience-content">
-            <div class="experience-box">
-              <h4>Research</h4>
-              <ul>
-                <li>Time-series analysis</li>
-                <li>Data cleaning and validation</li>
-                <li>Exploratory statistics</li>
-                <li>Reproducible analysis in R</li>
-              </ul>
-            </div>
-            
-            <div class="experience-box">
-              <h4>Foundation</h4>
-              <ul>
-                <li>Observational datasets</li>
-                <li>Careful interpretation</li>
-                <li>Uncertainty characterization</li>
-                <li>Statistical methods</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="tag-group" style="margin-top: var(--space-lg);">
-            <span class="tag">Time Series Analysis</span>
+          <div class="tag-group" style="margin-top: var(--space-md);">
             <span class="tag">R</span>
-            <span class="tag">Data Validation</span>
+            <span class="tag">Time Series</span>
+            <span class="tag">Data Analysis</span>
             <span class="tag">Uncertainty</span>
           </div>
         </div>
         
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <h2 class="experience-title">Financial Analyst</h2>
-              <div class="experience-org">FI Consulting</div>
-              <div class="experience-meta">
-                <span><i class="fas fa-calendar"></i> Jan 2022 – May 2022</span>
-                <span><i class="fas fa-building"></i> Washington, DC</span>
-              </div>
-            </div>
-          </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2022</div>
+          <h3 class="timeline-title">Financial Analyst</h3>
+          <div class="timeline-org">FI Consulting</div>
           
-          <p>
-            Analyzed longitudinal financial and operational data from IPEDS covering 10,000+ higher-education 
-            institutions and 200+ variables spanning multiple decades. Applied machine learning and statistical 
-            modeling to identify institutions at elevated risk of financial distress.
-          </p>
+          <ul class="impact-list">
+            <li><strong>ML-based risk assessment:</strong> 10,000+ higher-education institutions</li>
+            <li><strong>Large-scale data analysis:</strong> 200+ variables, multi-decade longitudinal data</li>
+            <li><strong>Production-ready deliverables:</strong> Client-facing ML models and insights</li>
+            <li><strong>Industry experience:</strong> Consulting environment, cross-functional collaboration</li>
+          </ul>
           
-          <div class="experience-content">
-            <div class="experience-box">
-              <h4>Technical Impact</h4>
-              <ul>
-                <li>Large-scale data analysis (10,000+ institutions)</li>
-                <li>Machine learning for risk assessment</li>
-                <li>Multi-decade longitudinal analysis</li>
-                <li>Evidence-based strategic insights</li>
-              </ul>
-            </div>
-            
-            <div class="experience-box">
-              <h4>Methods & Skills</h4>
-              <ul>
-                <li>ML modeling for financial vulnerability</li>
-                <li>Risk assessment and prediction</li>
-                <li>Data synthesis and visualization</li>
-                <li>Stakeholder communication</li>
-              </ul>
-            </div>
-            
-            <div class="experience-box">
-              <h4>Industry Experience</h4>
-              <ul>
-                <li>Consulting environment</li>
-                <li>Decision-oriented analysis</li>
-                <li>Cross-functional collaboration</li>
-                <li>Production-ready deliverables</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="tag-group" style="margin-top: var(--space-lg);">
+          <div class="tag-group" style="margin-top: var(--space-md);">
             <span class="tag">Machine Learning</span>
+            <span class="tag">R</span>
             <span class="tag">Risk Assessment</span>
             <span class="tag">Large-Scale Data</span>
-            <span class="tag">R</span>
-            <span class="tag">Statistical Modeling</span>
           </div>
         </div>
         
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <h2 class="experience-title">Research Data Analyst</h2>
-              <div class="experience-org">University of Florida • Epidemiology & Health Analytics</div>
-              <div class="experience-meta">
-                <span><i class="fas fa-calendar"></i> May 2022 – Sep 2022</span>
-                <span><i class="fas fa-flask"></i> Remote</span>
-              </div>
-            </div>
-          </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2022</div>
+          <h3 class="timeline-title">Research Data Analyst</h3>
+          <div class="timeline-org">University of Florida • Epidemiology & Health Analytics</div>
           
-          <p>
-            Analyzed epidemiological and survey data related to medical marijuana use among older HIV patients 
-            with chronic pain. Designed standardized data collection protocols and collaborated with faculty 
-            and Ph.D. researchers on cross-departmental research coordination.
-          </p>
+          <ul class="impact-list">
+            <li><strong>Epidemiological analysis:</strong> Medical marijuana use among HIV patients</li>
+            <li><strong>Data protocol design:</strong> Standardized collection, improved quality</li>
+            <li><strong>Cross-departmental collaboration:</strong> Faculty and Ph.D. researchers</li>
+            <li><strong>R & Python:</strong> Statistical evaluation and analysis</li>
+          </ul>
           
-          <div class="experience-content">
-            <div class="experience-box">
-              <h4>Research Impact</h4>
-              <ul>
-                <li>Treatment benefits and risk evaluation</li>
-                <li>Data quality and consistency improvement</li>
-                <li>Cross-departmental study alignment</li>
-                <li>Epidemiological analysis</li>
-              </ul>
-            </div>
-            
-            <div class="experience-box">
-              <h4>Technical Skills</h4>
-              <ul>
-                <li>Epidemiological data analysis</li>
-                <li>Data protocol design</li>
-                <li>Statistical evaluation</li>
-                <li>R and Python programming</li>
-              </ul>
-            </div>
-            
-            <div class="experience-box">
-              <h4>Collaboration</h4>
-              <ul>
-                <li>Cross-functional research teams</li>
-                <li>Weekly coordination meetings</li>
-                <li>Multi-stakeholder alignment</li>
-                <li>Research documentation</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="tag-group" style="margin-top: var(--space-lg);">
+          <div class="tag-group" style="margin-top: var(--space-md);">
             <span class="tag">Epidemiology</span>
             <span class="tag">Health Analytics</span>
             <span class="tag">R</span>
             <span class="tag">Python</span>
-            <span class="tag">Data Protocols</span>
           </div>
         </div>
         
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <h2 class="experience-title">Research Assistant</h2>
-              <div class="experience-org">George Washington University • School of Business</div>
-              <div class="experience-meta">
-                <span><i class="fas fa-calendar"></i> Aug 2021 – Dec 2021</span>
-                <span><i class="fas fa-chart-line"></i> Climate Risk Analysis</span>
-              </div>
-            </div>
-          </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2021 – 2022</div>
+          <h3 class="timeline-title">Research Assistant</h3>
+          <div class="timeline-org">George Washington University • School of Business</div>
           
-          <p>
-            Collected and analyzed property-level financial and operational data from SEC 10-K filings to study 
-            the relationship between climate risk exposure and cost of capital for U.S. REITs. Built structured 
-            datasets with 22+ variables and performed quantitative analysis linking climate risk indicators to 
-            financing costs.
-          </p>
+          <ul class="impact-list">
+            <li><strong>Climate risk analysis:</strong> REIT cost of capital and financial modeling</li>
+            <li><strong>SEC data extraction:</strong> Property-level financial and operational data</li>
+            <li><strong>Quantitative risk assessment:</strong> Climate exposure → financing costs</li>
+            <li><strong>Real-world applications:</strong> Climate science + financial modeling</li>
+          </ul>
           
-          <div class="experience-content">
-            <div class="experience-box">
-              <h4>Research Focus</h4>
-              <ul>
-                <li>Climate risk and financial modeling</li>
-                <li>REIT cost of capital analysis</li>
-                <li>SEC filing data extraction</li>
-                <li>Quantitative risk assessment</li>
-              </ul>
-            </div>
-            
-            <div class="experience-box">
-              <h4>Technical Methods</h4>
-              <ul>
-                <li>Data cleaning and feature engineering</li>
-                <li>Exploratory data analysis</li>
-                <li>Statistical modeling in R</li>
-                <li>Structured dataset construction</li>
-              </ul>
-            </div>
-            
-            <div class="experience-box">
-              <h4>Relevance</h4>
-              <ul>
-                <li>Climate science applications</li>
-                <li>Financial risk modeling</li>
-                <li>Real-world data analysis</li>
-                <li>Research-to-insights pipeline</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="tag-group" style="margin-top: var(--space-lg);">
+          <div class="tag-group" style="margin-top: var(--space-md);">
             <span class="tag">Climate Risk</span>
             <span class="tag">Financial Modeling</span>
-            <span class="tag">Data Analysis</span>
             <span class="tag">R</span>
-            <span class="tag">SEC Filings</span>
+            <span class="tag">Data Analysis</span>
           </div>
         </div>
         
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <h2 class="experience-title">Content Creator — Science Communication</h2>
-              <div class="experience-org">Data-Driven Education</div>
-              <div class="experience-meta">
-                <span><i class="fas fa-calendar"></i> 2021 – Present</span>
-                <span><i class="fas fa-users"></i> 4,500+ followers</span>
-              </div>
-            </div>
-          </div>
-          
-          <p>
-            Built trust and engagement by explaining science, health, and decision-making with clarity 
-            and evidence. Demonstrated ability to communicate complex technical concepts to diverse audiences.
-          </p>
-          
-          <div class="experience-content">
-            <div class="experience-box">
-              <h4>Impact</h4>
-              <ul>
-                <li>Xiaohongshu: 4,500+ followers</li>
-                <li>20.7K+ likes/saves</li>
-                <li>bilibili: 150,600+ views</li>
-                <li>Science communication at scale</li>
-              </ul>
-            </div>
-            
-            <div class="experience-box">
-              <h4>Skills</h4>
-              <ul>
-                <li>Technical communication</li>
-                <li>Data visualization</li>
-                <li>Audience engagement</li>
-                <li>Content strategy</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <h2 class="experience-title">NCAA Division I Student-Athlete</h2>
-              <div class="experience-org">George Washington University</div>
-              <div class="experience-meta">
-                <span><i class="fas fa-calendar"></i> Aug 2018 – Aug 2020</span>
-                <span><i class="fas fa-trophy"></i> Division I</span>
-              </div>
-            </div>
-          </div>
-          
-          <p>
-            Balanced full academic course load (Major GPA: 3.84) with 17+ hours/week of training and competition 
-            at the Division I level. Achieved highest UTR: 12.0 Singles, 13.0 Doubles. Demonstrated consistent 
-            time management, resilience, and execution under pressure.
-          </p>
-          
-          <div class="experience-content">
-            <div class="experience-box">
-              <h4>Performance</h4>
-              <ul>
-                <li>Division I competition</li>
-                <li>UTR 12.0 Singles, 13.0 Doubles</li>
-                <li>Academic excellence (3.84 GPA)</li>
-                <li>ITA All-Academic Team</li>
-              </ul>
-            </div>
-            
-            <div class="experience-box">
-              <h4>Transferable Skills</h4>
-              <ul>
-                <li>Time management under pressure</li>
-                <li>Resilience and adaptability</li>
-                <li>Performance execution</li>
-                <li>Academic-athletic balance</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <h2 class="experience-title">Vice President</h2>
-              <div class="experience-org">GW International Students Association</div>
-              <div class="experience-meta">
-                <span><i class="fas fa-calendar"></i> Aug 2021 – May 2022</span>
-                <span><i class="fas fa-users"></i> 20+ member team</span>
-              </div>
-            </div>
-          </div>
-          
-          <p>
-            Led and managed a 20+ member executive and operations team, coordinating large-scale events and 
-            cultural programs serving the international student community. Represented the organization in 
-            coordination with university administrators and 20+ external student and cultural groups.
-          </p>
-          
-          <div class="experience-content">
-            <div class="experience-box">
-              <h4>Leadership Impact</h4>
-              <ul>
-                <li>Team management (20+ members)</li>
-                <li>Large-scale event coordination</li>
-                <li>Cross-campus partnerships</li>
-                <li>Budget planning and fundraising</li>
-              </ul>
-            </div>
-            
-            <div class="experience-box">
-              <h4>Skills Demonstrated</h4>
-              <ul>
-                <li>Organizational leadership</li>
-                <li>Stakeholder management</li>
-                <li>Project management</li>
-                <li>Community building</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </section>
-
-    <section class="section" style="background: var(--color-surface); padding: var(--space-3xl) var(--space-xl); border-radius: var(--border-radius-lg);">
-      <h2>Education</h2>
-      <p class="text-muted" style="text-align: center; margin-bottom: var(--space-xl);">
-        Academic excellence across elite institutions
-      </p>
-      
-      <div class="experience-timeline">
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <h2 class="experience-title">Doctor of Philosophy (PhD)</h2>
-              <div class="experience-org">Johns Hopkins University • Whiting School of Engineering</div>
-              <div class="experience-meta">
-                <span><i class="fas fa-calendar"></i> 2023 – 2027 (Expected)</span>
-                <span><i class="fas fa-graduation-cap"></i> Geography and Environmental Engineering</span>
-                <span><i class="fas fa-star"></i> GPA: 4.0/4.0</span>
-              </div>
-            </div>
-          </div>
-          
-          <p>
-            Doctoral research in Arctic methane emissions using physics-based inverse modeling and Bayesian inference. 
-            Building scalable computational systems for climate science applications.
-          </p>
-        </div>
-        
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <h2 class="experience-title">Master of Health Science (MHS)</h2>
-              <div class="experience-org">Johns Hopkins Bloomberg School of Public Health</div>
-              <div class="experience-meta">
-                <span><i class="fas fa-calendar"></i> Aug 2022 – May 2023</span>
-                <span><i class="fas fa-graduation-cap"></i> Environmental Health and Engineering</span>
-                <span><i class="fas fa-star"></i> GPA: 4.0/4.0</span>
-              </div>
-            </div>
-          </div>
-          
-          <p>
-            Master's degree with focus on environmental health, data analysis, and public health applications. 
-            Outstanding essay award recipient.
-          </p>
-        </div>
-        
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <h2 class="experience-title">Bachelor of Science (BS)</h2>
-              <div class="experience-org">George Washington University • School of Business</div>
-              <div class="experience-meta">
-                <span><i class="fas fa-calendar"></i> 2018 – 2022</span>
-                <span><i class="fas fa-graduation-cap"></i> Business Analytics (STEM), Communication</span>
-                <span><i class="fas fa-star"></i> GPA: 3.84/4.0</span>
-              </div>
-            </div>
-          </div>
-          
-          <p>
-            Dual major in Business Analytics (STEM-designated) and Communication. Balanced rigorous academics 
-            with Division I athletics, maintaining high performance in both domains.
-          </p>
-        </div>
-        
-        <div class="experience-item">
-          <div class="experience-header">
-            <div>
-              <h2 class="experience-title">High School Diploma</h2>
-              <div class="experience-org">IMG Academy</div>
-              <div class="experience-meta">
-                <span><i class="fas fa-calendar"></i> 2015 – 2018</span>
-                <span><i class="fas fa-star"></i> GPA: 4.0/4.0</span>
-                <span><i class="fas fa-trophy"></i> Elite Athletic Training</span>
-              </div>
-            </div>
-          </div>
-          
-          <p>
-            Elite athletic and academic training at IMG Academy, one of the world's premier sports and education 
-            institutions. National Honors Society member. Student-Athlete of the Week recognition.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Awards & Recognition</h2>
-      <p class="text-muted" style="text-align: center; margin-bottom: var(--space-xl);">
-        Recognition for excellence in research, academics, and athletics
-      </p>
-      
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg);">
-        <div class="card card-compact">
-          <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-md);">
-            <div style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--color-primary-light); border-radius: var(--border-radius); color: var(--color-primary); font-size: var(--text-xl);">
-              <i class="fas fa-graduation-cap"></i>
-            </div>
-            <div>
-              <h4 style="margin: 0;">Academic Excellence</h4>
-            </div>
-          </div>
-          <ul style="list-style: none; padding: 0; margin: 0;">
-            <li style="padding: var(--space-xs) 0; color: var(--color-text-secondary);">• PhD GPA: 4.0/4.0 (Current)</li>
-            <li style="padding: var(--space-xs) 0; color: var(--color-text-secondary);">• Master's GPA: 4.0/4.0</li>
-            <li style="padding: var(--space-xs) 0; color: var(--color-text-secondary);">• Master's Outstanding Essay Award</li>
-            <li style="padding: var(--space-xs) 0; color: var(--color-text-secondary);">• Graduate Service Award</li>
-            <li style="padding: var(--space-xs) 0; color: var(--color-text-secondary);">• BS GPA: 3.84/4.0</li>
-            <li style="padding: var(--space-xs) 0; color: var(--color-text-secondary);">• High School GPA: 4.0/4.0</li>
-          </ul>
-        </div>
-        
-        <div class="card card-compact">
-          <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-md);">
-            <div style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--color-primary-light); border-radius: var(--border-radius); color: var(--color-primary); font-size: var(--text-xl);">
-              <i class="fas fa-trophy"></i>
-            </div>
-            <div>
-              <h4 style="margin: 0;">Athletic Achievements</h4>
-            </div>
-          </div>
-          <ul style="list-style: none; padding: 0; margin: 0;">
-            <li style="padding: var(--space-xs) 0; color: var(--color-text-secondary);">• CSC Academic All-American (Third Team, 2024)</li>
-            <li style="padding: var(--space-xs) 0; color: var(--color-text-secondary);">• CSC Academic All-District (2023, 2024)</li>
-            <li style="padding: var(--space-xs) 0; color: var(--color-text-secondary);">• First Team All-Centennial (2023)</li>
-            <li style="padding: var(--space-xs) 0; color: var(--color-text-secondary);">• Second Team All-Centennial (2024)</li>
-            <li style="padding: var(--space-xs) 0; color: var(--color-text-secondary);">• Ranked #22 in JHU history (42 career wins)</li>
-            <li style="padding: var(--space-xs) 0; color: var(--color-text-secondary);">• National Ranking: #23 (2023)</li>
-            <li style="padding: var(--space-xs) 0; color: var(--color-text-secondary);">• ITA Scholar-Athlete (6×: 3× GW, 3× JHU)</li>
-          </ul>
-        </div>
-        
-        <div class="card card-compact">
-          <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-md);">
-            <div style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--color-primary-light); border-radius: var(--border-radius); color: var(--color-primary); font-size: var(--text-xl);">
-              <i class="fas fa-star"></i>
-            </div>
-            <div>
-              <h4 style="margin: 0;">Additional Honors</h4>
-            </div>
-          </div>
-          <ul style="list-style: none; padding: 0; margin: 0;">
-            <li style="padding: var(--space-xs) 0; color: var(--color-text-secondary);">• Academic All-Centennial Conference (2023, 2024)</li>
-            <li style="padding: var(--space-xs) 0; color: var(--color-text-secondary);">• Centennial Conference Academic Honor Roll (2023, 2024)</li>
-            <li style="padding: var(--space-xs) 0; color: var(--color-text-secondary);">• <a href="https://www.youtube.com/watch?v=rXiiwaVW6Qo" target="_blank" rel="noopener" style="color: var(--color-primary);">Featured Interview (WebsEdgeScience)</a></li>
-            <li style="padding: var(--space-xs) 0; color: var(--color-text-secondary);">• ITA All-Academic Team Award</li>
-            <li style="padding: var(--space-xs) 0; color: var(--color-text-secondary);">• Continental Cup Winner (Team Asia)</li>
-          </ul>
-        </div>
       </div>
     </section>
 
     <section class="skills-section">
-      <h2>Technical Skills & Expertise</h2>
+      <h2>Technical Skills</h2>
       <p class="text-muted" style="text-align: center; margin-bottom: var(--space-xl);">
         Production-ready skills for Big Tech roles
       </p>
       
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-lg);">
-        <div>
-          <h4 style="margin-bottom: var(--space-md);">Core Methods</h4>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>ML & Statistics</h4>
           <div class="tag-group">
-            <span class="tag">Inverse Problems</span>
+            <span class="tag">Machine Learning</span>
             <span class="tag">Bayesian Inference</span>
             <span class="tag">Uncertainty Quantification</span>
+            <span class="tag">Statistical Modeling</span>
+            <span class="tag">Optimization</span>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <h4>Modeling & Methods</h4>
+          <div class="tag-group">
+            <span class="tag">Inverse Modeling</span>
+            <span class="tag">Geostatistical Methods</span>
             <span class="tag">Transport Modeling</span>
-            <span class="tag">Model Evaluation</span>
-            <span class="tag">Statistical Methods</span>
+            <span class="tag">Time Series Analysis</span>
+            <span class="tag">Geospatial Analysis</span>
           </div>
         </div>
         
-        <div>
-          <h4 style="margin-bottom: var(--space-md);">Programming & Tools</h4>
+        <div class="skill-category">
+          <h4>Data Engineering</h4>
           <div class="tag-group">
-            <span class="tag">Python</span>
-            <span class="tag">MATLAB</span>
-            <span class="tag">R</span>
             <span class="tag">HPC Workflows</span>
-            <span class="tag">Git</span>
-            <span class="tag">ML Frameworks</span>
-          </div>
-        </div>
-        
-        <div>
-          <h4 style="margin-bottom: var(--space-md);">Research Engineering</h4>
-          <div class="tag-group">
             <span class="tag">Reproducible Research</span>
-            <span class="tag">Code Quality</span>
-            <span class="tag">Documentation</span>
+            <span class="tag">Data Pipelines</span>
             <span class="tag">Version Control</span>
-            <span class="tag">Testing</span>
             <span class="tag">CI/CD</span>
           </div>
         </div>
         
-        <div>
-          <h4 style="margin-bottom: var(--space-md);">Communication</h4>
+        <div class="skill-category">
+          <h4>Tools & Languages</h4>
           <div class="tag-group">
-            <span class="tag">Technical Writing</span>
-            <span class="tag">Science Communication</span>
-            <span class="tag">Data Visualization</span>
-            <span class="tag">Mentorship</span>
-            <span class="tag">Cross-functional Collaboration</span>
+            <span class="tag">Python</span>
+            <span class="tag">MATLAB</span>
+            <span class="tag">R</span>
+            <span class="tag">Git</span>
+            <span class="tag">Linux/Unix</span>
           </div>
         </div>
       </div>
     </section>
+
+    <div class="page-cta">
+      <h3>Interested in Working Together?</h3>
+      <p style="margin: var(--space-md) 0; color: var(--color-text-secondary);">
+        Open to opportunities in Applied Scientist, Research Engineer, and Data Scientist roles.
+      </p>
+      <div class="page-cta-buttons">
+        <a href="mailto:hliu154@jh.edu" class="btn btn-primary">
+          <i class="fas fa-envelope"></i> Email Me
+        </a>
+        <a href="assets/Mason_Liu_CV.pdf" download class="btn">
+          <i class="fas fa-download"></i> Download CV
+        </a>
+        <a href="contact.html" class="btn">
+          <i class="fas fa-comments"></i> Contact Page
+        </a>
+      </div>
+    </div>
   </main>
 
   <footer>
@@ -930,6 +418,9 @@
       <a href="https://github.com/hanyumasonliu" target="_blank" rel="noopener" aria-label="GitHub">
         <i class="fab fa-github"></i>
       </a>
+      <a href="https://scholar.google.com/citations?user=7ziLpjUAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
       <a href="mailto:hliu154@jh.edu" aria-label="Email">
         <i class="fas fa-envelope"></i>
       </a>
@@ -939,6 +430,38 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    const darkModeIcon = document.getElementById("dark-mode-icon");
+    const html = document.documentElement;
+    
+    const currentTheme = localStorage.getItem("theme") || 
+      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    
+    if (currentTheme === "dark") {
+      html.classList.add("dark-mode");
+      darkModeIcon.classList.remove("fa-moon");
+      darkModeIcon.classList.add("fa-sun");
+    }
+    
+    darkModeToggle.addEventListener("click", () => {
+      html.classList.toggle("dark-mode");
+      const isDark = html.classList.contains("dark-mode");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      darkModeIcon.classList.toggle("fa-moon");
+      darkModeIcon.classList.toggle("fa-sun");
+    });
+    
+    // Sticky Nav
+    const nav = document.getElementById("main-nav");
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 50) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
+      }
+    });
   </script>
 </body>
 </html>
