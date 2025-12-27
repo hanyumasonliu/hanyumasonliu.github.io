@@ -104,7 +104,7 @@
     
     .coaching-images {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: var(--space-lg);
       margin-top: var(--space-xl);
     }
@@ -115,16 +115,56 @@
     
     .coaching-image-wrapper img {
       width: 100%;
-      max-width: 500px;
+      max-width: 100%;
+      height: auto;
       border-radius: var(--border-radius-lg);
       border: 1px solid var(--color-border);
       box-shadow: var(--shadow-md);
+      display: block;
     }
     
     .coaching-image-wrapper p {
       margin-top: var(--space-md);
       font-size: var(--text-sm);
       color: var(--color-text-muted);
+    }
+    
+    @media (max-width: 768px) {
+      .coaching-images {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+        margin-top: var(--space-lg);
+      }
+      
+      .coaching-image-wrapper {
+        width: 100%;
+        padding: 0;
+      }
+      
+      .coaching-image-wrapper img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+      }
+      
+      .coaching-highlight {
+        padding: var(--space-lg);
+        margin: var(--space-xl) 0;
+      }
+      
+      .coaching-highlight p {
+        font-size: var(--text-base);
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .coaching-images {
+        gap: var(--space-lg);
+      }
+      
+      .coaching-image-wrapper img {
+        border-radius: var(--border-radius);
+      }
     }
     
     .transferable-skills {
