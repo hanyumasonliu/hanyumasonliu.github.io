@@ -131,6 +131,12 @@ a:hover {
   color: var(--color-primary-dark);
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Layout */
 .container {
   max-width: var(--max-width);
@@ -473,16 +479,39 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+  
+  .nav-container {
+    padding: var(--space-sm) var(--space-md);
+    flex-wrap: wrap;
+  }
+  
   .nav-links {
-    gap: var(--space-md);
+    gap: var(--space-sm);
+    flex-wrap: wrap;
   }
   
   .nav-links a {
     font-size: var(--text-xs);
+    padding: var(--space-xs) var(--space-sm);
   }
   
   .hero {
     padding: calc(80px + var(--space-xl)) 0 var(--space-xl);
+  }
+  
+  .hero h1 {
+    font-size: var(--text-3xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--text-lg);
+  }
+  
+  .hero-description {
+    font-size: var(--text-base);
   }
   
   .btn-group {
@@ -492,6 +521,89 @@ footer {
   
   .btn {
     justify-content: center;
+    width: 100%;
+  }
+  
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+  
+  .section-title {
+    font-size: var(--text-2xl);
+  }
+  
+  h2 {
+    font-size: var(--text-2xl);
+  }
+  
+  h3 {
+    font-size: var(--text-xl);
+  }
+  
+  .card {
+    padding: var(--space-lg);
+  }
+  
+  .experience-item {
+    padding: var(--space-lg);
+  }
+  
+  .experience-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .research-card-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .coaching-role-content {
+    grid-template-columns: 1fr;
+  }
+  
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+  
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .impact-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    gap: var(--space-xs);
+  }
+  
+  .nav-links a {
+    font-size: 0.7rem;
+  }
+  
+  .hero h1 {
+    font-size: var(--text-2xl);
+  }
+  
+  .stat-grid,
+  .impact-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .achievement-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
