@@ -8,7 +8,7 @@
   <title>Experience | Hanyu (Mason) Liu — Applied Scientist & Research Engineer</title>
   <meta name="title" content="Experience | Hanyu (Mason) Liu" />
   <meta name="description" content="Professional experience of Hanyu (Mason) Liu: PhD research at Johns Hopkins, industry ML work at FI Consulting, ATP tour coaching, and leadership roles. Building production-ready systems." />
-  <meta name="keywords" content="Applied Scientist, Research Engineer, PhD Research, Machine Learning, Industry Experience, Leadership, Cross-functional Collaboration" />
+  <meta name="keywords" content="Applied Scientist, Research Engineer, PhD Research, Machine Learning, Python, SQL, Swift, Data Engineering, Industry Experience, Leadership, Cross-functional Collaboration" />
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -26,7 +26,7 @@
   
   <link rel="stylesheet" href="assets/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
+
   <style>
     .page-hero {
       padding: calc(80px + var(--space-3xl)) 0 var(--space-2xl);
@@ -116,21 +116,80 @@
     
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: var(--space-lg);
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-xl);
       margin-top: var(--space-xl);
     }
     
     .skill-category {
-      padding: var(--space-lg);
+      padding: var(--space-xl);
       background: var(--color-surface-elevated);
       border: 1px solid var(--color-border);
       border-radius: var(--border-radius-lg);
+      transition: all var(--transition-base);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .skill-category::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+      transform: scaleX(0);
+      transition: transform var(--transition-base);
+    }
+    
+    .skill-category:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+    
+    .skill-category:hover::before {
+      transform: scaleX(1);
     }
     
     .skill-category h4 {
       margin-bottom: var(--space-md);
       color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      font-size: var(--text-lg);
+    }
+    
+    .skill-category-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-primary-light);
+      border-radius: var(--border-radius);
+      color: var(--color-primary);
+      font-size: var(--text-base);
+    }
+    
+    .tag {
+      display: inline-block;
+      padding: var(--space-xs) var(--space-md);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      transition: all var(--transition-fast);
+      margin: var(--space-xs) var(--space-xs) var(--space-xs) 0;
+    }
+    
+    .tag:hover {
+      background: var(--color-primary-light);
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      transform: translateY(-1px);
     }
     
     .page-cta {
@@ -157,11 +216,11 @@
       <a href="index.html" class="brand">Mason Liu</a>
       <div style="display: flex; align-items: center;">
         <div class="nav-links">
-          <a href="index.html">Home</a>
+        <a href="index.html">Home</a>
           <a href="research.html">Research</a>
           <a href="experience.html" class="active">Experience</a>
-          <a href="tennis.html">Tennis</a>
-          <a href="contact.html">Contact</a>
+        <a href="tennis.html">Tennis</a>
+        <a href="contact.html">Contact</a>
         </div>
         <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
           <i class="fas fa-moon" id="dark-mode-icon"></i>
@@ -185,7 +244,7 @@
   <main class="container">
     <section class="section">
       <div class="timeline">
-        
+
         <div class="timeline-item">
           <div class="timeline-date">2023 – Present</div>
           <h3 class="timeline-title">Doctoral Student</h3>
@@ -211,7 +270,21 @@
         </div>
         
         <div class="timeline-item">
-          <div class="timeline-date">2023 – Present</div>
+          <div class="timeline-date">2022 – Present</div>
+          <h3 class="timeline-title">NCAA Division I Student-Athlete</h3>
+          <div class="timeline-org">Johns Hopkins University</div>
+          
+          <ul class="impact-list">
+            <li><strong>National rankings:</strong> #23 singles, #24 doubles (Fall 2022)</li>
+            <li><strong>Academic excellence:</strong> Academic All-American, All-District, First Team All-Centennial</li>
+            <li><strong>Elite performance:</strong> Balancing Division I athletics with PhD research</li>
+            <li><strong>Time management:</strong> 17+ hours/week training while maintaining 4.0 GPA</li>
+            <li><strong>Leadership:</strong> Team culture and competitive excellence</li>
+          </ul>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2025 – Present</div>
           <h3 class="timeline-title">Assistant Men's Tennis Coach</h3>
           <div class="timeline-org">Johns Hopkins University</div>
           
@@ -224,7 +297,7 @@
         </div>
         
         <div class="timeline-item">
-          <div class="timeline-date">2024 – Present</div>
+          <div class="timeline-date">2025 – Present</div>
           <h3 class="timeline-title">Tour Coach — ATP Professional Tennis</h3>
           <div class="timeline-org">ATP Tour</div>
           
@@ -246,7 +319,7 @@
             <li><strong>Science communication:</strong> Featured interview (WebsEdgeScience)</li>
             <li><strong>Policy translation:</strong> Technical analysis → non-technical insights</li>
             <li><strong>Iterative coaching:</strong> Draft → feedback → revise → present workflow</li>
-          </ul>
+              </ul>
           
           <div style="margin-top: var(--space-md);">
             <a href="https://www.youtube.com/watch?v=rXiiwaVW6Qo" target="_blank" rel="noopener" class="btn" style="font-size: var(--text-sm);">
@@ -272,9 +345,9 @@
             <span class="tag">Time Series</span>
             <span class="tag">Data Analysis</span>
             <span class="tag">Uncertainty</span>
+            </div>
           </div>
-        </div>
-        
+
         <div class="timeline-item">
           <div class="timeline-date">2022</div>
           <h3 class="timeline-title">Financial Analyst</h3>
@@ -285,7 +358,7 @@
             <li><strong>Large-scale data analysis:</strong> 200+ variables, multi-decade longitudinal data</li>
             <li><strong>Production-ready deliverables:</strong> Client-facing ML models and insights</li>
             <li><strong>Industry experience:</strong> Consulting environment, cross-functional collaboration</li>
-          </ul>
+              </ul>
           
           <div class="tag-group" style="margin-top: var(--space-md);">
             <span class="tag">Machine Learning</span>
@@ -312,6 +385,66 @@
             <span class="tag">Health Analytics</span>
             <span class="tag">R</span>
             <span class="tag">Python</span>
+            </div>
+          </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2022 – Present</div>
+          <h3 class="timeline-title">Science Communication & Content Creator</h3>
+          <div class="timeline-org">Xiaohongshu & Bilibili • Educational Content</div>
+          
+          <ul class="impact-list">
+            <li><strong>Science communication:</strong> 30+ educational content pieces on science, health, data-informed decision making</li>
+            <li><strong>Data-driven content:</strong> 50+ data-driven educational videos with 150,600+ total views</li>
+            <li><strong>Audience analytics:</strong> Applied engagement metrics to optimize content strategy and delivery</li>
+            <li><strong>Community building:</strong> Built and moderated interactive online communities (4,500+ followers)</li>
+            <li><strong>Performance optimization:</strong> Used feedback signals to improve reach, retention, and engagement</li>
+          </ul>
+          
+          <div class="tag-group" style="margin-top: var(--space-md);">
+            <span class="tag">Science Communication</span>
+            <span class="tag">Data Analytics</span>
+            <span class="tag">Content Strategy</span>
+            <span class="tag">Community Building</span>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2022</div>
+          <h3 class="timeline-title">Mathematics Tutor</h3>
+          <div class="timeline-org">District of Columbia Public Schools (DCPS)</div>
+          
+          <ul class="impact-list">
+            <li><strong>Customized instruction:</strong> Weekly math lessons for 4 middle school students</li>
+            <li><strong>Measurable impact:</strong> Average grade improvement of ~10%</li>
+            <li><strong>Teaching methodology:</strong> Problem-solving skills, mathematical confidence, study habits</li>
+            <li><strong>Communication:</strong> Tailored instruction to individual learning needs</li>
+          </ul>
+          
+          <div class="tag-group" style="margin-top: var(--space-md);">
+            <span class="tag">Education</span>
+            <span class="tag">Mentorship</span>
+            <span class="tag">Communication</span>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2021 – 2022</div>
+          <h3 class="timeline-title">Vice President</h3>
+          <div class="timeline-org">GW International Students Association</div>
+          
+          <ul class="impact-list">
+            <li><strong>Leadership:</strong> Led 20+ member executive and operations team</li>
+            <li><strong>Cross-functional collaboration:</strong> Coordinated with university administrators and 20+ external groups</li>
+            <li><strong>Event management:</strong> Large-scale events, cultural programs, networking initiatives</li>
+            <li><strong>Budget & fundraising:</strong> Contributed to $1,000+ in program funding</li>
+            <li><strong>Community impact:</strong> Increased student engagement and visibility</li>
+          </ul>
+          
+          <div class="tag-group" style="margin-top: var(--space-md);">
+            <span class="tag">Leadership</span>
+            <span class="tag">Project Management</span>
+            <span class="tag">Team Management</span>
           </div>
         </div>
         
@@ -335,57 +468,269 @@
           </div>
         </div>
         
+        <div class="timeline-item">
+          <div class="timeline-date">2021</div>
+          <h3 class="timeline-title">Research Assistant</h3>
+          <div class="timeline-org">Peking Union Medical College</div>
+          
+          <ul class="impact-list">
+            <li><strong>Clinical research:</strong> Case-control and retrospective cohort analyses</li>
+            <li><strong>Team leadership:</strong> Led 4-person data analysis team</li>
+            <li><strong>Statistical methods:</strong> Multivariate analysis of 30+ clinical and biomarker variables</li>
+            <li><strong>Medical insights:</strong> Identified risk associations between serum prolactin and pneumothorax</li>
+            <li><strong>Research coordination:</strong> Weekly meetings with physicians and Ph.D. researchers</li>
+          </ul>
+          
+          <div class="tag-group" style="margin-top: var(--space-md);">
+            <span class="tag">Clinical Research</span>
+            <span class="tag">Statistical Analysis</span>
+            <span class="tag">Team Leadership</span>
+            <span class="tag">Medical Research</span>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2020 – 2021</div>
+          <h3 class="timeline-title">Intern</h3>
+          <div class="timeline-org">Philip Morris International</div>
+          
+          <ul class="impact-list">
+            <li><strong>Data-driven analysis:</strong> Harm-reduction strategies for next-generation products</li>
+            <li><strong>Large-scale document review:</strong> 1,000+ pages of scientific and policy documents</li>
+            <li><strong>Cross-functional collaboration:</strong> Scientists, policy teams, business stakeholders</li>
+            <li><strong>Analytical synthesis:</strong> Unstructured information → comparable metrics</li>
+            <li><strong>Strategic communication:</strong> Clear summaries for internal and external stakeholders</li>
+          </ul>
+          
+          <div class="tag-group" style="margin-top: var(--space-md);">
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Policy Analysis</span>
+            <span class="tag">Strategic Analysis</span>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2018 – 2020</div>
+          <h3 class="timeline-title">NCAA Division I Student-Athlete</h3>
+          <div class="timeline-org">George Washington University</div>
+          
+          <ul class="impact-list">
+            <li><strong>Division I competition:</strong> Highest UTR 12.0 Singles, 13.0 Doubles</li>
+            <li><strong>Academic excellence:</strong> 3.84 Major GPA while competing at Division I level</li>
+            <li><strong>Time management:</strong> 17+ hours/week training with full academic course load</li>
+            <li><strong>Travel management:</strong> Intensive spring season schedules, weekend matches</li>
+            <li><strong>Team recognition:</strong> ITA All-Academic Team Award</li>
+          </ul>
+          
+          <div class="tag-group" style="margin-top: var(--space-md);">
+            <span class="tag">Division I Athletics</span>
+            <span class="tag">Time Management</span>
+            <span class="tag">Academic Excellence</span>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2018 – 2022</div>
+          <h3 class="timeline-title">Bachelor of Science, Business Analytics (STEM)</h3>
+          <div class="timeline-org">George Washington University • School of Business</div>
+          
+          <ul class="impact-list">
+            <li><strong>Core curriculum:</strong> Machine Learning, Deep Learning, Neural Networks, Artificial Intelligence</li>
+            <li><strong>ML frameworks:</strong> Scikit-learn, TensorFlow, Keras, PyTorch fundamentals</li>
+            <li><strong>Neural networks:</strong> Feedforward, CNN, RNN, LSTM architectures</li>
+            <li><strong>AI applications:</strong> Natural Language Processing, Computer Vision basics, Predictive Analytics</li>
+            <li><strong>Statistical foundations:</strong> Regression, Classification, Clustering, Ensemble Methods</li>
+            <li><strong>Business applications:</strong> Applied ML to real-world business problems and case studies</li>
+            <li><strong>GPA:</strong> 3.84/4.0 (Major GPA)</li>
+          </ul>
+          
+          <div class="tag-group" style="margin-top: var(--space-md);">
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Deep Learning</span>
+            <span class="tag">Neural Networks</span>
+            <span class="tag">Artificial Intelligence</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">Keras</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">Scikit-learn</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <section class="skills-section">
+    <section class="skills-section" id="skills">
       <h2>Technical Skills</h2>
       <p class="text-muted" style="text-align: center; margin-bottom: var(--space-xl);">
-        Production-ready skills for Big Tech roles
+        Production-ready skills for Big Tech roles. Comprehensive technical capabilities across 
+        programming languages, ML methods, data engineering, and mobile development.
       </p>
       
       <div class="skills-grid">
         <div class="skill-category">
-          <h4>ML & Statistics</h4>
+          <h4>
+            <span class="skill-category-icon"><i class="fas fa-brain"></i></span>
+            Machine Learning & Statistics
+          </h4>
           <div class="tag-group">
             <span class="tag">Machine Learning</span>
+            <span class="tag">Supervised Learning</span>
+            <span class="tag">Unsupervised Learning</span>
             <span class="tag">Bayesian Inference</span>
             <span class="tag">Uncertainty Quantification</span>
             <span class="tag">Statistical Modeling</span>
             <span class="tag">Optimization</span>
+            <span class="tag">Ensemble Methods</span>
+            <span class="tag">Cross-Validation</span>
+            <span class="tag">Feature Engineering</span>
           </div>
         </div>
         
         <div class="skill-category">
-          <h4>Modeling & Methods</h4>
+          <h4>
+            <span class="skill-category-icon"><i class="fas fa-network-wired"></i></span>
+            Deep Learning & Neural Networks
+          </h4>
+          <div class="tag-group">
+            <span class="tag">Deep Learning</span>
+            <span class="tag">Neural Networks</span>
+            <span class="tag">Convolutional Neural Networks (CNN)</span>
+            <span class="tag">Recurrent Neural Networks (RNN)</span>
+            <span class="tag">LSTM</span>
+            <span class="tag">Feedforward Networks</span>
+            <span class="tag">Backpropagation</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">Keras</span>
+            <span class="tag">PyTorch</span>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <h4>
+            <span class="skill-category-icon"><i class="fas fa-robot"></i></span>
+            Artificial Intelligence
+          </h4>
+          <div class="tag-group">
+            <span class="tag">Artificial Intelligence</span>
+            <span class="tag">Natural Language Processing (NLP)</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Predictive Analytics</span>
+            <span class="tag">Pattern Recognition</span>
+            <span class="tag">Model Training & Evaluation</span>
+            <span class="tag">Hyperparameter Tuning</span>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <h4>
+            <span class="skill-category-icon"><i class="fas fa-project-diagram"></i></span>
+            Modeling & Methods
+          </h4>
           <div class="tag-group">
             <span class="tag">Inverse Modeling</span>
             <span class="tag">Geostatistical Methods</span>
             <span class="tag">Transport Modeling</span>
             <span class="tag">Time Series Analysis</span>
             <span class="tag">Geospatial Analysis</span>
+            <span class="tag">Atmospheric Modeling</span>
+            <span class="tag">Numerical Methods</span>
           </div>
         </div>
         
         <div class="skill-category">
-          <h4>Data Engineering</h4>
+          <h4>
+            <span class="skill-category-icon"><i class="fas fa-code"></i></span>
+            Programming Languages
+          </h4>
+            <div class="tag-group">
+            <span class="tag">Python</span>
+            <span class="tag">MATLAB</span>
+            <span class="tag">R</span>
+            <span class="tag">Swift</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Bash/Shell</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <h4>
+            <span class="skill-category-icon"><i class="fas fa-database"></i></span>
+            Data & Databases
+          </h4>
+          <div class="tag-group">
+            <span class="tag">SQL</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Data Warehousing</span>
+            <span class="tag">ETL Pipelines</span>
+            <span class="tag">Data Cleaning</span>
+            <span class="tag">Large-Scale Data</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>
+            <span class="skill-category-icon"><i class="fas fa-server"></i></span>
+            Data Engineering & Infrastructure
+          </h4>
           <div class="tag-group">
             <span class="tag">HPC Workflows</span>
             <span class="tag">Reproducible Research</span>
             <span class="tag">Data Pipelines</span>
-            <span class="tag">Version Control</span>
+            <span class="tag">Version Control (Git)</span>
             <span class="tag">CI/CD</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Linux/Unix</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>
+            <span class="skill-category-icon"><i class="fas fa-chart-line"></i></span>
+            Scientific Computing & ML Libraries
+          </h4>
+          <div class="tag-group">
+            <span class="tag">NumPy</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">SciPy</span>
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">Keras</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">Matplotlib</span>
+            <span class="tag">Plotly</span>
+            <span class="tag">Seaborn</span>
+            <span class="tag">Jupyter</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>
+            <span class="skill-category-icon"><i class="fas fa-mobile-alt"></i></span>
+            Mobile & Development
+          </h4>
+          <div class="tag-group">
+            <span class="tag">Swift</span>
+            <span class="tag">iOS Development</span>
+            <span class="tag">Xcode</span>
+            <span class="tag">Mobile UI/UX</span>
+            <span class="tag">App Development</span>
           </div>
         </div>
         
         <div class="skill-category">
-          <h4>Tools & Languages</h4>
+          <h4>
+            <span class="skill-category-icon"><i class="fas fa-tools"></i></span>
+            Tools & Platforms
+          </h4>
           <div class="tag-group">
-            <span class="tag">Python</span>
-            <span class="tag">MATLAB</span>
-            <span class="tag">R</span>
-            <span class="tag">Git</span>
-            <span class="tag">Linux/Unix</span>
+            <span class="tag">Git/GitHub</span>
+            <span class="tag">Jupyter Notebooks</span>
+            <span class="tag">VS Code</span>
+            <span class="tag">LaTeX</span>
+            <span class="tag">Markdown</span>
+            <span class="tag">Slurm</span>
+            <span class="tag">AWS (Basic)</span>
           </div>
         </div>
       </div>
@@ -412,18 +757,18 @@
 
   <footer>
     <div class="footer-links">
-      <a href="https://www.linkedin.com/in/hliu83/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/hliu83/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/hanyumasonliu" target="_blank" rel="noopener" aria-label="GitHub">
+        </a>
+        <a href="https://github.com/hanyumasonliu" target="_blank" rel="noopener" aria-label="GitHub">
         <i class="fab fa-github"></i>
       </a>
       <a href="https://scholar.google.com/citations?user=7ziLpjUAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar">
         <i class="fas fa-graduation-cap"></i>
-      </a>
+        </a>
       <a href="mailto:hliu154@jh.edu" aria-label="Email">
         <i class="fas fa-envelope"></i>
-      </a>
+        </a>
     </div>
     <p>© <span id="year"></span> Hanyu (Mason) Liu</p>
   </footer>
