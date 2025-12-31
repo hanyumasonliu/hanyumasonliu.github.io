@@ -2,10 +2,6 @@
 
 **Live Website:** [https://hanyumasonliu.github.io/](https://hanyumasonliu.github.io/)
 
-## About
-
-Professional website showcasing research, experience, and achievements. Designed for Big Tech recruiting (Applied Scientist, Research Engineer, Data Scientist roles) with a focus on technical excellence, production-ready capabilities, and elite performance.
-
 ## Features
 
 - **Multi-page structure** with dedicated sections for Research, Experience, Tennis, and Contact
@@ -45,24 +41,16 @@ Professional website showcasing research, experience, and achievements. Designed
 - Business Analytics Intern (Philip Morris International)
 
 ### Leadership & Athletics
-- NCAA Student-Athlete (Johns Hopkins)
-- ATP 1000 Tour Coach
+- NCAA Student-Athlete (George Washington and Johns Hopkins)
+- ATP 1000 Professional Tennis Tour Coach
 - Assistant Men's Tennis Coach (Johns Hopkins)
 
 ## Technical Skills
 
-- **Languages:** Python, MATLAB, R, SQL, Swift, JavaScript
+- **Languages:** Python, MATLAB, R, SQL, Swift, JavaScript, C, HTML
 - **ML & AI:** Machine Learning, Deep Learning, Neural Networks, TensorFlow, PyTorch, Keras
 - **Methods:** Inverse Modeling, Bayesian Inference, Uncertainty Quantification, Geostatistics
 - **Tools:** Git, HPC Workflows, Docker, Jupyter, VS Code
-
-## Development
-
-This is a static website hosted on GitHub Pages. To make changes:
-
-1. Edit HTML/CSS files directly
-2. Commit and push to `main` branch
-3. Changes will auto-deploy to GitHub Pages
 
 ## Contact
 
